@@ -1,0 +1,64 @@
+\chapter{The Kitaev chain}
+The Kitaev chain is a toy model of a one dimensional spinless p-wave superconductor, and is an example of material that can realize a topological superconducting phase \cite{kitaevUnpairedMajoranaFermions2001}. It consists of a chain of spinless fermions with nearest-neighbour hopping and superconducting pairing, under the influence of a chemical potential. The Hamiltonian takes the form 
+\begin{align}
+    H =& \sum_j\left[ - \omega \left(a_j^\dagger a_{j+1} + a_{j+1}^\dagger a_j  \right) - \mu \left(a_j^\dagger  a_j - \frac{1}{2} \right) + \Delta a_j a_{j+1} + \Delta^* a_{j+1}^\dagger a_j^\dagger \right]
+    \label{eq:Original_Kitaev_Hamiltonian}
+\end{align}
+where $a_j$ and $a_j^\dagger$ are annihilation and creation operators for the fermionic sites $j$ in the chain. $\omega$ is a hopping amplitude, $\mu$ is the chemical potential, and $\Delta = |\Delta|e^{i\theta}$ is the induced superconducting gap. The Hamiltonian serves to give rise to Majorana fermion quasiparticles at its boundaries. These Majorana fermions can be used as qubits, and a network of chains can be used for quantum computation. 
+
+Majorana fermions are interesting candidates for qubits as their topological nature provides robustness against local perturbations and certain sources of decoherence. Their non-Abelian nature also allows for braiding, where the majorana fermions exchange position and information about the path is stored in the wavefunction. 
+
+\section{Majorana fermions}
+A Majorana fermion is a particle that is its own antiparticle. The Majorana operators can be defined as
+\begin{align}
+    c_{2j-1} = a_j + a_j^\dagger, \hspace{4mm}  c_{2j} = \frac{a_j - a_j^\dagger}{i}, \hspace{4mm} (j = 1, ..., N) \label{eq:majorana_op2j}
+\end{align}
+which are hermitian, and anticommute, meaning they satisfy the relations
+\begin{align}
+    c_m^\dagger = c_m, \hspace{4mm} c_l c_m + c_m c_l = 2 \delta_{lm}, \hspace{4mm} (l,m = 1, ..., 2N). \label{eq:Majorana_Herm_anticomm}
+\end{align}
+Using the definitions of the majorana operators \ref{eq:majorana_op2j} we can find the number operator for a site $j$
+\begin{align}
+    a_j^\dagger a_j = \frac{1}{2} \left(1 + i c_{2j-1} c_{2j} \right),
+\end{align}
+where the term $i c_{2j-1} c_{2j}$ corresponds to a phase error. If $c_{2j-1}$ and $c_{2j}$ are not on the same site, but separated in space, then $c_{2j-1} c_{2j}$ would represent an interaction between two separated Majorana sites, requiring the environment to couple the Majorana fermions simultaneously to create the phase error. Physical noise and imperfections are typically local, so placing the Majorana sites far enough away from each other would decrease the risk of a phase error. Further, a single Majorana operator cannot appear by itself in a reasonable Hamiltonian as it would not preserve fermionic parity; flipping the system from an even to odd (or vice versa) number of fermions. As such, the Majorana operators will always come in pairs $c_i c_l$, and thus no parity preserving term can involve just one isolated Majorana. Together this tells us that errors would either have to break parity, or couple both separated Majoranas at once, which is highly unlikely and thus the Majorana fermions are protected from local errors.
+
+\subsection{Rewriting Hamiltonian in terms of Majorana operators}
+We can express the Hamiltonian in terms of Majorana operators. As we will see, this transformation will make the structure of the phases and the emergence of the edge modes transparent. Before doing so we hide the phase $\theta$ in the majorana operators 
+\begin{align}
+    c_{2j-1} &= e^{i \frac{\theta}{2}} a_j + e^{-i \frac{\theta}{2}}a_j^\dagger \label{eq:c2j-1_hide_phase}\\
+    c_{2j} &= -ie^{i \frac{\theta}{2}} a_j + ie^{-i \frac{\theta}{2}}a_j^\dagger \label{eq:c2j_hide_phase}.
+\end{align}
+We can now perform the transformation of the Hamiltonian by inverting relations \ref{eq:c2j-1_hide_phase} and \ref{eq:c2j_hide_phase}, and inserting into the Hamiltonian \ref{eq:Original_Kitaev_Hamiltonian}. Together with the hermiticity and anticommutation relations \ref{eq:Majorana_Herm_anticomm} we get the Hamiltonian
+\begin{align}
+    H &= \frac{i}{2} \sum_j \left[-\mu c_{2j-1} c_{2j} + \left(\omega + \left|\Delta \right|  \right) c_{2j} c_{2j+1} + \left(-\omega + \left| \Delta \right| \right) c_{2j-1} c_{2j+2} \right].
+\end{align}
+This calculation is shown in appendix \ref{Appendix:Hamiltonian_Transformation}.
+
+\subsection{Diagonalization in the
+  \texorpdfstring{$\boldsymbol{\omega = |\Delta| > 0, \mu = 0}$}
+                 {$\omega = |\Delta| > 0, \mu = 0$}
+  case}
+In the case 
+\begin{align}
+\omega = |\Delta|, \hspace{4mm} \mu = 0
+\end{align}
+the Hamiltonian reduces to
+\begin{align}
+  H = i\sum_{j} \omega c_{2j} c_{2j+1} \label{eq:H_tdelta_mu0}  
+\end{align}
+where we now can define new annihilation and creation operators for the sites
+\begin{align}
+    d_j &= \frac{1}{2} \left(c_{2j} + i c_{2j+1} \right) \\
+    d_j^\dagger &= \frac{1}{2} \left(c_{2j} - i c_{2j+1} \right).
+\end{align}
+Such that we can rewrite the Hamiltonian 
+\begin{align}
+    H &= 2 \omega \sum_{j = 1}^{N-1} \left(d_j^\dagger d_j - \frac{1}{2} \right)
+\end{align}
+
+\subsection{other case}
+
+\section{Topology}
+
+\section{Quantum computation \& the T-junction}

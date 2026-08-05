@@ -1,0 +1,48 @@
+\chapter{Calculations}
+\section{Transforming Kitaev chain Hamiltonian to Majorana operators} 
+\label{Appendix:Hamiltonian_Transformation}
+This appendix shows how transform the original Kitaev chain hamiltonian expressed in fermionic operators $a_j$ and $a_j^\dagger$ to being expressed in terms of the majorana operators $c_{2j-1}$ and $c_2j$. 
+
+Starting with the majorana operators
+\begin{align}
+    c_{2j-1} &= e^{i \frac{\theta}{2}} a_j + e^{-i \frac{\theta}{2}}a_j^\dagger \\
+    c_{2j} &= -ie^{i \frac{\theta}{2}} a_j + ie^{-i \frac{\theta}{2}}a_j^\dagger.
+\end{align}
+We can invert them, leading to four expressions
+\begin{align}
+    a_j &= e^{- i \frac{\theta}{2}} c_{2j-1} - e^{-i \theta} a_j^\dagger \\
+    &= i e^{- i \frac{\theta}{2}} c_{2j} + e^{- i \theta} a_j^\dagger \\
+    a_j^\dagger &= e^{i \frac{\theta}{2}} c_{2j-1} - e^{i\theta} a_j \\
+    &= - i e^{i\frac{\theta}{2}} c_{2j} + e^{i \theta} a_j.
+\end{align}
+Combining the expressions for $a_j$, and for $a_j^\dagger$ we find
+\begin{align}
+    a_j &= \frac{1}{2} \left( e^{- i \frac{\theta}{2}} c_{2j-1} - e^{- i \theta} a_j^\dagger + e^{- i \theta} a_j^\dagger + i e^{- i \frac{\theta}{2}} c_2j \right) \\
+    &= \frac{1}{2} e^{-i \frac{\theta}{2}} \left( c_{2j-1} + i c_{2j} \right)\\
+    a_j^\dagger &= \frac{1}{2} \left( e^{i \frac{\theta}{2}} c_{2j-1} - e^{i\theta} a_j + e^{i \theta} a_j - i e^{i\frac{\theta}{2}} c_{2j}   \right) \\
+    &= \frac{1}{2} e^{i \frac{\theta}{2}} \left( c_{2j-1} - i c_{2j}  \right).
+\end{align}
+We now substitute these expressions into the original hamiltonian
+\begin{align}
+    H =& \sum_j\left[ - \omega \left(a_j^\dagger a_{j+1} + a_{j+1}^\dagger a_j  \right) - \mu \left(a_j^\dagger  a_j - \frac{1}{2} \right) + \Delta a_j a_{j+1} + \Delta^* a_{j+1}^\dagger a_j^\dagger \right]\\
+    &= -\omega \sum_j  \frac{1}{2} e^{i \frac{\theta}{2}} \left( c_{2j-1} - i c_{2j}  \right) \frac{1}{2} e^{-i \frac{\theta}{2}} \left( c_{2(j+1)-1} + i c_{2(j+1)} \right) \\
+    &-\omega \sum_j \frac{1}{2} e^{i \frac{\theta}{2}} \left( c_{2(j+1)-1} - i c_{2(j+1)}  \right) \frac{1}{2} e^{-i \frac{\theta}{2}} \left( c_{2j-1} + i c_{2j} \right)\\
+    &- \mu \sum_j \left(\frac{1}{2} e^{i \frac{\theta}{2}} \left( c_{2j-1} - i c_{2j}  \right) \frac{1}{2} e^{-i \frac{\theta}{2}} \left( c_{2j-1} + i c_{2j} \right)  - \frac{1}{2}\right) \\
+    &+ \Delta \sum_j \frac{1}{2} e^{-i \frac{\theta}{2}} \left( c_{2j-1} + i c_{2j} \right) \frac{1}{2} e^{-i \frac{\theta}{2}} \left( c_{2(j+1)-1} + i c_{2(j+1)} \right) \\
+    &+ \Delta^* \sum_j \frac{1}{2} e^{i \frac{\theta}{2}} \left( c_{2(j+1)-1} - i c_{2(j+1)}  \right) \frac{1}{2} e^{i \frac{\theta}{2}} \left( c_{2j-1} - i c_{2j}  \right)\\
+    &= - \frac{\omega}{4} \sum_j \left( c_{2j-1} c_{2j + 1} + i c_{2j-1} c_{2j + 2} - i c_{2j} c_{2j + 1} + c_{2j} c_{2j + 2} \right) \\
+    &- \frac{\omega}{4} \sum_j \left( c_{2j+1} c_{2j - 1} + i c_{2j + 1} c_{2j} - i c_{2j + 2} c_{2j - 1} + c_{2j + 2} c_{2j}\right)\\
+    & -\frac{\mu}{4} \sum_j \left( c_{2j-1}^2 + ic_{2j-1} c_{2j} - i c_{2j} c_{2j-1} + c_{2j}^2 - 2 \right) \\
+    &+ \frac{|\Delta|}{4}e^{i\theta} \sum_j e^{-i \theta} \left( c_{2j-1} c_{2j+1} + i c_{2j-1} c_{2j+2} + i c_{2j} c_{2j+1} - c_{2j} c_{2j+2} \right) \\
+    &+ \frac{|\Delta|}{4} e^{-i\theta} \sum_j e^{i\theta}\left( c_{2j+1} c_{2j-1} - i c_{2j + 1} c_{2j} - i c_{2j+2} c_{2j-1} - c_{2j+2} c_{2j}\right) \\
+    &= - \frac{\omega}{4} \sum_j \left( 0 + 2 i c_{2j-1} c_{2j+2} - 2i c_{2j}c_{2j+1} + 0\right) \\
+    &- \frac{\mu}{4} \sum_j \left( 2i c_{2j-1}c_{2j} + 2 - 2\right)\\
+    &+ \frac{|\Delta|}{4}\sum_j \left( 0 + 2i c_{2j-1}c_{2j+2} + 2i c_{2j} c_{2j+1} + 0  \right) \\
+    &= \frac{i}{2} \sum_j \left[-\mu c_{2j-1} c_{2j} + \left(\omega + \left|\Delta \right|  \right) c_{2j} c_{2j+1} + \left(-\omega + \left| \Delta \right| \right) c_{2j-1} c_{2j+2} \right]
+\end{align}
+Where we used $\Delta = |\Delta|e^{i\theta}$ and the anticommutation relations
+\begin{align}
+    \left\{ c_l, c_m \right\} &= c_l c_m + c_m c_l = 2\delta_{lm} \\
+    c_l c_m &= - c_m c_l (m \neq l)\\
+    c_l^2 &= 1.
+\end{align}

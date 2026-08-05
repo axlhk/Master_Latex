@@ -1,0 +1,99 @@
+\documentclass[UKenglish]{uiomasterthesis}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc, url}   \urlstyle{sf}
+\usepackage{babel, textcomp, uiomasterfp}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\pdfstringdefDisableCommands{%
+  \def\boldsymbol#1{#1}%
+  \def\langle{<}%
+  \def\rangle{>}%
+  \def\mid{|}%
+  \def\frac#1#2{#1/#2}%
+  \def\psi{psi}%
+  \def\lambda{lambda}%
+}
+\usepackage[
+  backend=biber,
+  style=numeric,
+  sorting=none
+]{biblatex}\addbibresource{Topological_Kitaev_chain.bib}
+
+\title{Topological quantum computing with the Kitaev chain}
+\subtitle{Solving quantum computing and \\
+providing the world with infinite porridge}
+\author{Axl Hendrik Kleven\\ \url{axlhk@uio.no}}
+
+\includeonly{chapters/Kitaev_Chain, chapters/Appendix_Kitaev}
+
+% \includeonly{chapters/Kitaev_Chain}
+
+
+\begin{document}
+
+\uiomasterfp[kind={Master's thesis}, image={Bergli}, compact, program = {Theoretical Physics}, supervisors = {Joakim Bergli \ and Eivind Støland} , colour=green, date=\today]
+
+
+\begin{abstract}
+    1111111
+\end{abstract}
+
+\include{chapters/Introduction}
+
+\include{chapters/Kitaev_Chain}
+
+\include{chapters/Methods}
+
+\include{chapters/Results}
+
+
+\chapter{Spørsmål}
+Generelle spørsmål:
+08.03.26: Bruker jeg bra notasjon eller burde jeg bytte til mer kompakt notasjon (dot for derivert)?
+
+Eivind master:
+
+Kitaev original article https://arxiv.org/pdf/cond-mat/0010440
+- Hvordan kommer majorana fermionene til kantene - er det bare et matematisk triks ved å definere hamiltonianen ved riktige operatorer? Ref. figur i Kitaev artikkel 
+
+"Introduction to topological superconductivity and
+Majorana fermions
+Martin Leijnse and Karsten Flensberg " https://arxiv.org/pdf/1206.1736
+
+Non-Abelian statistics and topological quantum
+information processing in 1D wire networksfile:///C:/Users/axlkl/Downloads/nphys1915.pdf
+
+From its supplementary:
+- 
+
+Topological Quantum Computation
+https://arxiv.org/pdf/quant-ph/0101025
+
+
+\section{Huskeliste / idemyldring}
+Recap av Kitaev artikkelen om Majorana fermioner
+    - Ikke bruk Arxiv som kilde
+    - Flesh ut starten av Kitaev kapittel med hvorfor operatorene er som de er mtp. hermitisk, antikommuterende
+    - Mer kondenserte språk? - Mer direkte eksempler på hva Majoranaene tåler 
+
+Adiabatic meaning
+
+Kutte kjede
+    - Hvordan kjeden er kuttet; hva som faktisk endres og hva det tilsvarer fysisk
+
+T-junction
+    - Flytte rundt på fermionene. Hvordan de flyttes rundt, helt spesifikt
+
+Sammenligne med Eivind - god kode
+    - Resultater for kutte kjede
+
+
+
+\printbibliography
+
+\appendix
+\include{chapters/Appendix_Kitaev}
+
+
+\end{document}

@@ -1,0 +1,71 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{kitaevUnpairedMajoranaFermions2001}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=59949d44a3903dfabb88bff3220ff2e0}{%
+           family={Kitaev},
+           familyi={K\bibinitperiod},
+           given={Alexei},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{59949d44a3903dfabb88bff3220ff2e0}
+      \strng{fullhash}{59949d44a3903dfabb88bff3220ff2e0}
+      \strng{fullhashraw}{59949d44a3903dfabb88bff3220ff2e0}
+      \strng{bibnamehash}{59949d44a3903dfabb88bff3220ff2e0}
+      \strng{authorbibnamehash}{59949d44a3903dfabb88bff3220ff2e0}
+      \strng{authornamehash}{59949d44a3903dfabb88bff3220ff2e0}
+      \strng{authorfullhash}{59949d44a3903dfabb88bff3220ff2e0}
+      \strng{authorfullhashraw}{59949d44a3903dfabb88bff3220ff2e0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Certain one-dimensional Fermi systems have an energy gap in the bulk spectrum while boundary states are described by one Majorana operator per boundary point. A finite system of length \$L\$ possesses two ground states with an energy difference proportional to \$\textbackslash exp(-L/l\_0)\$ and different fermionic parities. Such systems can be used as qubits since they are intrinsically immune to decoherence. The property of a system to have boundary Majorana fermions is expressed as a condition on the bulk electron spectrum. The condition is satisfied in the presence of an arbitrary small energy gap induced by proximity of a 3-dimensional p-wave superconductor, provided that the normal spectrum has an odd number of Fermi points in each half of the Brillouin zone (each spin component counts separately).}
+      \field{eprinttype}{arXiv}
+      \field{issn}{1468-4780}
+      \field{journaltitle}{Physics-Uspekhi}
+      \field{month}{10}
+      \field{number}{10S}
+      \field{title}{Unpaired {{Majorana}} Fermions in Quantum Wires}
+      \field{urlday}{29}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{volume}{44}
+      \field{year}{2001}
+      \field{urldateera}{ce}
+      \field{pages}{131\bibrangedash 136}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1070/1063-7869/44/10S/S29
+      \endverb
+      \verb{eprint}
+      \verb cond-mat/0010440
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\axlkl\\Zotero\\storage\\DIMR8YB8\\Kitaev - 2001 - Unpaired Majorana fermions in quantum wires.pdf;C\:\\Users\\axlkl\\Zotero\\storage\\HN2PLXC7\\0010440.html
+      \endverb
+      \keyw{Condensed Matter - Mesoscale and Nanoscale Physics,Quantum Physics}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

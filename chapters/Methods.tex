@@ -1,0 +1,135 @@
+\chapter{Methods}
+
+\section{Theory}
+
+\subsection{Hilbert space and many-body basis}
+Considering a Kitaev chain with $L$ sites we can use an occupation number basis
+\begin{align}
+    \left\{ |n\rangle \right\}, \hspace{4mm} |n\rangle = |n_1, n_2, ..., n_L\rangle, \hspace{4mm} n_i \in \{0,1\}.
+\end{align}
+Where $0$ represents a site being empty, and $1$ represents a site being occupied. This defines our Hilbert space, with a corresponding Hamiltonian $\mathcal{H}$. This allows us to produce a Hamiltonian matrix 
+\begin{align}
+    H_{nm} = \langle n | \mathcal{H} |m\rangle.
+\end{align}
+%Er det rett å si "corresponding Hamiltonian"?
+
+\subsection{Diagonalizing the Hamiltonian}
+Diagonalizing by the use of a unitary matrix $U$ with elements $c_{nk}$
+\begin{align}
+    H = U D U^{-1}
+\end{align}
+where $D$ is diagonal containing the eigenvalues $E_k$. The energy eigenstates are related to the basis by
+\begin{align}
+    | \psi_k \rangle &= \sum_n c_{nk} |n\rangle .
+\end{align}
+We can expand any state in the energy eigenbasis
+\begin{align}
+    |\phi \rangle = \sum_{k} a_k |\psi_k\rangle.
+\end{align}
+For a time-independent $H$, the time evolution of $U$ can be written
+\begin{align}
+    U(t) = e^{-i H t}
+\end{align}
+such that
+\begin{align}
+    |\phi(t)\rangle &= U(t)|\phi\rangle \\
+    &= e^{-i H t} |\phi(0) \rangle \\
+    &= \sum_k a_k(0) e^{-i H t} |\psi_k\rangle \\
+    &= \sum_k a_k(t) |\psi_k\rangle
+\end{align}
+Where $|\phi(0) \rangle = |\phi\rangle, a_k(0) = a_k$ from earlier. We see that the coefficients just pick up time-dependent phases
+\begin{align}
+    a_k(t) &= a_k(0) e^{-iHt}
+\end{align}
+
+\subsection*{Time-dependent Hamiltonian \& adiabatic basis}
+We now want to define a time dependent Hamiltonian with an orthonormal instantaneous basis
+\begin{align}
+    H(t)&; \hspace{4mm} \left\{ |\psi_k(t)\rangle \right\} \\
+    H(t) |\psi_k(t) \rangle &= E_k(t) |\psi_k(t)\rangle. \\
+\end{align}
+Expanding the full state as
+\begin{align}
+    |\phi(t)\rangle &= \sum_k a_k(t) e^{-i\int_0^t dt' \lambda_k(t')}|\psi_k(t)\rangle
+\end{align}
+we can now determine the time evolution of the system using Schrödingers equation
+\begin{align}
+    - i H |\phi \rangle &= \frac{d}{dt} |\phi\rangle \\
+    -i H \sum_k a_k e^{-i \int_0^t \lambda_k} |\psi_k\rangle&= \frac{d}{dt} \sum_k a_k(t) e^{-i\int_0^t dt' \lambda_k(t')}|\psi_k(t)\rangle\\
+    -i\sum_k a_ke^{-i\int_0^t\lambda_k}E_k|\psi_k\rangle &= \sum_k \left[ \frac{d a_k}{dt} e^{- i \int_0^t \lambda_k} |\psi_k \rangle + a_k (-i\lambda_k) e^{-i\int_0^t \lambda_k} |\psi_k\rangle + a_k e^{-i\int_0^t \lambda_k} \frac{d|\psi_k\rangle}{dt} \right] 
+\end{align}
+\begin{align}
+    -i \sum_ke^{-i\int_0^t \lambda_k} \left[ a_k E_k |\psi_k\rangle -i  \frac{d a_k}{dt} |\psi_k \rangle - a_k \lambda_k|\psi_k\rangle -i a_k  \frac{d|\psi_k\rangle}{dt}\right] &= 0 \\
+    \sum_ke^{-i\int_0^t \lambda_k} \left[ a_k \left( (E_k - \lambda_k) |\psi_k\rangle - i \frac{d|\psi_k\rangle}{dt}\right) -i  \frac{d a_k}{dt} |\psi_k \rangle \right] &= 0 
+\end{align}
+We now project onto $\langle \psi_l |$ as we by orthonormality have $\langle \psi_l |\psi_k \rangle = \delta_{lk}$.
+\begin{align}
+    \langle \psi_l |\sum_k e^{-i\int_0^t \lambda_k} \left[ a_k \left( (E_k - \lambda_k) |\psi_k\rangle - i \frac{d|\psi_k\rangle}{dt}\right) -i  \frac{d a_k}{dt} |\psi_k \rangle \right] &= 0 \\
+    \sum_k e^{-i\int_0^t \lambda_k}  \left[a_k \left( ( E_k - \lambda_k) \delta_{l,k}  - i \langle \psi_l | \frac{d}{dt} |\psi_k\rangle \right) - i \frac{d a_k}{dt} \delta_{l,k}   \right] &= 0 \\
+    e^{-i\int_0^t \lambda_l} \left[ a_l(E_l - \lambda_l) -  i \frac{d a_l}{dt} \right] - i \sum_k a_k e^{-i\int_0^t \lambda_k}  \langle \psi_l | \frac{d}{dt} |\psi_k\rangle &= 0 \\
+    a_l(E_l - \lambda_l) -  i \frac{d a_l}{dt} - i e^{i\int_0^t \lambda_l} \sum_k a_k e^{-i\int_0^t \lambda_k} \langle \psi_l | \frac{d}{dt} |\psi_k\rangle &= 0 \\
+    \sum_k a_k e^{-i\int_0^t (\lambda_l - \lambda_k)} \langle \psi_l | \frac{d}{dt} |\psi_k\rangle -i a_l(E_l - \lambda_l) &= \frac{d a_l}{dt} 
+\end{align}
+Remembering that $\lambda$ is just a definition used to split off a phase from $a_k$, we can choose it to help simplify our equation. We see that by choosing
+\begin{align}
+    \lambda_k = E_k - i \langle \psi_k | \frac{d}{dt} |\psi_k\rangle
+\end{align}
+we can remove all diagonal terms.
+\begin{align}
+    \sum_k a_k e^{-i\int_0^t (\lambda_l - \lambda_k)} \langle \psi_l | \frac{d}{dt} |\psi_k\rangle -i a_l(E_l - E_l - i \langle \psi_l | \frac{d}{dt} |\psi_l\rangle) &= \frac{d a_l}{dt} \\
+    \sum_{k\neq l} a_k e^{-i\int_0^t (\lambda_l - \lambda_k)} \langle \psi_l | \frac{d}{dt} |\psi_k\rangle  +  a_l e^{0} \langle \psi_l | \frac{d}{dt} |\psi_l\rangle  - a_l \langle \psi_l | \frac{d}{dt} |\psi_l\rangle &= \frac{d a_l}{dt} \\
+    \sum_{k\neq l} a_k e^{-i\int_0^t (\lambda_l - \lambda_k)} \langle \psi_l | \frac{d}{dt} |\psi_k\rangle &= \frac{d a_l}{dt}     
+\end{align}
+
+\section{BdG Hamiltonian}
+Speed
+
+\section{RK4 integration}
+Accuracy
+
+
+
+\section{Code structure}
+I used UiOGPT to help write and debug the code.
+
+\subsection{Setting up the Kitaev chain Hamiltonian matrix}
+Using original Hamiltonian $\ref{eq:Original_Kitaev_Hamiltonian}$.
+
+Open boundary conditions
+
+Hilbert space basis
+
+Making $H_{nm}$
+
+For mu term:
+Use $ \sum_j n_j |n\rangle = \sum_j a_j^\dagger a_j |n\rangle = N|n\rangle$
+
+For omega and delta terms:
+$c_j^\dagger c_{j+1} |n\rangle = c_1 c_2 |m_2\rangle$
+
+Use time dependent $\mu$ for time dependency. 
+
+\subsection{Finding eigenvectors and eigenvalues by diagonalization}
+numpy.linalg.eigh
+
+\subsection{Calculating $\langle \psi_l | \frac{d}{dt} | \psi_k \rangle $ \& $\lambda$}
+Finite difference (Numerical derivation) for the bulk $n \in \left[1, N - 1\right]$
+\begin{equation}
+    \langle \psi_l(t_n)| \frac{d}{dt} |\psi_k(t_n) \rangle = \frac{\langle \psi_l(t_n) | \psi_k(t_{n+1})\rangle - \langle \psi_l(t_n) | \psi_k(t_{n-1})\rangle}{2 \Delta t}.
+\end{equation}
+And a forward difference for $n = 0$
+\begin{align}
+    \langle \psi_l(t_0)| \frac{d}{dt} |\psi_k(t_0) \rangle &= \frac{d}{dt}\left[ \langle \psi_l(t_0) | \psi_k(t)\rangle \right]_{t_0}\\
+    &= \frac{\langle \psi_l(t_0) | \psi_k ( t_1) \rangle - \langle \psi_l(t_0) | \psi_k ( t_0 ) \rangle}{t_1 - t_0}\\
+    &= \frac{\langle \psi_l(t_0) | \psi_k ( t_1) \rangle - \delta_{lk}}{dt}.
+\end{align}
+And a backward difference to find $n = N-1$.
+
+\subsection{Time evolution of amplitudes}
+Using Euler.\\
+Upgrade to RK4 later.
+
+\subsection*{Evolving the fixed basis}
+Using H(t) with $\mu(t), \omega(t), \Delta(t)$
+
+Here one can also evolve the ... basis as seen in Eivinds master
