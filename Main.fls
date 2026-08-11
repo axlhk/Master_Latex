@@ -358,10 +358,8 @@ INPUT c:/texlive/2026/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/adobe/helvetic/phvb8t.tfm
-INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/lm/rm-lmr12.tfm
-INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmmi12.tfm
-INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
-INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
+INPUT c:/texlive/2026/texmf-dist/fonts/tfm/adobe/helvetic/phvb8t.tfm
+INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/lm/rm-lmbx10.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/lm/rm-lmbx8.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/lm/rm-lmbx6.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmmib10.tfm
@@ -372,6 +370,8 @@ INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmbsy7.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/vf/adobe/helvetic/phvr8t.vf
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
+INPUT c:/texlive/2026/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf
+INPUT c:/texlive/2026/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT ./chapters/Methods.tex
@@ -407,7 +407,7 @@ INPUT ./Main.out
 INPUT Main.run.xml
 OUTPUT Main.run.xml
 INPUT c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb
-INPUT c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
+INPUT c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
 INPUT c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb
 INPUT c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmex10.pfb
 INPUT c:/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi10.pfb

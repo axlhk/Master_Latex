@@ -23,31 +23,42 @@ Using the definitions of the majorana operators \ref{eq:majorana_op2j} we can fi
 \end{align}
 where the term $i c_{2j-1} c_{2j}$ corresponds to a phase error. If $c_{2j-1}$ and $c_{2j}$ are not on the same site, but separated in space, then $c_{2j-1} c_{2j}$ would represent an interaction between two separated Majorana sites, requiring the environment to couple the Majorana fermions simultaneously to create the phase error. Physical noise and imperfections are typically local, so placing the Majorana sites far enough away from each other would decrease the risk of a phase error. Further, a single Majorana operator cannot appear by itself in a reasonable Hamiltonian as it would not preserve fermionic parity; flipping the system from an even to odd (or vice versa) number of fermions. As such, the Majorana operators will always come in pairs $c_i c_l$, and thus no parity preserving term can involve just one isolated Majorana. Together this tells us that errors would either have to break parity, or couple both separated Majoranas at once, which is highly unlikely and thus the Majorana fermions are protected from local errors.
 
-\subsection{Rewriting Hamiltonian in terms of Majorana operators}
-We can express the Hamiltonian in terms of Majorana operators. As we will see, this transformation will make the structure of the phases and the emergence of the edge modes transparent. Before doing so we hide the phase $\theta$ in the majorana operators 
+\subsection{Rewriting the Hamiltonian in terms of Majorana operators}
+We can express the Hamiltonian in terms of Majorana operators. As we will see, this transformation will provide insight about the structure of the phases and the emergence of the edge modes. Before doing so we simplify the calculation by hiding the phase $\theta$ in the majorana operators
 \begin{align}
     c_{2j-1} &= e^{i \frac{\theta}{2}} a_j + e^{-i \frac{\theta}{2}}a_j^\dagger \label{eq:c2j-1_hide_phase}\\
     c_{2j} &= -ie^{i \frac{\theta}{2}} a_j + ie^{-i \frac{\theta}{2}}a_j^\dagger \label{eq:c2j_hide_phase}.
 \end{align}
-We can now perform the transformation of the Hamiltonian by inverting relations \ref{eq:c2j-1_hide_phase} and \ref{eq:c2j_hide_phase}, and inserting into the Hamiltonian \ref{eq:Original_Kitaev_Hamiltonian}. Together with the hermiticity and anticommutation relations \ref{eq:Majorana_Herm_anticomm} we get the Hamiltonian
+We can now perform the transformation of the Hamiltonian by inverting these relations and inserting into the original Hamiltonian \ref{eq:Original_Kitaev_Hamiltonian}. Together with the hermiticity and anticommutation relations \ref{eq:Majorana_Herm_anticomm} we get the Hamiltonian
 \begin{align}
     H &= \frac{i}{2} \sum_j \left[-\mu c_{2j-1} c_{2j} + \left(\omega + \left|\Delta \right|  \right) c_{2j} c_{2j+1} + \left(-\omega + \left| \Delta \right| \right) c_{2j-1} c_{2j+2} \right].
 \end{align}
-This calculation is shown in appendix \ref{Appendix:Hamiltonian_Transformation}.
+This calculation is shown in appendix \ref{Appendix:Hamiltonian_Transformation}. Staring at this Hamiltonian, we can first see that it is on the general quadratic Majorana form
+\begin{align}
+    H = \frac{i}{4} \sum_{l, m} A_{lm} c_{l} c_m
+\end{align}
+with A being a real, antisymmetric matrix. With A being real antisymmetric, it encodes the intrinsic particle-hole symmetry of the superconducting system. And the single particle spectrum is fully determined by the eigenvalues of A, reducing the problem from a many-body operator problem to a single-particle linear algebra problem. This is the basis of BdG, as we will get back to later. Further, we see that all direct mentions of the complex phase $\theta$ are gone from $H$. This reflects that $\theta$ can be removed by an appropriate gauge transformation, and is therefore irrelevant for the bulk spectrum and the topological classification of the phases, which we will also touch upon later.
 
-\subsection{Diagonalization in the
+The Majorana representation also gives us a geometric picture of the chain. The Hamiltonian now consists of three terms, providing three different types of couplings. An on-site term $-\mu c_{2j-1} c_{2j}$, and two nearest-neighbour terms $(\omega + |\Delta|)c_{2j} c_{2j+1}$ and $(-\omega + |\Delta|) c_{2j-1} c_{2j+2}$. The on-site term produces two Majorana modes per site $j$, so for a chain of length $L$ we get $2L$ Majorana operators. We can garner further insight by studying specific cases for the parameters $\mu, \omega$ and $|\Delta|$ of the Hamiltonian.
+
+\subsubsection{Trivial case \texorpdfstring{$\boldsymbol{\omega = |\Delta| = 0, \mu > 0}$} {$\omega = |\Delta| > 0, \mu = 0$}}
+In the case where $\mu$ dominates the Hamiltonian reduces to
+\begin{align}
+    H &= -\mu \sum_j \left(a_j^\dagger a_j - \frac{1}{2} \right) = \frac{i}{2} \mu \sum_j c_{2j-1}c_{2j}.
+\end{align}
+In this case the system is topologically trivial as the Majoranas on each site are glued together to form a complex fermion. There are no unpaired Majorana fermions at the edges of the chain.
+
+\subsubsection{Diagonalization in the
   \texorpdfstring{$\boldsymbol{\omega = |\Delta| > 0, \mu = 0}$}
                  {$\omega = |\Delta| > 0, \mu = 0$}
   case}
-In the case 
+In the case where the hopping and superconducting parameters dominate the Hamiltonian reduces to
 \begin{align}
-\omega = |\Delta|, \hspace{4mm} \mu = 0
+  H = i\sum_{j} \omega c_{2j} c_{2j+1}, \label{eq:H_tdelta_mu0}  
 \end{align}
-the Hamiltonian reduces to
-\begin{align}
-  H = i\sum_{j} \omega c_{2j} c_{2j+1} \label{eq:H_tdelta_mu0}  
-\end{align}
-where we now can define new annihilation and creation operators for the sites
+where the nearest neighbours between different sites dominate. This is an interesting case as $c_2$ couples to $c_3$, $c_4$ couples to $c_5$, and so on. But $c_1$ and $c_2L$, the Majorana edge states, do not appear in the Hamiltonian. They have however not disappeared physically, but rather exist as zero energy nonlocal fermionic modes at the edges of the wire. This is the most important insight from the transformation of the Hamiltonian as these are the states we were looking to create.
+
+We can now define new annihilation and creation operators for the sites
 \begin{align}
     d_j &= \frac{1}{2} \left(c_{2j} + i c_{2j+1} \right) \\
     d_j^\dagger &= \frac{1}{2} \left(c_{2j} - i c_{2j+1} \right).
@@ -57,8 +68,11 @@ Such that we can rewrite the Hamiltonian
     H &= 2 \omega \sum_{j = 1}^{N-1} \left(d_j^\dagger d_j - \frac{1}{2} \right)
 \end{align}
 
-\subsection{other case}
+\subsubsection{Arbitrary $\boldsymbol{\omega}$, $\boldsymbol{\mu}$, $\boldsymbol{\Delta}$}
+
 
 \section{Topology}
+
+\section{BdG}
 
 \section{Quantum computation \& the T-junction}

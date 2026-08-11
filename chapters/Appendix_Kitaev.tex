@@ -1,7 +1,7 @@
 \chapter{Calculations}
 \section{Transforming Kitaev chain Hamiltonian to Majorana operators} 
 \label{Appendix:Hamiltonian_Transformation}
-This appendix shows how transform the original Kitaev chain hamiltonian expressed in fermionic operators $a_j$ and $a_j^\dagger$ to being expressed in terms of the majorana operators $c_{2j-1}$ and $c_2j$. 
+This appendix shows how transform the original Kitaev chain Hamiltonian expressed in fermionic operators $a_j$ and $a_j^\dagger$ to being expressed in terms of the majorana operators $c_{2j-1}$ and $c_2j$. 
 
 Starting with the majorana operators
 \begin{align}
@@ -22,7 +22,7 @@ Combining the expressions for $a_j$, and for $a_j^\dagger$ we find
     a_j^\dagger &= \frac{1}{2} \left( e^{i \frac{\theta}{2}} c_{2j-1} - e^{i\theta} a_j + e^{i \theta} a_j - i e^{i\frac{\theta}{2}} c_{2j}   \right) \\
     &= \frac{1}{2} e^{i \frac{\theta}{2}} \left( c_{2j-1} - i c_{2j}  \right).
 \end{align}
-We now substitute these expressions into the original hamiltonian
+We now substitute these expressions into the original Hamiltonian
 \begin{align}
     H =& \sum_j\left[ - \omega \left(a_j^\dagger a_{j+1} + a_{j+1}^\dagger a_j  \right) - \mu \left(a_j^\dagger  a_j - \frac{1}{2} \right) + \Delta a_j a_{j+1} + \Delta^* a_{j+1}^\dagger a_j^\dagger \right]\\
     &= -\omega \sum_j  \frac{1}{2} e^{i \frac{\theta}{2}} \left( c_{2j-1} - i c_{2j}  \right) \frac{1}{2} e^{-i \frac{\theta}{2}} \left( c_{2(j+1)-1} + i c_{2(j+1)} \right) \\
