@@ -37,36 +37,42 @@ This calculation is shown in appendix \ref{Appendix:Hamiltonian_Transformation}.
 \begin{align}
     H = \frac{i}{4} \sum_{l, m} A_{lm} c_{l} c_m
 \end{align}
-with A being a real, antisymmetric matrix. With A being real antisymmetric, it encodes the intrinsic particle-hole symmetry of the superconducting system. And the single particle spectrum is fully determined by the eigenvalues of A, reducing the problem from a many-body operator problem to a single-particle linear algebra problem. This is the basis of BdG, as we will get back to later. Further, we see that all direct mentions of the complex phase $\theta$ are gone from $H$. This reflects that $\theta$ can be removed by an appropriate gauge transformation, and is therefore irrelevant for the bulk spectrum and the topological classification of the phases, which we will also touch upon later.
+with A being a real and antisymmetric matrix, encoding the intrinsic particle-hole symmetry of the superconducting system. The single particle spectrum is fully determined by the eigenvalues of $A$, reducing the problem from a $2^{L}$-dimensional many-body operator problem in Fock space to a single-particle linear algebra problem on a $2L \times 2L$ matrix. This is the basis of BdG, as we will get back to later. Further, we see that all direct mentions of the complex phase $\theta$ are gone from $H$. This reflects that $\theta$ can be removed by an appropriate gauge transformation, and is therefore irrelevant for the bulk spectrum and the topological classification of the phases, which we will also touch upon later.
 
-The Majorana representation also gives us a geometric picture of the chain. The Hamiltonian now consists of three terms, providing three different types of couplings. An on-site term $-\mu c_{2j-1} c_{2j}$, and two nearest-neighbour terms $(\omega + |\Delta|)c_{2j} c_{2j+1}$ and $(-\omega + |\Delta|) c_{2j-1} c_{2j+2}$. The on-site term produces two Majorana modes per site $j$, so for a chain of length $L$ we get $2L$ Majorana operators. We can garner further insight by studying specific cases for the parameters $\mu, \omega$ and $|\Delta|$ of the Hamiltonian.
+The Majorana representation also gives us a geometric picture of the chain. The Hamiltonian now consists of three terms, providing three different types of couplings. An on-site term $-\mu c_{2j-1} c_{2j}$, and two nearest-neighbour terms $(\omega + |\Delta|)c_{2j} c_{2j+1}$ and $(-\omega + |\Delta|) c_{2j-1} c_{2j+2}$. The on-site term couples two Majorana modes per site $j$, so for a chain of length $L$ we get $2L$ Majorana operators. We can garner further insight by studying specific cases for the parameters $\mu, \omega$ and $|\Delta|$ of the Hamiltonian.
 
-\subsubsection{Trivial case \texorpdfstring{$\boldsymbol{\omega = |\Delta| = 0, \mu > 0}$} {$\omega = |\Delta| > 0, \mu = 0$}}
+\subsubsection{Trivial case \texorpdfstring{$\boldsymbol{\omega = |\Delta| = 0, \mu > 0}$} {$\omega = |\Delta| = 0, \mu > 0$}}
 In the case where $\mu$ dominates the Hamiltonian reduces to
 \begin{align}
     H &= -\mu \sum_j \left(a_j^\dagger a_j - \frac{1}{2} \right) = \frac{i}{2} \mu \sum_j c_{2j-1}c_{2j}.
 \end{align}
 In this case the system is topologically trivial as the Majoranas on each site are glued together to form a complex fermion. There are no unpaired Majorana fermions at the edges of the chain.
 
-\subsubsection{Diagonalization in the
-  \texorpdfstring{$\boldsymbol{\omega = |\Delta| > 0, \mu = 0}$}
-                 {$\omega = |\Delta| > 0, \mu = 0$}
-  case}
+\subsubsection{Topological case $\boldsymbol{\omega} = \boldsymbol{|\Delta|} > 0, \boldsymbol{\mu} = 0$}
 In the case where the hopping and superconducting parameters dominate the Hamiltonian reduces to
 \begin{align}
   H = i\sum_{j} \omega c_{2j} c_{2j+1}, \label{eq:H_tdelta_mu0}  
 \end{align}
-where the nearest neighbours between different sites dominate. This is an interesting case as $c_2$ couples to $c_3$, $c_4$ couples to $c_5$, and so on. But $c_1$ and $c_2L$, the Majorana edge states, do not appear in the Hamiltonian. They have however not disappeared physically, but rather exist as zero energy nonlocal fermionic modes at the edges of the wire. This is the most important insight from the transformation of the Hamiltonian as these are the states we were looking to create.
+where the nearest neighbours between different sites dominate. This is an interesting case as $c_2$ couples to $c_3$, $c_4$ couples to $c_5$, and so on. But $c_1$ and $c_{2L}$, the Majorana edge states, do not appear in the Hamiltonian. They have however not disappeared physically, but rather remain as zero-energy Majorana modes localized at the edges of the wire. Together they form a nonlocal fermionic zero mode. This is the most important insight from the transformation of the Hamiltonian as these are the states we were looking to create.
 
-We can now define new annihilation and creation operators for the sites
+We can now define new annihilation and creation operators spanning the sites $j$ and $j+1$
 \begin{align}
     d_j &= \frac{1}{2} \left(c_{2j} + i c_{2j+1} \right) \\
     d_j^\dagger &= \frac{1}{2} \left(c_{2j} - i c_{2j+1} \right).
 \end{align}
 Such that we can rewrite the Hamiltonian 
 \begin{align}
-    H &= 2 \omega \sum_{j = 1}^{N-1} \left(d_j^\dagger d_j - \frac{1}{2} \right)
+    H &= 2 \omega \sum_{j = 1} \left(d_j^\dagger d_j - \frac{1}{2} \right).
 \end{align}
+As the edge states are not mentioned in the Hamiltonian, this expression fully determines the energy spectrum of the bulk. We see that the bulk consists of fermionic modes with energy $\propto 2\omega$. Further, the ground states satisfy the condition $d_j |\psi \rangle = 0 $ for all $j$. As such, all these modes will remain empty, and any ground state $|\psi \rangle $ is fully determined by the edge majoranas $c_1$ and $c_{2L}$. Therefore we get two orthogonal states where the above ground state condition for the bulk is true; $|\psi_0\rangle$ and $|\psi_1 \rangle$. These ground states will be eigenstates of the hermitian operator $-i c_{1} c_{2L}$ as the edge Majoranas represent unpaired degrees of freedom. This operator also squares to 1, and as such has eigenvalues $\pm 1$. We get 
+\begin{align}
+    - i c_{1} c_{2L} |\psi_0 \rangle = |\psi_0\rangle, \hspace{4mm} - i c_{1} c_{2L} |\psi_1 \rangle = -|\psi_1\rangle,
+\end{align}
+where the labeling of the states were chosen arbitrarily. We see that the total fermion parity operator
+\begin{align}
+    P = \prod_j \left(- i c_{2j-1} c_{2j} \right)
+\end{align}
+has the same contribution from the bulk for both ground states. So the difference in parity is solely a result of the edge contribution $-i c_1 c_{2L}$. The even parity of $|\psi_0 \rangle$ represents the state being a superposition of states with an even number of electrons. And $|\psi_1 \rangle$ has an odd parity, representing an odd number of electrons. Together they reflect the boundary degrees of freedom from the unpaired Majorana modes at the edges. 
 
 \subsubsection{Arbitrary $\boldsymbol{\omega}$, $\boldsymbol{\mu}$, $\boldsymbol{\Delta}$}
 

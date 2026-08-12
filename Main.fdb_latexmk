@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber Main"] 0 "Main.bcf" "Main.bbl" "Main" 1786446021.52441 -1
-  "Main.bcf" 1786446021 107852 51d8a3cff9120bb3f0ecca7d0029915e "pdflatex"
+["biber Main"] 0 "Main.bcf" "Main.bbl" "Main" 1786536259.28875 -1
+  "Main.bcf" 1786536258 107852 51d8a3cff9120bb3f0ecca7d0029915e "pdflatex"
   "Topological_Kitaev_chain.bib" 1785775109 9816 ada4b770c8ef510b1bbfe13b3dc90115 ""
   (generated)
   "Main.bbl"
   "Main.blg"
   (rewritten before read)
-["pdflatex"] 1786446019.36251 "c:/Users/axlkl/Master_ltx/Main.tex" "Main.pdf" "Main" 1786446021.52536 0
+["pdflatex"] 1786536254.60983 "c:/Users/axlkl/Master_ltx/Main.tex" "Main.pdf" "Main" 1786536259.29214 0
   "Bergli.png" 1785869697 90022 cef59652b4c9eaf714ffce3ccd85267e ""
-  "Main.aux" 1786446021 1103 0405da3b38820a967547f67908be2698 "pdflatex"
+  "Main.aux" 1786536258 1103 5505a84f5f9a198dd00327e500fad1dd "pdflatex"
   "Main.bbl" 1785869050 3303 cc82add5ed4060a4d2f29ad785862ffb "biber Main"
-  "Main.out" 1786446021 1791 2dc6212ff1bd7af8f5593f0a0d450666 "pdflatex"
-  "Main.run.xml" 1786446021 2383 b6523a20ec910b9940de18ebe2375cce "pdflatex"
+  "Main.out" 1786536258 1791 2dc6212ff1bd7af8f5593f0a0d450666 "pdflatex"
+  "Main.run.xml" 1786536258 2383 b6523a20ec910b9940de18ebe2375cce "pdflatex"
   "Main.tex" 1786013516 2855 d16c304bf3c5b45ade83f3ca4b68db5f ""
   "c:/Users/axlkl/Master_ltx/Main.tex" 1786013516 2855 d16c304bf3c5b45ade83f3ca4b68db5f ""
   "c:/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc" 1785766274 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -174,12 +174,12 @@
   "c:/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1785772419 5619402 ad1310ccf7f36101ef3e8f014a173c46 ""
   "c:/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1785772536 3656528 0150b0e46aad89f4218c38cfa7acff38 ""
   "c:/texlive/2026/texmf.cnf" 1785772388 713 e69b156964470283e0530f5060668171 ""
-  "chapters/Appendix_Kitaev.aux" 1786446021 4549 fab77b2410c0582b9719c8ec88c75d73 "pdflatex"
+  "chapters/Appendix_Kitaev.aux" 1786536258 4549 fab77b2410c0582b9719c8ec88c75d73 "pdflatex"
   "chapters/Appendix_Kitaev.tex" 1786013516 4115 598cde974b1ca6f26a7876087e8b52ab ""
   "chapters/Introduction.aux" 1785924444 4244 bcd1633fea4bb8e5d6096d56efe63ae3 ""
   "chapters/Introduction.tex" 1785923792 85 3b3ecd71bbeb70d419c5d3bd77664bdf ""
-  "chapters/Kitaev_Chain.aux" 1786446021 6045 126964c6c1e6cfd4a767771227dd2e16 "pdflatex"
-  "chapters/Kitaev_Chain.tex" 1786446018 7883 ae47516a8c7b84b0105d83209ded8985 ""
+  "chapters/Kitaev_Chain.aux" 1786536258 6031 9a5b07f83afdeab75a23784016234f07 "pdflatex"
+  "chapters/Kitaev_Chain.tex" 1786536247 9509 49a18d3db96e87d5864112f89fb7c034 ""
   "chapters/Methods.aux" 1785924444 5634 02353111138feae3cd8db147fc545315 ""
   "chapters/Methods.tex" 1785778616 6735 44ed0f0bab408f0c2c3e2f0d35d59c8d ""
   "chapters/Results.aux" 1785924444 4237 9f337a7a66ebfe3a374ca60ccfb66092 ""
