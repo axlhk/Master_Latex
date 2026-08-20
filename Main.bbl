@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.3 $
+% $ biblatex bbl format version 3.2 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,8 +18,8 @@
 
 
 \refsection{0}
-  \datalist[entry]{none/global//global/global/global}
-    \entry{kitaevUnpairedMajoranaFermions2001}{article}{}{}
+  \datalist[entry]{none/global//global/global}
+    \entry{kitaevUnpairedMajoranaFermions2001a}{article}{}
       \name{author}{1}{}{%
         {{hash=59949d44a3903dfabb88bff3220ff2e0}{%
            family={Kitaev},
@@ -29,12 +29,10 @@
       }
       \strng{namehash}{59949d44a3903dfabb88bff3220ff2e0}
       \strng{fullhash}{59949d44a3903dfabb88bff3220ff2e0}
-      \strng{fullhashraw}{59949d44a3903dfabb88bff3220ff2e0}
       \strng{bibnamehash}{59949d44a3903dfabb88bff3220ff2e0}
       \strng{authorbibnamehash}{59949d44a3903dfabb88bff3220ff2e0}
       \strng{authornamehash}{59949d44a3903dfabb88bff3220ff2e0}
       \strng{authorfullhash}{59949d44a3903dfabb88bff3220ff2e0}
-      \strng{authorfullhashraw}{59949d44a3903dfabb88bff3220ff2e0}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -46,8 +44,8 @@
       \field{month}{10}
       \field{number}{10S}
       \field{title}{Unpaired {{Majorana}} Fermions in Quantum Wires}
-      \field{urlday}{29}
-      \field{urlmonth}{1}
+      \field{urlday}{4}
+      \field{urlmonth}{2}
       \field{urlyear}{2026}
       \field{volume}{44}
       \field{year}{2001}
@@ -61,9 +59,41 @@
       \verb cond-mat/0010440
       \endverb
       \verb{file}
-      \verb C\:\\Users\\axlkl\\Zotero\\storage\\DIMR8YB8\\Kitaev - 2001 - Unpaired Majorana fermions in quantum wires.pdf;C\:\\Users\\axlkl\\Zotero\\storage\\HN2PLXC7\\0010440.html
+      \verb C\:\\Users\\axlkl\\Zotero\\storage\\2U6SP3XY\\Kitaev - 2001 - Unpaired Majorana fermions in quantum wires.pdf;C\:\\Users\\axlkl\\Zotero\\storage\\8IQSCW2B\\0010440.html
       \endverb
       \keyw{Condensed Matter - Mesoscale and Nanoscale Physics,Quantum Physics}
+    \endentry
+    \entry{zotero-item-34}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e263e3c3f70989aca20797e29b79e307}{%
+           family={Haber},
+           familyi={H\bibinitperiod},
+           given={Howard\bibnamedelima E.},
+           giveni={H\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{e263e3c3f70989aca20797e29b79e307}
+      \strng{fullhash}{e263e3c3f70989aca20797e29b79e307}
+      \strng{bibnamehash}{e263e3c3f70989aca20797e29b79e307}
+      \strng{authorbibnamehash}{e263e3c3f70989aca20797e29b79e307}
+      \strng{authornamehash}{e263e3c3f70989aca20797e29b79e307}
+      \strng{authorfullhash}{e263e3c3f70989aca20797e29b79e307}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Properties of Antisymmetric Matrices}
+      \field{urlday}{19}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://scipp-legacy.pbsci.ucsc.edu/~haber/ph218/pfaffian15.pdf
+      \endverb
+      \verb{url}
+      \verb https://scipp-legacy.pbsci.ucsc.edu/~haber/ph218/pfaffian15.pdf
+      \endverb
     \endentry
   \enddatalist
 \endrefsection

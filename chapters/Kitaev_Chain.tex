@@ -1,5 +1,5 @@
 \chapter{The Kitaev chain}
-The Kitaev chain is a toy model of a one dimensional spinless p-wave superconductor, and is an example of material that can realize a topological superconducting phase \cite{kitaevUnpairedMajoranaFermions2001}. It consists of a chain of spinless fermions with nearest-neighbour hopping and superconducting pairing, under the influence of a chemical potential. The Hamiltonian takes the form 
+In this chapter we closely follow the original theory laid out by Kitaev  \cite{kitaevUnpairedMajoranaFermions2001a}, re-deriving the main results and filling in with intermediate steps and discussion for clarity. The Kitaev chain is a toy model of a one dimensional spinless p-wave superconductor, and is an example of material that can realize a topological superconducting phase. It consists of a chain of spinless fermions with nearest-neighbour hopping and superconducting pairing, under the influence of a chemical potential. The Hamiltonian takes the form 
 \begin{align}
     H =& \sum_j\left[ - \omega \left(a_j^\dagger a_{j+1} + a_{j+1}^\dagger a_j  \right) - \mu \left(a_j^\dagger  a_j - \frac{1}{2} \right) + \Delta a_j a_{j+1} + \Delta^* a_{j+1}^\dagger a_j^\dagger \right]
     \label{eq:Original_Kitaev_Hamiltonian}
@@ -15,7 +15,7 @@ A Majorana fermion is a particle that is its own antiparticle. The Majorana oper
 \end{align}
 which are hermitian, and anticommute, meaning they satisfy the relations
 \begin{align}
-    c_m^\dagger = c_m, \hspace{4mm} c_l c_m + c_m c_l = 2 \delta_{lm}, \hspace{4mm} (l,m = 1, ..., 2N). \label{eq:Majorana_Herm_anticomm}
+    c_m^\dagger = c_m, \hspace{4mm} \{c_l, c_m\} = c_l c_m + c_m c_l = 2 \delta_{lm}, \hspace{4mm} (l,m = 1, ..., 2N). \label{eq:Majorana_Herm_anticomm}
 \end{align}
 Using the definitions of the majorana operators \ref{eq:majorana_op2j} we can find the number operator for a site $j$
 \begin{align}
@@ -33,9 +33,9 @@ We can now perform the transformation of the Hamiltonian by inverting these rela
 \begin{align}
     H &= \frac{i}{2} \sum_j \left[-\mu c_{2j-1} c_{2j} + \left(\omega + \left|\Delta \right|  \right) c_{2j} c_{2j+1} + \left(-\omega + \left| \Delta \right| \right) c_{2j-1} c_{2j+2} \right].
 \end{align}
-This calculation is shown in appendix \ref{Appendix:Hamiltonian_Transformation}. Staring at this Hamiltonian, we can first see that it is on the general quadratic Majorana form
+This calculation is shown in appendix \ref{Appendix:Hamiltonian_Transformation_Majorana_ops}. Staring at this Hamiltonian, we can first see that it is on the general quadratic Majorana form
 \begin{align}
-    H = \frac{i}{4} \sum_{l, m} A_{lm} c_{l} c_m
+    H = \frac{i}{4} \sum_{l, m} A_{lm} c_{l} c_m, \hspace{4mm} A^T = -A\label{eq:quadratic_H}
 \end{align}
 with A being a real and antisymmetric matrix, encoding the intrinsic particle-hole symmetry of the superconducting system. The single particle spectrum is fully determined by the eigenvalues of $A$, reducing the problem from a $2^{L}$-dimensional many-body operator problem in Fock space to a single-particle linear algebra problem on a $2L \times 2L$ matrix. This is the basis of BdG, as we will get back to later. Further, we see that all direct mentions of the complex phase $\theta$ are gone from $H$. This reflects that $\theta$ can be removed by an appropriate gauge transformation, and is therefore irrelevant for the bulk spectrum and the topological classification of the phases, which we will also touch upon later.
 
@@ -46,7 +46,7 @@ In the case where $\mu$ dominates the Hamiltonian reduces to
 \begin{align}
     H &= -\mu \sum_j \left(a_j^\dagger a_j - \frac{1}{2} \right) = \frac{i}{2} \mu \sum_j c_{2j-1}c_{2j}.
 \end{align}
-In this case the system is topologically trivial as the Majoranas on each site are glued together to form a complex fermion. There are no unpaired Majorana fermions at the edges of the chain.
+In this case the system is topologically trivial as the Majoranas on each site are glued together to form a complex fermion. There are no unpaired Majorana fermions at the edges of the chain, making this case uninteresting for further study.
 
 \subsubsection{Topological case $\boldsymbol{\omega} = \boldsymbol{|\Delta|} > 0, \boldsymbol{\mu} = 0$}
 In the case where the hopping and superconducting parameters dominate the Hamiltonian reduces to
@@ -74,11 +74,88 @@ where the labeling of the states were chosen arbitrarily. We see that the total 
 \end{align}
 has the same contribution from the bulk for both ground states. So the difference in parity is solely a result of the edge contribution $-i c_1 c_{2L}$. The even parity of $|\psi_0 \rangle$ represents the state being a superposition of states with an even number of electrons. And $|\psi_1 \rangle$ has an odd parity, representing an odd number of electrons. Together they reflect the boundary degrees of freedom from the unpaired Majorana modes at the edges. 
 
-\subsubsection{Arbitrary $\boldsymbol{\omega}$, $\boldsymbol{\mu}$, $\boldsymbol{\Delta}$}
+\subsubsection{Arbitrary values of $\boldsymbol{\omega}$, $\boldsymbol{\mu}$, $\boldsymbol{\Delta}$}
+For arbitrary values of $\omega$, $\mu$, $\Delta$ the Hamiltonian has the general quadratic form (\ref{eq:quadratic_H}) in terms of the Majorana operators. This means the Hamiltonian can be diagonalized into independent fermionic modes by a change of basis, implemented by a matrix $W$. We require that $W$ is a $2N \times 2N$ real orthogonal $(W^T W = W W^T = I)$ matrix, and that it has two further properties; the first being that it defines new operators $\{b_m', b_m''\} $ by the linear transformation $b = Wc$, or
+\begin{align}
+    \begin{pmatrix}
+        b_1'\\
+        b_1''\\
+        \vdots\\
+        b_N'\\
+        b_N''
+    \end{pmatrix} = W \begin{pmatrix}
+        c_1 \\
+        c_2\\
+        \vdots\\
+        c_{2N-1}\\
+        c_{2N}
+    \end{pmatrix}.
+\end{align}
+This property is ensured by $W$ being real and orthogonal, such that after the transformation the Majorana anticommutation relations are preserved. This can be shown using $b_\gamma = \sum_\alpha W_{\gamma \alpha} c_\alpha$, where $W_{\gamma \alpha}$ are just real numbers, meaning they commute
+\begin{align}
+    \{b_\gamma, b_\delta\} &= \sum_{\alpha, \beta} W_{\gamma \alpha} W_{\delta \beta} \{c_\alpha, c_\beta\} \\
+    &= \sum_{\alpha, \beta} W_{\gamma \alpha} W_{\delta \beta} 2 \delta_{\alpha \beta} \\
+    &= 2 \sum_{\alpha} W_{\gamma \alpha} W_{\delta \alpha}\\
+    &= 2 \sum_\alpha W_{\gamma \alpha} W^T_{\alpha \delta} \\
+    &= 2 \delta_{\gamma \delta} 
+\end{align}
+where the last step is a result of $W$ being orthogonal. The second property stems from the antisymmetry of $A$, such that in this basis $A$ acquires a canonical block-diagonal form
+\begin{align}
+    W A W^T = \begin{pmatrix}
+        0 & \epsilon_1 & & & \\
+        -\epsilon_1 & 0 & & &\\
+        & & \ddots & & \\
+        & & & 0 & \epsilon_N \\
+        & & & - \epsilon_N & 0
+    \end{pmatrix}.
+\end{align}
+This condition stems from a mathematical theorem on the canonical form of real antisymmetric matrices, which states that if we have a real antisymmetric matrix $A$ of size $2N \times 2N$ there exists a real orthogonal matrix $W$ such that $A$ can be transformed into a block-diagonal form 
+\begin{align}
+    WAW^T = \text{diag}(C_1, C_2, \cdots, C_N), \hspace{4mm} C_j = \begin{pmatrix}
+        0 & -\lambda_j \\
+        \lambda_j & 0
+    \end{pmatrix}
+\end{align}
+with $\lambda_j > 0$ being real numbers, stemming from the pairs of complex eigenvalues $\pm i \lambda_j$ for $A$. This theorem is a standard result in matrix analysis, and a proof can be found in \cite{zotero-item-34} \footnote{There are apparently many books on this topic, none of which i had access to. This is the best source i could find without proving it directly.}. Once we have a matrix $W$ that satisfies the above conditions we can reduce the Hamiltonian further to a canonical form by inverting the transformation $b_\gamma = \sum_\alpha W_{\gamma \alpha} c_\alpha$ to $c_\alpha = \sum_\gamma W_{\alpha \gamma}^T b_\gamma = \sum_\gamma W_{\gamma \alpha} b_\gamma$
+\begin{align}
+    H_\text{canonical} &= \frac{i}{4} \sum_{\alpha, \beta} A_{\alpha \beta} c_\alpha c_\beta\\
+    &= \frac{i}{4} \sum_{\alpha, \beta, \gamma, \delta} A_{\alpha \beta} W_{\gamma \alpha} b_\gamma W_{\delta \beta} b_\delta \\
+    &= \frac{i}{4} \sum_{\alpha, \beta, \gamma, \delta} W_{\gamma \alpha} A_{\alpha \beta} W_{\delta \beta} b_\gamma b_\delta\\
+    &= \frac{i}{4} \sum_{\gamma, \delta} \left(W A W^T \right)_{\gamma \delta} b_\gamma b_\delta\\
+    &= \frac{i}{4} \sum_{m=1}^N \begin{pmatrix}
+        b_m' & b_m''
+    \end{pmatrix} \begin{pmatrix}
+        0 & \epsilon_m \\
+        -\epsilon_m & 0
+    \end{pmatrix} \begin{pmatrix}
+        b_m'\\
+        b_m''
+    \end{pmatrix}\\
+    &= \frac{i}{4} \sum_{m=1}^N \epsilon_m \left(b_m' b_m'' - b_m'' b_m' \right) \\
+    &= \frac{i}{4} \sum_{m=1}^N \epsilon_m 2 b_m' b_m''\\
+    &= \frac{i}{2} \sum_{m=1}^N \epsilon_m b_m' b_m'' = \sum_{m=1}^N \epsilon_m \left(\tilde{a}_m^\dagger \tilde{a}_m - \frac{1}{2} \right) \hspace{4mm} (\epsilon_m \geq 0).
+\end{align}
+Where we used that $\{b_m',b_m''\} = 0$ as they are separate components of $b$. In this form $b_m'$ and $b_m''$ are real linear combinations of $c_{2j-1}$ and $c_{2j}$, retaining the commutation relations. $N$ is the number of fermionic sites in the system, here $N = L$. The complex fermion quasiparticles are defined as $\tilde{a}_m = \frac{1}{2} \left( b_m' + i b_m'' \right) $ and $\tilde{a}_m^\dagger = \frac{1}{2} \left(b_m' - i b_m'' \right)$. 
 
+The key take-away here is that the Kitaev chain Hamiltonian, due to being quadratic, can be diagonalized into independent quasi particles $\tilde{a}_m$ with energies $\epsilon_m$. This is how the problem is reduced from a $2^L$-dimensional many-body problem to single-particle energies and modes on a $2L \times 2L$ matrix.
 
-\section{Topology}
+\section{Topological phases}
+The bulk spectrum for energy vs. momentum is given by 
+\begin{align}
+    \epsilon(q) = \pm \sqrt{\left(2 \omega \cos(q) + \mu\right)^2 + 4 |\Delta|^2 \sin^2(q)}, \hspace{4mm} - \pi \leq q \leq \pi. \label{eq:Bulk_spectrum}
+\end{align}
+Finding this relation is done by Fourier transforming the Hamiltonian to momentum space and finding its eigenvalues as shown in appendix \ref{Appendix:Hamiltonian_Transformation_momentum_space}. 
+
+From this we get the plot of topological values in Eivinds(?)
 
 \section{BdG}
 
-\section{Quantum computation \& the T-junction}
+
+\section{Quantum computation}
+The main idea for using Majorana fermions for quantum computation, is through a process called braiding. In this process the Majoranas are spacially rotated around eachother, producing a difference in phase. In 1D this is however hard to do; rotating the whole chain around itself has no effect. And if two Majoranas meet, they simply combine into a normal fermion, allowing the stored information to decohere. Several methods are being discussed to overcome this obstacle, and we will study two of them. 
+
+\subsection{T-junction}
+The T-junction is a proposed architecture for allowing braiding with a 1D Kitaev chain. Simply put, the idea stems from connecting a 1D chain to the middle of another, producing a T-shape. In this geometry, one can in theory braid the Majoranas by altering the parameters of the Hamiltonian to rotate the edge states around eachother without touching. 
+
+\subsection{Quantum dots}
+
