@@ -1,0 +1,61 @@
+\chapter{Quantum computation}
+The main idea for using Majorana fermions for quantum computation is through a process called braiding. In this process the Majoranas are spatially rotated around eachother, producing a difference in phase. In 1D this is however hard to do; rotating the whole chain around itself has no effect. And if two Majoranas meet, they simply combine into a normal fermion, allowing the stored information to decohere. Several methods are being discussed to overcome this obstacle, and we will study two of them. 
+
+\section{Logical qubits from Majorana modes}
+
+\subsection{Degenerate ground states}
+Recalling the previously discussed Kitaev chain Hamiltonian, and the following definition using the Majorana operators $c_{m}$ with properties 
+\begin{align}
+    d_j &= \frac{1}{2} \left(c_{2j} + i c_{2j+1} \right) \\
+    d_j^\dagger &= \frac{1}{2} \left(c_{2j} - i c_{2j+1} \right)\\
+    c_{m}^\dagger &= c_m, \hspace{4mm} \{c_l, c_m\} = 2\delta_{lm}.
+\end{align}
+We recall that in the trivial phase, Majoranas on all sites pair up into ordinary fermions with non-zero energy. However in the topological phase the chain experiences unpaired Majoranas at the edges, which we want well-separated (meaning their wavefunctions overlap negligibly). For a 1D wire of $2M$ such edge Majoranas one can construct $M$ fermion operators as
+\begin{align}
+    f_j &= \frac{1}{2} \left(c_{2j} + i c_{2j+1} \right).
+\end{align}
+These correspond to zero-energy modes, and can give rise to $2^M$ degenerate ground states which can be labeled by occupation numbers $n_j = f_j^\dagger f_j = 0, 1$. 
+
+Wave function representation
+
+Conservation of parity
+
+Four Majoranas - a proper qubit
+
+Nonlocality - spatial separation of Majoranas
+
+\cite{aliceaNonAbelianStatisticsTopological2011a} \cite{aliceaNewDirectionsPursuit2012}
+
+\section{Braiding and non-abelian statistics (exchange of Majoranas)}
+
+\subsection{General result}
+Berry phase
+
+\subsection{Clifford group}
+?
+
+\subsection{What's missing}
+Something something non-topological 
+
+supplementary operations
+
+\section{Methods using the Kitaev chain}
+
+
+\subsection{T-junction}
+The T-junction is a proposed architecture for allowing braiding with a 1D Kitaev chain. Simply put, the idea stems from connecting a 1D chain to the middle of another, producing a T-shape. In this geometry, one can in theory braid the Majoranas by altering the parameters of the Hamiltonian to rotate the edge states around eachother without touching. 
+
+\begin{figure}
+    \centering
+    % \includegraphics{T-junction}
+    \caption{}
+    \label{fig:T_junction}
+\end{figure}
+
+\subsubsection{Exchange of two Majoranas}
+
+\subsubsection{Network of wires}
+
+\subsection{Quantum dots}
+
+\subsection{Others}
