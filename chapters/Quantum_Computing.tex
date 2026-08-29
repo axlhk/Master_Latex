@@ -1,5 +1,5 @@
 \chapter{Quantum computation}
-The main idea for using Majorana fermions for quantum computation is through a process called braiding. In this process the Majoranas are spatially rotated around eachother, producing a difference in phase. In 1D this is however hard to do; rotating the whole chain around itself has no effect. And if two Majoranas meet, they simply combine into a normal fermion, allowing the stored information to decohere. Several methods are being discussed to overcome this obstacle, and we will study two of them. 
+The main idea for using Majorana fermions for quantum computation is through a process called braiding. In this process the Majoranas are spatially rotated around eachother, producing a difference in phase. In 1D this is however hard to do: If two Majoranas meet, they simply combine into a normal fermion, allowing the stored information to decohere. Several methods are being discussed to overcome this obstacle, and we will closer study especially one of them; the T-junction. In this junction we will show that one can perform the Pauli X and Z gates (and therefore also Y) but we still need an extra gate, not provided by topologically protected operations, in order to create a general quantum computer.
 
 \section{Logical qubits from Majorana modes}
 
@@ -10,31 +10,62 @@ Recalling the previously discussed Kitaev chain Hamiltonian, and the following d
     d_j^\dagger &= \frac{1}{2} \left(c_{2j} - i c_{2j+1} \right)\\
     c_{m}^\dagger &= c_m, \hspace{4mm} \{c_l, c_m\} = 2\delta_{lm}.
 \end{align}
-We recall that in the trivial phase, Majoranas on all sites pair up into ordinary fermions with non-zero energy. However in the topological phase the chain experiences unpaired Majoranas at the edges, which we want well-separated (meaning their wavefunctions overlap negligibly). For a 1D wire of $2M$ such edge Majoranas one can construct $M$ fermion operators as
+We recall that in the trivial phase, Majoranas on all sites pair up into ordinary fermions with non-zero energy. However in the topological phase the chain experiences unpaired Majoranas at the edges, which we want well-separated (meaning their wavefunctions overlap negligibly). For a 1D wire of $2M$ such edge Majoranas one can generally construct $M$ fermion operators $f_{lm}$ \footnote{Note here that $f_{lm}$ is a special case of the the general $d_j$ shown above, only $f_{lm}$ is specifically for the Majorana edge modes} with the properties
 \begin{align}
-    f_j &= \frac{1}{2} \left(c_{2j} + i c_{2j+1} \right).
+    f_{lm} &= \frac{1}{2} \left(c_{l} + i c_{m} \right) \\
+    \{f_{lm}, f^\dagger_{lm}\} &= 1 \\
+    f_{ij}^2 &= \left(f_{ij}^\dagger\right)^2 = 0
 \end{align}
 These correspond to zero-energy modes, and can give rise to $2^M$ degenerate ground states which can be labeled by occupation numbers $n_j = f_j^\dagger f_j = 0, 1$. 
 
-Wave function representation
+\subsection{Logical basis states}
+\subsubsection{Four Majoranas - a proper qubit}
+If we have a single Kitaev chain in the topological phase we can produce 2 Majorana zero mdoes. 
 
-Conservation of parity
+Conservation of global fermion parity P
+    - Fixed P means that no pair can encode a qubit
 
-Four Majoranas - a proper qubit
 
-Nonlocality - spatial separation of Majoranas
+
+In the case of having two wires in the topological phase we can produce 4 Majorana zero modes, which can be used to create logical basis states
+\begin{align}
+    |0_L\rangle &= |0_{12}, 0_{34}\rangle \\  
+    |1_L \rangle &= |1_{12}, 1_{34} \rangle = f_{12}^\dagger f_{34}^\dagger |0_L\rangle
+\end{align}
+
+$0_L = 0, 0$
+
+Pauli operators
+
+\subsection{Nonlocality and wavefunction picture}
+Overlap decays as exp(-L / xi)
+
 
 \cite{aliceaNonAbelianStatisticsTopological2011a} \cite{aliceaNewDirectionsPursuit2012}
+
 
 \section{Braiding and non-abelian statistics (exchange of Majoranas)}
 
 \subsection{General result}
 Berry phase
 
+Tegning av braiding?
+
+% \subsection{Quantum gates}
+% Pauli X-gate
+%     - And its resulting error (sahu)
+%     - "Exchanging the two inner MZMs twice implements a topological Pauli X gate on the encoded qubit" (sahu)
+
+
 \subsection{Clifford group}
-?
+Exchange operator R \cite{sahuNoisyBraidingMajorana2026}
+
+X, Z, Y = iXZ
 
 \subsection{What's missing}
+We can get X (majoranas 1 and 2 switched), Z (majoranas 2 and 3 switched), and Y = i XZ operations, but missing something like T (pi / 8 rotation) 
+
+
 Something something non-topological 
 
 supplementary operations
@@ -52,10 +83,18 @@ The T-junction is a proposed architecture for allowing braiding with a 1D Kitaev
     \label{fig:T_junction}
 \end{figure}
 
+
 \subsubsection{Exchange of two Majoranas}
+Pali x y z gates
+
+Double switches = rotations? (Drawing from meeting with Joakim)
 
 \subsubsection{Network of wires}
 
 \subsection{Quantum dots}
 
+\subsection{Comparison of T-junction and Quantum dots}
+
 \subsection{Others}
+
+\section{Topological protection}

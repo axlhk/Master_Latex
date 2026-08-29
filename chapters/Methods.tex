@@ -1,4 +1,4 @@
-\chapter{Methods}
+\chapter{Numerical methods}
 In this paper we have numerically simulated the Kitaev chain T-junction using the full Fock space. We have chosen to do so using the adiabatic approximation in hopes of reducing the otherwise overwhelming demand for computational power, aiming to truncate the state space while preserving numerical accuracy. For integration we have used RK4 as it is relatively simple and produces accurate results, although it is not symplectic meaning it can drift from the true result if the time step is not sufficiently small.
 
 \section{Theory}
@@ -82,12 +82,12 @@ we can remove all diagonal terms.
     \sum_{k\neq l} a_k e^{-i\int_0^t (\lambda_l - \lambda_k)} \langle \psi_l | \frac{d}{dt} |\psi_k\rangle &= \frac{d a_l}{dt}     
 \end{align}
 
-\section{RK4 integration}
+\subsection{RK4 integration}
 Accuracy
 
 
 
-\section{Code structure}
+\subsection{Code structure}
 I used UiOGPT to help write and debug the code.
 
 \subsection{Setting up the Kitaev chain Hamiltonian matrix}
