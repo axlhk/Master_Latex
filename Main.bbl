@@ -138,8 +138,8 @@
       \strng{authorbibnamehash}{29b4219f55d783d4f8e5f0db9556bea6}
       \strng{authornamehash}{29b4219f55d783d4f8e5f0db9556bea6}
       \strng{authorfullhash}{fa2c352080cee9bbc8f3cade381e5bc7}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1745-2473, 1745-2481}
@@ -185,8 +185,8 @@
       \strng{authorbibnamehash}{6324a9f51bb50d2d158aef9f6ab76692}
       \strng{authornamehash}{6324a9f51bb50d2d158aef9f6ab76692}
       \strng{authorfullhash}{6324a9f51bb50d2d158aef9f6ab76692}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The 1937 theoretical discovery of Majorana fermions--whose defining property is that they are their own anti-particles--has since impacted diverse problems ranging from neutrino physics and dark matter searches to the fractional quantum Hall effect and superconductivity. Despite this long history the unambiguous observation of Majorana fermions nevertheless remains an outstanding goal. This review article highlights recent advances in the condensed matter search for Majorana that have led many in the field to believe that this quest may soon bear fruit. We begin by introducing in some detail exotic `topological' one- and two-dimensional superconductors that support Majorana fermions at their boundaries and at vortices. We then turn to one of the key insights that arose during the past few years; namely, that it is possible to `engineer' such exotic superconductors in the laboratory by forming appropriate heterostructures with ordinary s-wave superconductors. Numerous proposals of this type are discussed, based on diverse materials such as topological insulators, conventional semiconductors, ferromagnetic metals, and many others. The all-important question of how one experimentally detects Majorana fermions in these setups is then addressed. We focus on three classes of measurements that provide smoking-gun Majorana signatures: tunneling, Josephson effects, and interferometry. Finally, we discuss the most remarkable properties of condensed matter Majorana fermions--the non-Abelian exchange statistics that they generate and their associated potential for quantum computation.}
@@ -244,8 +244,8 @@
       \strng{authorbibnamehash}{abc0f366460e55441bed7494ff9d6b1d}
       \strng{authornamehash}{abc0f366460e55441bed7494ff9d6b1d}
       \strng{authorfullhash}{abc0f366460e55441bed7494ff9d6b1d}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Majorana zero modes have emerged as one of the most promising platforms for topological quantum computation, since their non-Abelian braiding statistics allow quantum information to be encoded nonlocally and manipulated through braiding operations that are, in principle, protected against local perturbations. In practice, however, a braid is only as robust as its physical implementation: finite-time operation, residual couplings, and environmental noise can all convert local excitations into logical errors during the exchange process. Here, we address this question through a microscopic comparison of two representative braiding architectures, a nanowire trijunction and a quantum-dot-assisted setup, simulating the full time-dependent Bogoliubov--de Gennes dynamics under both noiseless and noisy conditions. We show that the dot-assisted architecture consistently achieves a lower error over a shorter timescale than the trijunction, owing to its more localized exchange mechanism. This advantage persists in the presence of noise, and a spatially resolved analysis further reveals that, in the dot-assisted geometry, fast noise localized on the dot produces a smaller error than equivalent noise on the wires, whereas slow, quasi-static noise on the dot becomes the dominant limitation. Taken together, these findings link the different error contributions directly to device geometry, pointing to concrete design principles for noise-resilient Majorana-based quantum gates.}

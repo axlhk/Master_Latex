@@ -139,16 +139,133 @@ Where we used that $\{b_m',b_m''\} = 0$ as they are separate components of $b$. 
 
 The key take-away here is that the Kitaev chain Hamiltonian, due to being quadratic, can be diagonalized into independent quasi particles $\tilde{a}_m$ with energies $\epsilon_m$. This is how the problem is reduced from a $2^L$-dimensional many-body problem to single-particle energies and modes on a $2L \times 2L$ matrix.
 
-\section{Topological phases}
-The bulk spectrum for energy vs. momentum is given by 
+\section{Phases of the Kitaev chain}
+\subsection{Phases of the bulk spectrum}
+The bulk spectrum for energy vs. momentum $q$ for a chain of infinite length is given by \cite{kitaevUnpairedMajoranaFermions2001a}
 \begin{align}
     \epsilon(q) = \pm \sqrt{\left(2 \omega \cos(q) + \mu\right)^2 + 4 |\Delta|^2 \sin^2(q)}, \hspace{4mm} - \pi \leq q \leq \pi. \label{eq:Bulk_spectrum}
 \end{align}
-Finding this relation is done by Fourier transforming the Hamiltonian to momentum space and finding its eigenvalues as shown in appendix \ref{Appendix:Hamiltonian_Transformation_momentum_space}. 
+Finding this relation is done by Fourier transforming the Hamiltonian to momentum space as shown in appendix \ref{Appendix:Hamiltonian_Transformation_momentum_space} and then finding its eigenvalues, as we will show in \ref{sec:BdG}. This spectrum will tell us where the system is gapped ($\epsilon(q) \neq 0$), and where gap closings ($\epsilon(q) = 0$) occur. The gap closings mark boundaries between topological phases. 
 
+- - - - - - - - - - - - - - - - why? - - - - - - - - - - - - - - - - - - - -
+"In general, topological phases are defined for gapped systems. As long as the bulk gap stays open, one can vary parameters adiabatically without changing the topological class. Hence, gap closings ($\epsilon(q)=0$ for some q) signal phase transitions and mark the boundaries between distinct topological phases." - Fra chat
+- - - - - - - - - - - - - - - - - - - - - -- - - - - - -  - - - - - - -
+
+We now find the gap closings 
+\begin{align}
+    \epsilon(q) &= 0\\
+    \pm \sqrt{\left(2 \omega \cos(q) + \mu\right)^2 + 4 |\Delta|^2 \sin^2(q)} &= 0 \\
+    \left(2 \omega \cos(q) + \mu\right)^2 + 4 |\Delta|^2 \sin^2(q) &= 0
+\end{align}
+Both terms in this equation are real values squared, and must therefore be nonnegative. They must therefore both individually vanish to fulfill the equation, and we thus get two equations
+\begin{align}
+    2 \omega \cos(q) + \mu = 0, \hspace{4mm} \sin(q) = 0.
+\end{align}
+From the second equation we get $\sin(q) = 0$ for $q = 0, \pi$. Plugging this into the first equation we get
+\begin{equation}
+  \begin{aligned}
+    2 \omega \cos(0) + \mu &= 0\\
+    2 \omega &= -\mu 
+  \end{aligned}
+  \qquad
+  \begin{aligned}
+    2 \omega \cos(\pi) + \mu &= 0 \\
+      2 \omega &= \mu
+  \end{aligned}
+\end{equation}
+Meaning the bulk gap closes when $2|\omega| = |\mu|$, defining a phase boundary between the trivial and topological superconducting phases. 
+
+From our previous findings we know that the system will be in the topological phase when $\mu < \omega$, which is in the domain $|\mu| < 2|\omega|$. We here expect that if the parameters change without crossing the bulk gap boundary $2 |\omega| = |\mu|$ the system should remain in the same phase. Further we need $\Delta \neq 0$ to remain in the superconducting phase. Meaning the phases of the system can be divided into
+\begin{align}
+    2|\omega| > |\mu|, \Delta \neq 0 &: \text{Topological superconductor (Majorana edge states)}\notag \\
+    2|\omega| > |\mu|, \Delta = 0 &: \text{Gapless normal metal (no superconductivity)}\notag \\
+    2|\omega| = |\mu|, \Delta \neq 0 &: \text{The superconducting bulk gap closes (phase boundary)}\notag \\
+    2|\omega| < |\mu|, \Delta \neq 0 &: \text{Trivial superconductor (no Majorana edge states)}\notag \\
+    2|\omega| < |\mu|, \Delta = 0 &: \text{Insulator (gapped, no superconductivity)}\notag 
+\end{align}
+
+\subsection{Boundary modes}
+In the previous subsection we expected the phase of the system to remain the same as long as the bulk gap boundary is not crossed. We can check that this is true by studying the boundary modes, as they correspond to eigenvectors of $A$ localized near the ends of the chain, or in other words can confirm whether or not the phase is in the topological phase containing Majorana fermions. Such zero modes should have the form
+\begin{align}
+    b' &= \sum_j \left(\alpha_+' x_+^j + \alpha_-' x_-^j \right)c_{2j-1} \\
+    b'' &= \sum_j \left(\alpha_+'' x_+^{-j} + \alpha_-'' x_-^{-j} \right)c_{2j} 
+\end{align}
+
+- - - - - - - - - - - - - - because? - - - - - - - - - -
+
+with 
+
+\begin{align}
+    x_\pm &= \frac{- \mu \pm \sqrt{ \mu^2 - 4 \omega^2 + 4 |\Delta|^2  }}{2(\omega + |\Delta|)}
+\end{align}
+
+We have previously confirmed that the Majorana fermions can only exist when either (a) $2|\omega| < |\mu|, \Delta \neq 0$ or (b) $2|\omega| > |\mu|, \Delta \neq 0$. We therefore check these two phases. 
+
+\subsubsection{(a) $2|\omega| < |\mu|, \Delta \neq 0$}
+We get
+\begin{align}
+    |x_+| &= \left| \frac{-\mu + }{2(\omega + |\Delta|)}    \right| > 1\\
+    |x_-| &= \left| \frac{-\mu - }{2(\omega + |\Delta|)}    \right| < 1
+\end{align}
+
+
+Exponential decay of the overlap / tunneling amplitude
+
+\subsection{Topological phase diagram}
 From this we get the plot of topological values in Eivinds(?)
 
-\section{BdG}
 
+\section{BdG} \label{sec:BdG}
+\subsection{BdG form and Nambu basis}
+We want to express the Hamiltonian in momentum space as
+\begin{align}
+    H = \frac{1}{2} \sum_q \Psi_q^\dagger \mathcal{H}_\text{BdG} \Psi_q,
+\end{align}
+using the Nambu basis (spinors)
+\begin{align}
+    \Psi_q^\dagger = \begin{pmatrix}
+        a_q^\dagger & a_{-q} 
+    \end{pmatrix}, \hspace{4mm} \Psi_q = \begin{pmatrix}
+        a_q \\
+        a_{-q}^\dagger 
+    \end{pmatrix}.
+\end{align}
+Where the momentum-space fermioninic annihilation and creation operators $a_q, a_q^\dagger$ are defined by the fourier transformation 
+\begin{align}
+ a_j = \frac{1}{\sqrt{N}} \sum_q e^{iqj}a_q, \hspace{4mm} a_j^\dagger = \frac{1}{\sqrt{N}} \sum_q e^{-iqj}a_q^\dagger.
+\end{align}
+Where $q$ runs over the Brillouin zone $[-\pi, \pi]$. We see that $\mathcal{H}_\text{BdG}$ has to be a $2 \times 2$ matrix. If we look at an arbitrary $\mathcal{H}_\text{BdG}$ we can see that after multiplication with the Nambu spinors the Hamiltonian becomes
+\begin{align}
+    H &= \frac{1}{2} \sum_q \begin{pmatrix}
+        a_q^\dagger & a_{-q} 
+    \end{pmatrix} \begin{pmatrix}
+        a(q) & b(q)\\
+        c(q) & d(q)
+    \end{pmatrix}\begin{pmatrix}
+        a_q \\
+        a_{-q}^\dagger 
+    \end{pmatrix} \\
+    &= \frac{1}{2} \sum_q \left( a(q) a_q^\dagger a_q  + b(q) a_q^\dagger a_{-q}^\dagger + c(q) a_{-q} a_q + d(q) a_{-q} a_{-q}^\dagger\right).
+\end{align}
+If this is to match the momentum-space transformed Hamiltonian
+\begin{align}
+    H &= \sum_q \left[ -\left( \mu + 2 \omega \cos(q)\right) a_q^\dagger a_q + \Delta e^{-iq} a_q a_{-q} + \Delta^* e^{-iq} a_q^\dagger a_{-q}^\dagger \right]
+\end{align}
+as found in \ref{Appendix:Hamiltonian_Transformation_momentum_space}, we see that we must have
+\begin{align}
+    a(q) &= -\mu -2 \omega \cos(q)\\
+    b(q) &= \Delta^* e^{-iq}\\
+    c(q) &= -\Delta e^{-iq} \\
+    d(q) &= \mu + 2\omega \cos(-q) = \mu + 2\omega \cos(q)\\
+    \to \mathcal{H}_\text{BdG} &= \begin{pmatrix}
+        -\mu -2 \omega \cos(q) & \Delta^* e^{-iq}\\
+        -\Delta e^{-iq} & \mu + 2\omega \cos(q)
+    \end{pmatrix}.
+\end{align}
+Where we used the anti-commutation relations of the operators and dropped inessential constants. Writing out the entire Hamiltonian we have
+\begin{align}
+    H &= \frac{1}{2} 
+\end{align}
 
-
+\subsection{Diagonalizing the BdG Hamiltonian}
+By diagonalizing the BdG Hamiltonian we can find the energy spectrum.

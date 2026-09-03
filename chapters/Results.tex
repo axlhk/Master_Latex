@@ -1,6 +1,8 @@
 \chapter{Results \& discussion}
 Eivind the GOAT
 
+What do plots in the adiabatic basis actually tell us?
+
 \section{Splitting the chain}
 A previous masters student also did this. Boom i replicated his results life is good
 
@@ -18,7 +20,7 @@ eivind cut means that it's not the central bond thats cut, but rather one out to
 \begin{figure}
     \centering
     \includegraphics[width = \linewidth]{eivind_cut___eivind_instantaneous_basis.pdf}
-    \caption{}
+    \caption{trunct = 10}
     \label{fig:3}
 \end{figure}
 
@@ -35,6 +37,8 @@ eivind cut means that it's not the central bond thats cut, but rather one out to
     \caption{}
     \label{fig:5}
 \end{figure}
+
+Adiabatic evolution produces correct adiabatic basis coefficients for just low truncation (trunc = 10) and high dt (dt = 0.1). But the energy spectrum is completely off. Even using trunc = 250 makes the energy spectrum seemingly wrong for the Pauli X-gate (6-8 ground states where 4 is expected and weird bands (a single energy occupying a band, which becomes a single line as trunc increases)). Maybe run a proper test for cutting of a chain? 
 
 
 
