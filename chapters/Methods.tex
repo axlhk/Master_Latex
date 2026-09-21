@@ -1,9 +1,9 @@
 \chapter{Numerical methods}
-In this paper we have numerically simulated the Kitaev chain T-junction using the full Fock space. We have chosen to do so using the adiabatic approximation in hopes of reducing the otherwise overwhelming demand for computational power, aiming to truncate the state space while preserving numerical accuracy. For integration we have used RK4 as it is relatively simple and produces accurate results, although it is not symplectic meaning it can drift from the true result if the time step is not sufficiently small.
+In this thesis we have numerically simulated the Kitaev chain T-junction. We have chosen to do so using the adiabatic approximation in hopes of reducing the otherwise overwhelming demand for computational power, aiming to truncate the state space while preserving numerical accuracy. In order to test the accuracy we have also simulated the system by direct diagonalization. For integration we have used RK4 as it is relatively simple and produces accurate results, although it is not symplectic meaning it can drift from the true result if the time step is not sufficiently small.
 
-\section{Theory}
+This chapter covers the theory behind the methods used. It is meant mainly as an instruction on how to replicate the results, and contains very little to no interesting information about the physics of the Kitaev chain. Most readers will find this section at best dry, and we have theorized it could function as a sleep aid.
 
-\subsection{Hilbert space and many-body basis}
+\section{Hilbert space and many-body basis}
 Considering a Kitaev chain with $L$ sites we can use an occupation number basis
 \begin{align}
     \left\{ |n\rangle \right\}, \hspace{4mm} |n\rangle = |n_1, n_2, ..., n_L\rangle, \hspace{4mm} n_i \in \{0,1\}.
@@ -14,7 +14,7 @@ Where $0$ represents a site being empty, and $1$ represents a site being occupie
 \end{align}
 %Er det rett å si "corresponding Hamiltonian"?
 
-\subsection{Diagonalizing the Hamiltonian}
+\section{Diagonalizing the Hamiltonian}
 Diagonalizing by the use of a unitary matrix $U$ with elements $c_{nk}$
 \begin{align}
     H = U D U^{-1}
@@ -43,7 +43,7 @@ Where $|\phi(0) \rangle = |\phi\rangle, a_k(0) = a_k$ from earlier. We see that 
     a_k(t) &= a_k(0) e^{-iHt}
 \end{align}
 
-\subsection*{Time-dependent Hamiltonian \& adiabatic basis}
+\section{Time-dependent Hamiltonian \& adiabatic basis}
 We now want to define a time dependent Hamiltonian with an orthonormal instantaneous basis
 \begin{align}
     H(t)&; \hspace{4mm} \left\{ |\psi_k(t)\rangle \right\} \\
@@ -82,15 +82,15 @@ we can remove all diagonal terms.
     \sum_{k\neq l} a_k e^{-i\int_0^t (\lambda_l - \lambda_k)} \langle \psi_l | \frac{d}{dt} |\psi_k\rangle &= \frac{d a_l}{dt}     
 \end{align}
 
-\subsection{RK4 integration}
+\section{RK4 integration}
 Accuracy
 
 
 
-\subsection{Code structure}
+\section{Code structure}
 I used UiOGPT to help write and debug the code.
 
-\subsection{Setting up the Kitaev chain Hamiltonian matrix}
+\section{Setting up the Kitaev chain Hamiltonian matrix}
 Using original Hamiltonian $\ref{eq:Original_Kitaev_Hamiltonian}$.
 
 Open boundary conditions
@@ -107,10 +107,10 @@ $c_j^\dagger c_{j+1} |n\rangle = c_1 c_2 |m_2\rangle$
 
 Use time dependent $\mu$ for time dependency. 
 
-\subsection{Finding eigenvectors and eigenvalues by diagonalization}
+\section{Finding eigenvectors and eigenvalues by diagonalization}
 numpy.linalg.eigh
 
-\subsection{Calculating $\langle \psi_l | \frac{d}{dt} | \psi_k \rangle $ \& $\lambda$}
+\section{Calculating $\langle \psi_l | \frac{d}{dt} | \psi_k \rangle $ \& $\lambda$}
 Finite difference (Numerical derivation) for the bulk $n \in \left[1, N - 1\right]$
 \begin{equation}
     \langle \psi_l(t_n)| \frac{d}{dt} |\psi_k(t_n) \rangle = \frac{\langle \psi_l(t_n) | \psi_k(t_{n+1})\rangle - \langle \psi_l(t_n) | \psi_k(t_{n-1})\rangle}{2 \Delta t}.
@@ -123,11 +123,11 @@ And a forward difference for $n = 0$
 \end{align}
 And a backward difference to find $n = N-1$.
 
-\subsection{Time evolution of amplitudes}
+\section{Time evolution of amplitudes}
 Using Euler.\\
 Upgrade to RK4 later.
 
-\subsection*{Evolving the fixed basis}
+\section{Evolving the fixed basis}
 Using H(t) with $\mu(t), \omega(t), \Delta(t)$
 
 Here one can also evolve the ... basis as seen in Eivinds master

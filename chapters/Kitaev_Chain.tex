@@ -1,14 +1,16 @@
 \chapter{The Kitaev chain}
-In this chapter we closely follow the original theory laid out by Kitaev  \cite{kitaevUnpairedMajoranaFermions2001a}, re-deriving the main results and filling in with intermediate steps and discussion for clarity. The Kitaev chain is a toy model of a one dimensional spinless p-wave superconductor, and is an example of material that can realize a topological superconducting phase. It consists of a chain of spinless fermions with nearest-neighbour hopping and superconducting pairing, under the influence of a chemical potential. The Hamiltonian takes the form 
+The Kitaev chain is a toy model of a one dimensional spinless p-wave superconductor, and is an example of material that can realize a topological superconducting phase. It consists of a chain of spinless fermions with nearest-neighbour hopping and superconducting pairing, under the influence of a chemical potential. The Hamiltonian takes the form 
 \begin{align}
     H =& \sum_j\left[ - \omega \left(a_j^\dagger a_{j+1} + a_{j+1}^\dagger a_j  \right) - \mu \left(a_j^\dagger  a_j - \frac{1}{2} \right) + \Delta a_j a_{j+1} + \Delta^* a_{j+1}^\dagger a_j^\dagger \right]
     \label{eq:Original_Kitaev_Hamiltonian}
 \end{align}
-where $a_j$ and $a_j^\dagger$ are annihilation and creation operators for the fermionic sites $j$ in the chain. $\omega$ is a hopping amplitude, $\mu$ is the chemical potential, and $\Delta = |\Delta|e^{i\theta}$ is the induced superconducting gap. The Hamiltonian serves to give rise to Majorana fermion quasiparticles at its boundaries. These Majorana fermions can be used as qubits, and a network of chains can be used for quantum computation. 
+where $a_j$ and $a_j^\dagger$ are annihilation and creation operators for the fermionic sites $j = 1, 2, ..., L$ in the chain, where $L$ (sometimes $N$) is the total amount of sites. $\omega$ is a hopping amplitude, $\mu$ is the chemical potential, and $\Delta = |\Delta|e^{i\theta}$ is the induced superconducting gap. The Hamiltonian serves to give rise to zero energy Majorana fermion quasiparticles at its boundaries. Simply put, these Majorana fermions are theorized to be useful as qubits, and a network of chains can be used for quantum computation. 
 
-Majorana fermions are interesting candidates for qubits as their topological nature provides robustness against local perturbations and certain sources of decoherence. Their non-Abelian nature also allows for braiding, where the majorana fermions exchange position and information about the path is stored in the wavefunction. 
+Majorana fermions are interesting candidates for qubits as their topological nature provides robustness against local perturbations and certain sources of decoherence. Their non-Abelian nature allows for braiding, where the majorana fermions exchange position and information about the path is stored in the wavefunction. This is the core of the process that allows computation to take place, and we will study this closer in a later chapter \ref{chap:Quantum_computation}. 
 
-\section{Majorana fermions}
+In the first two sections \ref{sec:Majorana_Fermions}, \ref{sec:Phases_Kitaev_chain} (and this heading) of this chapter we closely follow the original theory laid out by Kitaev  \cite{kitaevUnpairedMajoranaFermions2001a}, re-deriving the main results and filling in with intermediate steps and discussion for clarity. More specifically we cover the origin of the Majorana fermions and the phases of the Kitaev chain. We also study BdG formalism and apply it to the Kitaev chain as parts of the phase discussion is based on these results. Further the BdG formalism can also offer great reductions in the dimensions of the problem greatly, and is as such a common formalism throughout the field. 
+
+\section{Majorana fermions} \label{sec:Majorana_Fermions}
 A Majorana fermion is a particle that is its own antiparticle. The Majorana operators can be defined as
 \begin{align}
     c_{2j-1} = a_j + a_j^\dagger, \hspace{4mm}  c_{2j} = \frac{a_j - a_j^\dagger}{i}, \hspace{4mm} (j = 1, ..., N) \label{eq:majorana_op2j}
@@ -41,14 +43,14 @@ with A being a real and antisymmetric matrix, encoding the intrinsic particle-ho
 
 The Majorana representation also gives us a geometric picture of the chain. The Hamiltonian now consists of three terms, providing three different types of couplings. An on-site term $-\mu c_{2j-1} c_{2j}$, and two nearest-neighbour terms $(\omega + |\Delta|)c_{2j} c_{2j+1}$ and $(-\omega + |\Delta|) c_{2j-1} c_{2j+2}$. The on-site term couples two Majorana modes per site $j$, so for a chain of length $L$ we get $2L$ Majorana operators. We can garner further insight by studying specific cases for the parameters $\mu, \omega$ and $|\Delta|$ of the Hamiltonian.
 
-\subsubsection{Trivial case \texorpdfstring{$\boldsymbol{\omega = |\Delta| = 0, \mu > 0}$} {$\omega = |\Delta| = 0, \mu > 0$}}
+\subsubsection{Topologically trivial case \texorpdfstring{$\boldsymbol{\omega = |\Delta| = 0, \mu > 0}$} {$\omega = |\Delta| = 0, \mu > 0$}}
 In the case where $\mu$ dominates the Hamiltonian reduces to
 \begin{align}
     H &= -\mu \sum_j \left(a_j^\dagger a_j - \frac{1}{2} \right) = \frac{i}{2} \mu \sum_j c_{2j-1}c_{2j}.
 \end{align}
 In this case the system is topologically trivial as the Majoranas on each site are glued together to form a complex fermion. There are no unpaired Majorana fermions at the edges of the chain, making this case uninteresting for further study.
 
-\subsubsection{Topological case $\boldsymbol{\omega} = \boldsymbol{|\Delta|} > 0, \boldsymbol{\mu} = 0$}
+\subsubsection{Topologically non-trivial case $\boldsymbol{\omega} = \boldsymbol{|\Delta|} > 0, \boldsymbol{\mu} = 0$}
 In the case where the hopping and superconducting parameters dominate the Hamiltonian reduces to
 \begin{align}
   H = i\sum_{j} \omega c_{2j} c_{2j+1}, \label{eq:H_tdelta_mu0}  
@@ -137,27 +139,49 @@ with $\lambda_j > 0$ being real numbers, stemming from the pairs of complex eige
 \end{align}
 Where we used that $\{b_m',b_m''\} = 0$ as they are separate components of $b$. In this form $b_m'$ and $b_m''$ are real linear combinations of $c_{2j-1}$ and $c_{2j}$, retaining the commutation relations. $N$ is the number of fermionic sites in the system, here $N = L$. The complex fermion quasiparticles are defined as $\tilde{a}_m = \frac{1}{2} \left( b_m' + i b_m'' \right) $ and $\tilde{a}_m^\dagger = \frac{1}{2} \left(b_m' - i b_m'' \right)$. 
 
-The key take-away here is that the Kitaev chain Hamiltonian, due to being quadratic, can be diagonalized into independent quasi particles $\tilde{a}_m$ with energies $\epsilon_m$. This is how the problem is reduced from a $2^L$-dimensional many-body problem to single-particle energies and modes on a $2L \times 2L$ matrix.
+The key take-away here is that the Kitaev chain Hamiltonian, due to being quadratic, can be diagonalized into independent quasi particles $\tilde{a}_m$ with energies $\epsilon_m$. This is how the problem can be reduced from a $2^L$-dimensional many-body problem to single-particle energies and modes on a $2L \times 2L$ matrix using BdG formalism as we will later cover \ref{sec:BdG}.
 
-\section{Phases of the Kitaev chain}
+\subsection{Properties of Majorana fermions}
+As the previous subsection also started by stating, a majorana fermion is a particle that is its own antiparticle. In other words, it obeys
+\begin{align}
+    c = c^\dagger.
+\end{align}
+At first glance\footnote{In fact, 6 months of first glances for some} it might appear to be a fairly tame statement. This is however an incredibly exciting statement which gives the Majorana fermions exciting properties. This equation essentially enforces that applying a majorana fermion annihilation operator is the same as applying a creation operator: removing a majorana fermion is identical to creating one.
+
+"an unpaired Majorana at a topologically nontrivial defect must have a counterpart somewhere else in the system" \cite{beenakkerSearchMajoranaFermions2013}
+
+% To understand these properties we need to take a look at what the hermitian conjugate really means. 
+
+% \subsubsection{The complex conjugate}
+
+% \subsubsection{The transpose}
+
+% \subsubsection{How to think about the Majorana fermion}
+
+Superconductors - particle hole symmetry
+
+"One peculiar thing about Majorana “fermions” is that no state is annihilated by them $\gamma i |\psi \rangle i = 0 \to 0 = \gamma 2 i |\psi i = |\psi i.$ There is no notion of the occupancy of a Majorana
+state. Asking whether a Majorana fermion is occupied is akin to asking whether the dog has Buddha-nature" - $https://nbi.ku.dk/english/theses/masters-theses/asbjoern-rasmussen/Asbj_rnRasmussen.pdf$
+
+What happens to the schrodinger equation? E = 0
+
+Nonlocality?
+
+\section{Phases of the Kitaev chain} \label{sec:Phases_Kitaev_chain}
+The Kitaev chain is really only interesting to us due to its promise of Majorana fermions. We have previously seen that these quasiparticles only appear for specific parameters. In other words the Kitaev chain can host several phases where the Majorana fermions are, or are not present. Previously we have referred to these phases as the topologically non-trivial and the topologically trivial phase, respectively. The goal of this section is to further our understanding of which relation of parameters cause the chain to be in which phase, with a specific focus on the distinction between the topological and the trivial phase. 
+
 \subsection{Phases of the bulk spectrum}
-The bulk spectrum for energy vs. momentum $q$ for a chain of infinite length is given by \cite{kitaevUnpairedMajoranaFermions2001a}
+The bulk spectrum for energy vs. momentum $q$ for a chain of infinite length is given by 
 \begin{align}
     \epsilon(q) = \pm \sqrt{\left(2 \omega \cos(q) + \mu\right)^2 + 4 |\Delta|^2 \sin^2(q)}, \hspace{4mm} - \pi \leq q \leq \pi. \label{eq:Bulk_spectrum}
 \end{align}
-Finding this relation is done by Fourier transforming the Hamiltonian to momentum space as shown in appendix \ref{Appendix:Hamiltonian_Transformation_momentum_space} and then finding its eigenvalues, as we will show in \ref{sec:BdG}. This spectrum will tell us where the system is gapped ($\epsilon(q) \neq 0$), and where gap closings ($\epsilon(q) = 0$) occur. The gap closings mark boundaries between topological phases. 
-
-- - - - - - - - - - - - - - - - why? - - - - - - - - - - - - - - - - - - - -
-"In general, topological phases are defined for gapped systems. As long as the bulk gap stays open, one can vary parameters adiabatically without changing the topological class. Hence, gap closings ($\epsilon(q)=0$ for some q) signal phase transitions and mark the boundaries between distinct topological phases." - Fra chat
-- - - - - - - - - - - - - - - - - - - - - -- - - - - - -  - - - - - - -
-
-We now find the gap closings 
+Finding this relation is done by Fourier transforming the Hamiltonian to momentum space as shown in appendix \ref{Appendix:Hamiltonian_Transformation_momentum_space} and then finding its eigenvalues, as we will show in \ref{sec:BdG}. This was done using periodic boundary conditions as we expect the same result when $L \to \infty$ for a chain. For now you can take this for granted as its derivation gives little insight into the physics of the system. This energy spectrum will tell us where the system is gapped ($\epsilon(q) \neq 0$), and where gap closings ($\epsilon(q) = 0$) occur. The gap closings mark boundaries between topological phases \footnote{For a more detailed dive into how the closings of the bulk gap signify topological phase transitions see Sec. II.A in \cite{aliceaNewDirectionsPursuit2012}}. We now find the gap closings 
 \begin{align}
     \epsilon(q) &= 0\\
     \pm \sqrt{\left(2 \omega \cos(q) + \mu\right)^2 + 4 |\Delta|^2 \sin^2(q)} &= 0 \\
     \left(2 \omega \cos(q) + \mu\right)^2 + 4 |\Delta|^2 \sin^2(q) &= 0
 \end{align}
-Both terms in this equation are real values squared, and must therefore be nonnegative. They must therefore both individually vanish to fulfill the equation, and we thus get two equations
+Both terms in this equation are real values squared, and must therefore be nonnegative. They must also both individually vanish to fulfill the equation, and we thus get two equations
 \begin{align}
     2 \omega \cos(q) + \mu = 0, \hspace{4mm} \sin(q) = 0.
 \end{align}
@@ -173,50 +197,109 @@ From the second equation we get $\sin(q) = 0$ for $q = 0, \pi$. Plugging this in
       2 \omega &= \mu
   \end{aligned}
 \end{equation}
-Meaning the bulk gap closes when $2|\omega| = |\mu|$, defining a phase boundary between the trivial and topological superconducting phases. 
+Meaning the bulk gap closes when $2|\omega| = |\mu|$, defining a phase boundary between the topologically trivial and non-trivial superconducting phases. 
 
-From our previous findings we know that the system will be in the topological phase when $\mu < \omega$, which is in the domain $|\mu| < 2|\omega|$. We here expect that if the parameters change without crossing the bulk gap boundary $2 |\omega| = |\mu|$ the system should remain in the same phase. Further we need $\Delta \neq 0$ to remain in the superconducting phase. Meaning the phases of the system can be divided into
+From our previous findings we know that the system will be in the topologically non-trivial phase when $\mu < \omega$ (from the case $\omega = |\Delta| > 0, \mu = 0$), which is in the domain $|\mu| < 2|\omega|$. We here expect that if the parameters change without crossing the bulk gap boundary $2 |\omega| = |\mu|$ the system should remain in the same phase. Further we need $\Delta \neq 0$ to remain in the superconducting phase. Meaning the phases of the system can be divided into 
 \begin{align}
-    2|\omega| > |\mu|, \Delta \neq 0 &: \text{Topological superconductor (Majorana edge states)}\notag \\
-    2|\omega| > |\mu|, \Delta = 0 &: \text{Gapless normal metal (no superconductivity)}\notag \\
-    2|\omega| = |\mu|, \Delta \neq 0 &: \text{The superconducting bulk gap closes (phase boundary)}\notag \\
-    2|\omega| < |\mu|, \Delta \neq 0 &: \text{Trivial superconductor (no Majorana edge states)}\notag \\
-    2|\omega| < |\mu|, \Delta = 0 &: \text{Insulator (gapped, no superconductivity)}\notag 
+    2|\omega| > |\mu|, \Delta \neq 0 &: \text{Topologically non-trivial superconductor (Majorana edge states)}. \notag \\
+    2|\omega| = |\mu|, \Delta \neq 0 &: \text{The superconducting bulk gap closes (phase boundary)}. \notag \\
+    2|\omega| < |\mu|, \Delta \neq 0 &: \text{Topologically trivial superconductor (no Majorana edge states)}.\notag \\
+    2|\omega| > |\mu|, \Delta = 0 &: \text{Gapless metal}. \notag \\
+    2|\omega| < |\mu|, \Delta = 0 &: \text{Gapped insulator}.\notag
 \end{align}
 
 \subsection{Boundary modes}
-In the previous subsection we expected the phase of the system to remain the same as long as the bulk gap boundary is not crossed. We can check that this is true by studying the boundary modes, as they correspond to eigenvectors of $A$ localized near the ends of the chain, or in other words can confirm whether or not the phase is in the topological phase containing Majorana fermions. Such zero modes should have the form
+In the previous subsection we expected the phase of the system to remain the same as long as the bulk gap boundary is not crossed. We can check that this is true by studying the boundary modes, as they correspond to eigenvectors of $A$ localized near the ends of the chain, or in other words can confirm whether or not the phase is in the topological phase containing Majorana fermions. Such zero modes should be real linear combinations of $c_{2j-1}, c_{2j}$, having the form
+\begin{align}
+    b' = \sum_j \beta_j' c_{2j-1}, \hspace{4mm} b'' = \sum_j \beta_j'' c_{2j}
+\end{align}
+where $b'$ and $b''$ should be localized on opposite sides of the chain. Here $\beta_j', \beta_j''$ are real coefficients of the Majorana operators. If $b'$ and $b''$ are zero modes they have no energy and should commute with the Hamiltonian $\left[H, b'\right] = \left[H, b''\right] = 0$. Further, because the Hamiltonian only couples nearest neighbours the matrix $A$ will be tridiagonal with general values $a, b, c$, meaning the bulk (excluding the edge modes) can be expressed by
+\begin{align}
+    a' \beta_{j+1}' + b' \beta_j' + c' \beta_{j-1}' &= 0, \\
+    a'' \beta_{j+1}'' + b'' \beta_j'' + c'' \beta_{j-1}'' &= 0.
+\end{align}
+The values $a, b, c$ for their respective $\beta$ will follow from the Hamiltonian; $b$ being the on-site term $\mu$, while $a$ and $c$ will be the off-diagonal pairing terms $(\omega \pm |\Delta|)$. These follow from the commutation relations mentioned above, and will allow us to find solutions for $b', b''$. We will here show the calculation for $b'$, and show the final result of $b''$, which has a similar calculation.
+\begin{align}
+    \left[H, b'\right] &= \sum_{l=1}^L \beta'_j \left[H, c_{2l-1}\right]\\
+    &= \sum_{l=1}^L \beta'_j \left( i \mu \delta_{jl} c_{2j} + i (\omega + |\Delta|) \delta_{l, j+1} c_{2j} - i (- \omega + |\Delta|) \delta_{lj} c_{2j+2}\right)\\
+    &= i \sum_{j=1}^L \mu \beta_j' c_{2j} + i \sum_{j=1}^{L-1} \beta_{j+1}' (\omega + |\Delta|) c_{2j} - \sum_{j=2}^{L-1} \beta_{j-1}' (-\omega + |\Delta|)c_{2j} \\
+    &= 0 \\
+    \left[H, b'' \right] &= -i \sum_{j=1}^L \mu \beta_{j}'' c_{2j-1} - i \sum_{j=2}^{L-1} \beta_{j-1}'' (\omega + |\Delta|) c_{2j-1} + i \sum_{j=1} \beta_{j+1} (-\omega + |\Delta|) c_{2j-1} \\
+    &= 0 .
+\end{align}
+Where we used $\{c_m c_n, c_l\} = 2(\delta_{ln} c_m - \delta_{lm} c_n)$, crossed out terms where $\delta_{l+1, j}$ will always be 0, and redefined $j = j+1$ in the $c_{2j+2}$ term to make all terms $c_{2j}$. These terms are general. In the bulk, the three sums can be combined into one as we can ignore the boundary cases $j=1$ and $j = L$. And at the boundaries one of the three terms will be irrelevant (as we would have a missing site), but the statement $[H, b'] = [H, b''] = 0$ still holds true and gives the boundary conditions. Our problem now reduces to finding $\beta_j$ that are localized near a boundary and satisfy the above equations. Looking at the bulk we see that we can try solutions on the form $\beta_j' = x^j, \beta_j'' = x^{-j}$, and that the equations then will reduce to the same characteristic equation 
+\begin{align}
+    (\omega + |\Delta|)x^{j+1} + \mu x^j + (\omega - |\Delta|) x^{j-1} &= 0\\
+    (\omega + |\Delta|)x^2 + \mu x + (\omega - |\Delta|) &= 0 \label{eq:characteristic_eq_x_boundaries}\\
+    \to x_\pm = \frac{-\mu \pm \sqrt{\mu^2 - 4 \omega^2 + 4 |\Delta|^2}}{2(\omega + |\Delta|)}. \\
+\end{align}
+From this the general solutions follow on the form
+\begin{align}
+    \beta_j' &= \alpha_+' x_+^j + \alpha_-' x_-^j,\\
+    \beta_j'' &= \alpha_+'' x_+^{-j} + \alpha_-'' x_-^{-j}.
+\end{align}
+With $\alpha_\pm$ being constants related to $x_\pm$. Therefore we can write an ansatz for the zero modes on either side of the chain
 \begin{align}
     b' &= \sum_j \left(\alpha_+' x_+^j + \alpha_-' x_-^j \right)c_{2j-1} \\
     b'' &= \sum_j \left(\alpha_+'' x_+^{-j} + \alpha_-'' x_-^{-j} \right)c_{2j} 
 \end{align}
+We have previously confirmed that the topological phase boundary lies at $2|\omega| = |\mu|, \Delta \neq 0$, with expected majoranas at (a) $2|\omega| > |\mu|, \Delta \neq 0$, and no expected majoranas at (b) $2|\omega| < |\mu|, \Delta \neq 0$. We therefore want to check the boundary modes of these two phases to ensure that this is indeed correct, and we remain in the expected topological phase within these domains.
 
-- - - - - - - - - - - - - - because? - - - - - - - - - -
+Before doing so we must clarify our expectations. If the zero mode $b'$ denotes a zero mode on the left side of the chain, then $b''$ will denote a zero mode on the right side (or vice versa). This is due to the exponential form $x^j$: If $|x_\pm| < 1$, then $x_\pm^j \to 0$ as $j$ increases, causing the zero mode $b'$ to be localized at the first site, $j = 1$. Whereas $x_\pm^{-j} \to \infty$ as $j$ increases, which after normalization causes $b''$ to be localized at the  end of the chain (again vice versa for $|x_\pm| > 1$). As such, we expect that when both $|x_\pm| < 1$ or $|x_\pm| > 1$ we have localized zero modes, with the second case causing them to have opposite orientations.
 
-with 
+If however one solution is smaller than $1$, and the other is larger, $|x_\pm| < 1, |x_\mp| > 1$, we see that the zero modes $b', b''$ become a sum of one element approaching $0$, and another approaching $\infty$. In other words, one component is `localized' at an end, while the other is growing into the bulk. This is not a localized zero mode. If this were to produce a localized zero mode at one end of the chain, we'd need one of the $\alpha_\pm = 0$. This however breaks with boundary conditions. If we check the simplest missing state at the end of a chain $j=0$ for $b'$ we see that $\beta_0' = \alpha_+' + \alpha_-' = 0$, which is impossible to satisfy if one $\alpha_\pm = 0$, and the other $\alpha_\mp \neq 0$. Similar arguments can be made for both ends of the chain for both $b', b''$. As such, we expect the case $|x_\pm| < 1, |x_\mp| > 1$ to produce no localized zero modes.
 
+Figuring out when $|x_\pm|$ is larger than or smaller than $1$ is not directly obvious, but it can done with a mathematical trick. If we cast $|x_\pm|$ into the complex plane and setting $|x_\pm| = 1 = e^{i\theta}$ to be the unit sphere, we can figure out the conditions on the parameters when $|x_\pm|$ crosses the unit sphere. Plugging this into our characteristic equation \ref{eq:characteristic_eq_x_boundaries} we find 
 \begin{align}
-    x_\pm &= \frac{- \mu \pm \sqrt{ \mu^2 - 4 \omega^2 + 4 |\Delta|^2  }}{2(\omega + |\Delta|)}
+    \left(\omega + |\Delta|\right) e^{i\theta} + \mu + \left(\omega - |\Delta| \right) e^{-i\theta} &= 0 \\
+    2\omega \cos(\theta) + 2 i |\Delta| \sin(\theta) + \mu &= 0
 \end{align}
-
-We have previously confirmed that the Majorana fermions can only exist when either (a) $2|\omega| < |\mu|, \Delta \neq 0$ or (b) $2|\omega| > |\mu|, \Delta \neq 0$. We therefore check these two phases. 
+Where the complex and the real terms have to equal $0$ separately, meaning we require $\sin(\theta) = 0 \to \theta = 0, \pi$, giving the solution
+\begin{align}
+    2\omega &= \pm \mu\\
+    2 |\omega| &= |\mu|.
+\end{align}
+Meaning that the value of $|x_\pm|$ can only cross $1$ when this condition is met\footnote{It is perhaps unsurprising and definitely reassuring that this is the same result as earlier}. As such, we can study the domains above and below this condition to determine which topological phase the domain belongs to, and we will remain in this phase if this boundary is not crossed.
 
 \subsubsection{(a) $2|\omega| < |\mu|, \Delta \neq 0$}
-We get
+From our condition above we see that we can safely consider the case $\omega = |\Delta|$, which significantly simplifies the problem
 \begin{align}
-    |x_+| &= \left| \frac{-\mu + }{2(\omega + |\Delta|)}    \right| > 1\\
-    |x_-| &= \left| \frac{-\mu - }{2(\omega + |\Delta|)}    \right| < 1
+    x_\pm &= \frac{-\mu \pm \sqrt{\mu^2 - 4 \omega^2 + 4 \omega^2}}{4 \omega}\\
+    &= \frac{-\mu \pm \mu }{4\omega}\\
+    &\to x_- = \frac{-\mu}{2\omega}, \hspace{4mm} x_+ = 0\\
+    &\to |x_-| < 1, \hspace{4mm} |x_+| > 1.
 \end{align}
+If we were to use different signs for the variables the inequalities would simple be reversed, but never the same for both $|x_\pm|$. As seen from our discussion above this corresponds to the zero modes not existing in this case. 
 
-
-Exponential decay of the overlap / tunneling amplitude
+\subsubsection{(b) $2\omega > |\mu|, \Delta \neq 0$}
+If we again consider $\omega = |\Delta|$ we find
+\begin{align}
+    x_\pm &= \frac{-\mu \pm \sqrt{\mu^2 - 4 \omega^2 + 4 \omega^2}}{4 \omega}\\
+    &= \frac{-\mu \pm \mu }{4\omega}\\
+    &\to x_- = \frac{-\mu}{2\omega}, \hspace{4mm} x_- = \frac{0}{2\omega}\\
+    &\to |x_-| < 1, \hspace{4mm} |x_+| < 1.
+\end{align}
+In this case we have Majorana zero modes $b'$ localized near $j=0$, and $b''$ near $j = L$. And if we change the sign convenction to $-\omega > |\mu|$, we simply flip the position of $b'$ and $b''$. This confirms our initial expectation that the zero modes will remain in the system when the parameters are changed, as long as $|\Delta| \neq 0$ and we do not cross the boundary from the domain $2|\omega| > |\mu|$ to $2|\omega| < |\mu|$.
 
 \subsection{Topological phase diagram}
 From this we get the plot of topological values in Eivinds(?)
 
 
+\subsection{Overlap of the Majorana wave functions}
+Up until this point, the discussion has really been for either a periodic chain, or a chain with $L \to \infty$. But in a realistic system, we'd have a finite $L$. 
+
+Previously, when we said the Majorana zero modes were localized at an end of the chain, we said so because the coefficient of the majorana operator in $b', b''$ we either falling off or increasing exponentially with $j$. This means that they are not truly localized, but have a tail which falls off exponentially from their respective end of the chain.
+
+% Exponential decay of the overlap / tunneling amplitude
+
+
 \section{BdG} \label{sec:BdG}
-\subsection{BdG form and Nambu basis}
+\subsection{General BdG form and Nambu basis}
+"the objective of the transformation is to cast a quadratic Hamiltonian into a diagonal form
+that resembles the Hamiltonian of a system of non-interacting particles." - \cite{bonarettiBogoliubovValatinTransformationFermionic2026}
+
+
+\subsection{BdG form of the Kitaev chain Hamiltonian}
 We want to express the Hamiltonian in momentum space as
 \begin{align}
     H = \frac{1}{2} \sum_q \Psi_q^\dagger \mathcal{H}_\text{BdG} \Psi_q,
@@ -234,7 +317,7 @@ Where the momentum-space fermioninic annihilation and creation operators $a_q, a
 \begin{align}
  a_j = \frac{1}{\sqrt{N}} \sum_q e^{iqj}a_q, \hspace{4mm} a_j^\dagger = \frac{1}{\sqrt{N}} \sum_q e^{-iqj}a_q^\dagger.
 \end{align}
-Where $q$ runs over the Brillouin zone $[-\pi, \pi]$. We see that $\mathcal{H}_\text{BdG}$ has to be a $2 \times 2$ matrix. If we look at an arbitrary $\mathcal{H}_\text{BdG}$ we can see that after multiplication with the Nambu spinors the Hamiltonian becomes
+Where $q = \frac{2 \pi n}{N}$ with $n$ such that $q$ runs over the Brillouin zone $[-\pi, \pi]$. We see that $\mathcal{H}_\text{BdG}$ has to be a $2 \times 2$ matrix. If we look at an arbitrary $\mathcal{H}_\text{BdG}$ we can see that after multiplication with the Nambu spinors the Hamiltonian becomes
 \begin{align}
     H &= \frac{1}{2} \sum_q \begin{pmatrix}
         a_q^\dagger & a_{-q} 
@@ -247,25 +330,41 @@ Where $q$ runs over the Brillouin zone $[-\pi, \pi]$. We see that $\mathcal{H}_\
     \end{pmatrix} \\
     &= \frac{1}{2} \sum_q \left( a(q) a_q^\dagger a_q  + b(q) a_q^\dagger a_{-q}^\dagger + c(q) a_{-q} a_q + d(q) a_{-q} a_{-q}^\dagger\right).
 \end{align}
-If this is to match the momentum-space transformed Hamiltonian
+This should match the momentum-space transformed Hamiltonian as found in \ref{Appendix:Hamiltonian_Transformation_momentum_space}. We therefore rewrite the Hamiltonian to match the above description. We use the anti-commutation relations of the operators together with $q = -q$ from the periodic boundary conditions, and drop inessential constants 
 \begin{align}
-    H &= \sum_q \left[ -\left( \mu + 2 \omega \cos(q)\right) a_q^\dagger a_q + \Delta e^{-iq} a_q a_{-q} + \Delta^* e^{-iq} a_q^\dagger a_{-q}^\dagger \right]
+    H &= \sum_q \left[-\mu a_q^\dagger a_q - 2 \omega \cos(q) a_q^\dagger a_q  - i \sin(q) \left( \Delta a_q a_{-q} + \Delta^* a_q^\dagger a_{-q}^\dagger\right) \right] \\
+    &= \frac{1}{2} \sum_q \left[ 2\left(- \mu - 2 \omega \cos(q) \right) a_q^\dagger a_q  - 2 i \sin(q) \left( \Delta a_q a_{-q} + \Delta^* a_q^\dagger a_{-q}^\dagger\right) \right]\\
+    &= \frac{1}{2} \sum_q \left[ \left(- \mu - 2 \omega \cos(q) \right) a_q^\dagger a_q + \left(- \mu - 2 \omega \cos(q) \right) a_q^\dagger a_q  - 2 i \sin(q) \left( \Delta a_q a_{-q} + \Delta^* a_q^\dagger a_{-q}^\dagger\right) \right] \\
+    &= \frac{1}{2} \sum_q \left[ \left(- \mu - 2 \omega \cos(q) \right) a_q^\dagger a_q + \left(\mu + 2 \omega \cos(-q) \right) a_{-q} a_{-q}^\dagger - 2 i \sin(q) \left( \Delta a_q a_{-q} + \Delta^* a_q^\dagger a_{-q}^\dagger\right) \right].
 \end{align}
-as found in \ref{Appendix:Hamiltonian_Transformation_momentum_space}, we see that we must have
+We see that we must have
 \begin{align}
     a(q) &= -\mu -2 \omega \cos(q)\\
-    b(q) &= \Delta^* e^{-iq}\\
-    c(q) &= -\Delta e^{-iq} \\
+    b(q) &= - 2 i \Delta \sin(q) \\
+    c(q) &= 2 i \Delta^* \sin(q) \\
     d(q) &= \mu + 2\omega \cos(-q) = \mu + 2\omega \cos(q)\\
     \to \mathcal{H}_\text{BdG} &= \begin{pmatrix}
-        -\mu -2 \omega \cos(q) & \Delta^* e^{-iq}\\
-        -\Delta e^{-iq} & \mu + 2\omega \cos(q)
+        -\mu -2 \omega \cos(q) & - 2 i \Delta \sin(q) \\
+        2 i \Delta^* \sin(q) & \mu + 2\omega \cos(q)
     \end{pmatrix}.
 \end{align}
-Where we used the anti-commutation relations of the operators and dropped inessential constants. Writing out the entire Hamiltonian we have
-\begin{align}
-    H &= \frac{1}{2} 
-\end{align}
 
-\subsection{Diagonalizing the BdG Hamiltonian}
-By diagonalizing the BdG Hamiltonian we can find the energy spectrum.
+
+\subsubsection{Diagonalizing the BdG Hamiltonian}
+By diagonalizing the BdG Hamiltonian we can find the energy spectrum. We find its eigenvalues by
+\begin{align}
+    \text{det}\left( \mathcal{H}_\text{BdG} - \epsilon I \right) &= 0\\ 
+    % \text{det}\begin{vmatrix}
+    %     -\xi \cos(q) - \epsilon & - 2 i \Delta \sin(q) \\
+    %     2 i \Delta^* \sin(q) & \xi \cos(q) - \epsilon
+    % \end{vmatrix} &= 0 \\
+    % \left( -\xi - \epsilon \right) \left( \xi - \epsilon \right) - \left( - 2 i \Delta \sin(q)  \right) \left( 2 i \Delta^* \sin(q) \right) &= 0\\
+    % -\xi^2  + \epsilon^2 - 4 |\Delta|^2 \sin^2(q) &= 0\\
+\end{align}
+which by the abc-formula gives the energy spectrum
+\begin{align}
+    % \epsilon &= \frac{0 \pm \sqrt{- 4 \left( -\xi^2 - 4 | \Delta|^2 \sin^2(q) \right)}}{2} \\
+    % &= \pm \sqrt{\xi^2 - 4 |\Delta|^2 \sin^2(q)}\\
+    \epsilon &= \pm \sqrt{\left(\mu + 2 \omega \cos(q)\right)^2 + 4 |\Delta|^2 \sin^2(q)}
+\end{align}
+% where we used $\xi = \mu + 2 \omega \cos(q)$ for simplicity during the calculation.

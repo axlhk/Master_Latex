@@ -49,19 +49,31 @@ Where we used $\Delta = |\Delta|e^{i\theta}$ and the anticommutation relations
 
 \section{Transforming the Kitaev chain Hamiltonian to momentum space}    
 \label{Appendix:Hamiltonian_Transformation_momentum_space}
-Taking inspiration from \cite{aliceaNewDirectionsPursuit2012} we start from the Kitaev chain Hamiltonian \ref{eq:Original_Kitaev_Hamiltonian}. Imposing periodic boundary conditions we can Fourier transform the Hamiltonian to momentum space $q$. We recall the Fourier transform
+Taking inspiration from \cite{aliceaNewDirectionsPursuit2012} we start from the Kitaev chain Hamiltonian 
+\begin{align}
+    H =& \sum_j\left[ - \omega \left(a_j^\dagger a_{j+1} + a_{j+1}^\dagger a_j  \right) - \mu \left(a_j^\dagger  a_j - \frac{1}{2} \right) + \Delta a_j a_{j+1} + \Delta^* a_{j+1}^\dagger a_j^\dagger \right]
+\end{align}
+Imposing periodic boundary conditions we can Fourier transform the Hamiltonian to momentum space $q$. We recall the Fourier transform
 \begin{align}
     a_j = \frac{1}{\sqrt{N}} \sum_q e^{iqj}a_q, \hspace{4mm} a_j^\dagger = \frac{1}{\sqrt{N}} \sum_q e^{-iqj}a_q^\dagger
 \end{align}
-where $q$ runs over the Brillouin zone $[-\pi, \pi]$. Using this we can transform each term in the Hamiltonian individually for simplicity. Starting with the on-site term
+where $q = \frac{2 \pi n}{N}$, with $n$ such that $q$runs over the first Brillouin zone $[-\pi, \pi]$. These operators keep the anticommutation relations of the real-space operators 
+\begin{align}
+    \left\{a_q, a_{q'} \right\} &= \frac{1}{N} \sum_{j j'} e^{-iqj} e^{-iq'j'}\left\{a_j, a_{j'} \right\} = 0\\
+    \left\{a_q, a_{q'}^\dagger \right\} &= \frac{1}{N} \sum_{jj'} e^{-iqj} e^{iq'j'}\left\{a_j, a_{j'}^\dagger \right\} \\
+    &= \frac{1}{N} \sum_{j j'} e^{-iqj} e^{iq'j'} \delta_{j, j'} \\
+    &= \frac{1}{N} \sum_j e^{i(q'-q)j} \\
+    &= \delta_{q, q'}
+\end{align}
+Using this we can transform each term in the Hamiltonian individually for simplicity. Starting with the on-site term
 \begin{align}
     H_\mu &= -\mu \sum_j \left(a_j^\dagger a_j - \frac{1}{2} \right) \\
     &=  -\mu \sum_j \left( \left( \frac{1}{\sqrt{N}} \sum_q e^{-iqj}a_q^\dagger \right) \left( \frac{1}{\sqrt{N}} \sum_{q'} e^{iq'j}a_{q'} \right) - \frac{1}{2}\right) \\
     &= -\mu \frac{1}{N} \sum_{j q q'} e^{i(q'-q)j} a_q^\dagger a_{q'} + \frac{\mu N}{2}\\
-    &= -\frac{\mu}{N} \sum_{qq'} N \delta_{qq'} a_q^\dagger a_{q'} + \frac{\mu N}{2}\\
+    &= -\frac{\mu}{N} \sum_{qq'} N \delta_{q,q'} a_q^\dagger a_{q'} + \frac{\mu N}{2}\\
     &= -\mu \sum_q  a_q^\dagger a_q + \frac{\mu N}{2}.
 \end{align}
-Where we used a property of the periodic boundary conditions $\sum_j e^{i(q'-q)j} = N \delta_{qq'}$. Continuing with the hopping term
+Where we used a property of the periodic boundary conditions $\sum_j e^{i(q'-q)j} = N \delta_{q,q'}$. Continuing with the hopping term
 \begin{align}
     H_\omega &= -\omega \sum_j \left(a_j^\dagger a_{j+1} + a_{j+1}^\dagger a_j \right)
 \end{align}
@@ -69,7 +81,7 @@ where we again split the calculation of the terms; the first term becomes
 \begin{align}
     H_\omega^1 &= -\omega \sum_j \left( \frac{1}{\sqrt{N}} \sum_q e^{-iqj}a_q^\dagger \right) \left( \frac{1}{\sqrt{N}} \sum_{q'} e^{iq'(j+1)}a_{q'} \right)\\
     &= - \frac{\omega}{N} \sum_{j q q'} e^{i(q'-q)j}e^{iq'} a_q^\dagger a_{q'}\\
-    &= -\frac{\omega}{N} \sum_{qq'} N \delta_{qq'}e^{iq'} a_q^\dagger a_{q'}\\
+    &= -\frac{\omega}{N} \sum_{qq'} N \delta_{q,q'}e^{iq'} a_q^\dagger a_{q'}\\
     &= -\omega \sum_q e^{iq} a_q^\dagger a_{q}.
 \end{align}
 And the second term similarly becomes
@@ -90,24 +102,42 @@ where we again split the calculation for simplicity
 \begin{align}
     H_\Delta^1 &= \Delta \sum_j \left( \frac{1}{\sqrt{N}} \sum_q e^{iqj}a_q \right) \left( \frac{1}{\sqrt{N}} \sum_{q'} e^{iq'(j+1)}a_{q'} \right)\\
     &= \frac{\Delta}{N} \sum_{jqq'} e^{i (q + q') j} e^{iq'} a_q a_{q'}\\
-    &= \frac{\Delta}{N} \sum_{qq'} N \delta_{q (-q')} e^{iq'} a_q a_{q'}\\
+    &= \frac{\Delta}{N} \sum_{qq'} N \delta_{q, -q'} e^{iq'} a_q a_{q'}\\
     &= \Delta \sum_q e^{-iq} a_q a_{-q}.
 \end{align}
 And the second term similarly becomes
 \begin{align}
-    H_\Delta^2 &= \Delta^* \left(  \frac{1}{\sqrt{N}} \sum_q e^{-iq(j+1)}a_q^\dagger  \right) \left(  \frac{1}{\sqrt{N}} \sum_{q'} e^{-iq'j}a_{q'}^\dagger    \right)\\
+    H_\Delta^2 &= \Delta^* \sum_j \left(  \frac{1}{\sqrt{N}} \sum_q e^{-iq(j+1)}a_q^\dagger  \right) \left(  \frac{1}{\sqrt{N}} \sum_{q'} e^{-iq'j}a_{q'}^\dagger    \right)\\
     &= \frac{\Delta^*}{N} \sum_{jqq'} e^{-i(q+q')j} e^{-iq} a_q^\dagger a_{q'}^\dagger \\
-    &= \frac{\Delta^*}{N} \sum_{qq'} N \delta_{q(-q')} e^{-iq} a_q^\dagger a_{q'}^\dagger \\
+    &= \frac{\Delta^*}{N} \sum_{qq'} N \delta_{q, -q'} e^{-iq} a_q^\dagger a_{q'}^\dagger \\
     &= \Delta^* \sum_{q} e^{-iq} a_q^\dagger a_{-q}^\dagger.
 \end{align}
 Combining all terms we get the momentum-space Hamiltonian
 \begin{align}
-    H &= \sum_q \left[ -\mu \left( a_q^\dagger a_q \right) - 2\omega \cos(q)a_q^\dagger a_q + \Delta e^{-iq} a_q a_{-q} + \Delta^* e^{-iq} a_q^\dagger a_{-q}^\dagger \right] + \frac{\mu N}{2}\\
-      &= \sum_q \left[ -\left( \mu + 2 \omega \cos(q)\right) a_q^\dagger a_q + \Delta e^{-iq} a_q a_{-q} + \Delta^* e^{-iq} a_q^\dagger a_{-q}^\dagger \right]
+    H &= \sum_q \left[ -\mu a_q^\dagger a_q  - 2\omega \cos(q)a_q^\dagger a_q + \Delta e^{-iq} a_q a_{-q} + \Delta^* e^{-iq} a_q^\dagger a_{-q}^\dagger \right] + \frac{\mu N}{2}
+    %   &= \sum_q \left[ -\left( \mu + 2 \omega \cos(q)\right) a_q^\dagger a_q + \Delta e^{-iq} a_q a_{-q} + \Delta^* e^{-iq} a_q^\dagger a_{-q}^\dagger \right]
 \end{align}
-Where the last term $+ \frac{\mu N}{2}$ can be ignored as it does not affect the spectrum, eigenstates, or any observable that depends on the energy differences.
+Where the last term $+ \frac{\mu N}{2}$ can be ignored as it does not affect the spectrum, eigenstates, or any observable that depends on the energy differences. As such it will be disregarded for the rest of the thesis. Later we will use this expression to construct the BdG Hamiltonian, which requires the pairing terms to be in an antisymmetric form, which they are not currently in. We can create the antisymmetric form by expanding the operators to be a combination of both orderings $a_q a_{-q}, a_{-q} a_q$ (and similar for the $\dagger$ terms) by the anticommutation relations. We start by considering the annihilation term 
+\begin{align}
+    \sum_q e^{-iq} a_q a_{-q} &= \frac{1}{2} \sum_q \left[e^{-iq} a_q a_{-q} + e^{-iq} a_q a_{-q} \right] \\
+    &= \frac{1}{2} \left[\sum_q e^{-iq} a_q a_{-q} - \sum_q e^{-iq} a_{-q} a_{q} \right] \\
+    &= \frac{1}{2} \left[\sum_q e^{-iq} a_q a_{-q} - \sum_{-q} e^{iq} a_{q} a_{-q} \right] \\
+    &= \frac{1}{2} \left[\sum_q e^{-iq} a_q a_{-q} - \sum_{q} e^{iq} a_{q} a_{-q} \right] \\
+    &= \frac{1}{2} \sum_q \left[e^{-iq} - e^{iq} \right] a_q a_{-q} \\
+    &=\frac{1}{2} \sum_q \left[- 2 i \sin(q) \right] a_q a_{-q} \\
+    &= - i \sum_q \sin(q) a_q a_{-q} \\
+\end{align}
+Where we also renambed the dummy variable $q \to -q$ for the second term. We are allowed to do this as a sum over $q$ is equivalent to a sum over $-q$ by the periodic boundary conditions. The corresponding calculation for the creation term similarly gives
+\begin{align}
+    \sum_q e^{-iq} a_q^\dagger a_{-q}^\dagger &= -i \sum_q \sin(q) a_q^\dagger a_{-q}^\dagger.
+\end{align}
+As such the final momentum-space Hamiltonian with antisymmetric pairing terms is
+\begin{align}
+    H &= \sum_q \left[-\mu a_q^\dagger a_q - 2 \omega \cos(q) a_q^\dagger a_q  - i \Delta \sin(q) a_q a_{-q} - i \Delta^* \sin(q) a_q^\dagger a_{-q}^\dagger \right]\\
+    &= \sum_q \left[-\mu a_q^\dagger a_q - 2 \omega \cos(q) a_q^\dagger a_q  - i \sin(q) \left( \Delta a_q a_{-q} + \Delta^* a_q^\dagger a_{-q}^\dagger\right) \right]
+\end{align}
 
 \section{Finding the evolution of the system under the adiabatic assumption}
 \label{Appendix:Finding_Adiabatic_evolution_equation}
 
-Move huge ugly calculation from methods to here
+Move huge ugly calculation from methods to here(?)

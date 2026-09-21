@@ -1,5 +1,68 @@
 \chapter{Introduction}
-Blablabla Kitaev is a genius
+In 1937, during the founding period of quantum field theory, Ettore Majorana hypothesised the existence of fermions which are their own antiparticle [Source? Original article behind paywall; wiki?]. These became known as Majorana fermions, and were for a long time considered to only be a property of very specific elementary particles [Wiki]. The interest in Majorana fermions in condensed matter physics is a recent phenomenon, bolstered by the surge of interest in topological phases of matter. Originally this interest started in 1978 with the experimental confirmation of the quantum Hall effect [wiki], which was theorised to occur due to an arising topological invariant - a Chern number. Continuing into the 1990s and 2000s the work on topological phases of matter continued with the generalization of topological insulators [wiki]; band insulators with stron spin-orbit coupling. Within this framework in 2001 Kitaev proposed the Kitaev chain \cite{kitaevUnpairedMajoranaFermions2001a}. A one-dimensional superconducting wire with a topological phase which can host Majorana zero modes at the ends of the chain. Recent experiments have yielded possible confirmations of the Majorana zero modes, although there is still strong debate on this topic as to whether or not they were measured [Source on science beef; zero-bias conductance peaks]. There is also strong debate around Microsofts quantum chips Majorana 1 and 2, supposedly implementing majorana zero modes to create a functioning topological quantum computer [Source? I've read too little on this].
+
+The Kitaev chain has garnered a lot of attention due to its promise of a topological qubit. As the majorana zero modes are spread further apart along the chain, the overlap of their wavefunctions decreases exponentially and their stored information undergoes a topological protection in which decoherence is significantly reduced. In other words a solid theoretical understanding and a following experimental realization of the Kitaev chain could mean opening the door to a decoherence free quantum computer. Such a quantum computer could provide great acceleration in many fields where quantum algorithms such as Grovers[cite] or Shor's[cite] are applicable, but can also offer exponential speedups in fields in which simulations of many-body quantum Hamiltonians are necessary [Fra \cite{nayakNonAbelianAnyonsTopological2008}: Feynman, R. P., 1982, Simulating physics with computers, International Journal of Theor. Physics 21, 467.] such as medicine, condensed matter and materials science, chemistry, and more [Source maybe? - nayak mentions high temp superconductivity specifically p.8]. There are however several issues the field must address for this to become reality. Among others we need a clear scalable method of implementing, measuring and braiding the Majoranas. We need to be able to understand the system at larger systems sizes (where we expect the topological protection to be strong) which is currently unfesible numerically due to the numerical cost increasing exponentially with the Hilbert space. And we need a system which is tolerant enough against decoherence to perform  $10^4$ to $10^6$ operations without errors in order to have sufficient error correction.
+
+"Topological quantum computation is a scheme for using a system whose excitations satisfy non-Abelian braiding statistics to perform quantum computation in a way that is naturally immune to errors" \cite{nayakNonAbelianAnyonsTopological2008}. As such, all problems mentioned become trivial and great promise of eternal porridge follows.
+
+This article aims to create a solid understanding of the current state of the field, and open doors to further research. First we review the Kitaev chain; study its mathematical and conceptual origins, and then further explore how this system can be used to create a simple topological qubit. Further we will explore the systems theoretical applications, limitations, and properties with regards to a specific architecture, the T-junction, designed to allow a scalable system of braidable Majoranas. Specifically we will study which operations are available to us in the form of braiding with non-abelian statistics. In continuation of this we will explore ways of numerically simulating the system with hopes of maintaining accuracy and reducing the numerical cost by considering an adiabatic approach and truncating higher energy states. 
+
+
+% What topic you are working on
+% - Kitaev chain
+% - Review of the chain and topological quantum computing by braiding with non-abelian statistics
+
+% Why this topic is important (the motivation)
+% - Quantum computers (for infinite porridge)
+
+% What is missing in existing work (the gap)
+% - A working experimental setup
+% - Numerical simulations of large enough systems
+% - Information about how large we need the system to be, how to perform operations best and so on.
+
+% What your thesis does to address that gap (aims, research questions, hypotheses)
+% - Research the adiabatic approximation and truncation of states to improve numerical calculation speed and memory issues
+
+% How the thesis is organized (chapter outline)
+% - Kitaev chain review
+% - Quantum computing with the T-chain
+% - Numerical simulations of a chain and T-chain
+
+% Situate your work in a broader context (historical, theoretical, practical, social, or technical).
+% % - https://en.wikipedia.org/wiki/Majorana_fermion
+% - Only recently a condensed matter topic
+
+% - integer and fractional quantum Hall effects 
+% % https://en.wikipedia.org/wiki/Quantum_Hall_effect
+% - topological order and topological phases
+
+% -  2000s: topological insulators and superconductors
+
+% - Kitaev chain (2001)
+% -  topological quantum computation, non-Abelian braiding statistics
+
+% - 2012 and later, experiments reported zero-bias conductance peaks
+
+% What is already known? (briefly)
+% - Majoranas are hard to detect
+% - This would be absolutely epic to realise in a functioning quantum computer (infinite porridge)
+
+% What is not known, unclear, or problematic? (the gap)
+% - How to actually make this
+% - How to actually actually measure the majoranas
+% - How to accurately simulate the system for more than a handful of sites
+% - How to actually make it a complete quantum computer
+
+% What specific problem or question does this thesis address?
+% - Adiabatic approach for numerical calculations
+
+% What is the purpose of this thesis?
+% - Understand, test, and open doors for further research
+
+% What is the methodology?
+% - Analytical calculations
+% - Numerical simulations in python
 
 Joakim Bergli for president
 
+Eivind Støland for vice president

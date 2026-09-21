@@ -4,52 +4,118 @@ Eivind the GOAT
 What do plots in the adiabatic basis actually tell us?
 
 \section{Splitting the chain}
+
+
+\subsection{Replicating results}
 A previous masters student also did this. Boom i replicated his results life is good
 
 
-eivind cut means that it's not the central bond thats cut, but rather one out to the side. This matches Eivinds new code. 
+% eivind cut means that it's not the central bond thats cut, but rather one out to the side. This matches Eivinds new code. 
 
 
-\begin{figure}
-    \centering
-    \includegraphics[width = \linewidth]{eivind_cut__trunc=10__eivind_diff_instantaneous_1.pdf}
-    \caption{}
-    \label{fig:2}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width = 0.5\linewidth]{eivind_cut__trunc=10__eivind_diff_instantaneous_1.pdf}
+%     \caption{His minus mine. Burde her oppgradere plottet til å ha adiabatisk og energi slik som jeg gjør for T junction. Se cutting comparison i Plot data cut chain modified}
+%     \label{fig:2}
+% \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width = \linewidth]{eivind_cut___eivind_instantaneous_basis.pdf}
-    \caption{trunct = 10}
-    \label{fig:3}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width = 0.5\linewidth]{eivind_cut___eivind_instantaneous_basis.pdf}
+%     \caption{trunc = 10}
+%     \label{fig:3}
+% \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width = \linewidth]{Proper_cut_chain_cut_chain_trunc=10_7_1.0_2.0_0.5_Adiabatic_precomputed_Kitaev_RK4_N=10_dt=0.001001001001001001_sparse.pdf}
-    \caption{}
-    \label{fig:4}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width = \linewidth]{Proper_cut_chain_cut_chain_trunc=10_7_1.0_2.0_0.5_Adiabatic_precomputed_Kitaev_RK4_N=10_dt=0.001001001001001001_sparse.pdf}
+%     \caption{}
+%     \label{fig:4}
+% \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width = \linewidth]{Proper_cut_chain_cut_chain_trunc=100_7_1.0_2.0_0.5_Adiabatic_precomputed_Kitaev_RK4_N=10_dt=0.001001001001001001_sparse.pdf}
-    \caption{}
-    \label{fig:5}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width = \linewidth]{Proper_cut_chain_cut_chain_trunc=100_7_1.0_2.0_0.5_Adiabatic_precomputed_Kitaev_RK4_N=10_dt=0.001001001001001001_sparse.pdf}
+%     \caption{}
+%     \label{fig:5}
+% \end{figure}
 
-Adiabatic evolution produces correct adiabatic basis coefficients for just low truncation (trunc = 10) and high dt (dt = 0.1). But the energy spectrum is completely off. Even using trunc = 250 makes the energy spectrum seemingly wrong for the Pauli X-gate (6-8 ground states where 4 is expected and weird bands (a single energy occupying a band, which becomes a single line as trunc increases)). Maybe run a proper test for cutting of a chain? 
+Adiabatic evolution produces correct adiabatic basis coefficients for just low truncation (trunc = 10) and high dt (dt = 0.1). But the energy spectrum is completely off.
 
 
 
-\subsubsection{Schrodinger evolution vs adiabatic evolution}
+\subsubsection{Numerical accuracy of the adiabatic approach}
+
+\subsubsection{Truncation}
 Time and accuracy wrt truncation
+Do trunc = 4, 10, 150, 250? 
+
+\begin{figure}
+    \centering
+    \includegraphics[width = \linewidth]{Cut_chain_4T_chain_switch_a_t_reduced_20_1.0_2.0_0.5_Adiabatic_precomputed_Kitaev_RK4_N=10_dt=0.001.pdf}
+    \caption{The 4 lowest energy states from the time evolution $(T=20)$ of a single chain of $N=10$ sites truncated to the 150 lowest energy states.}
+    \label{}
+\end{figure}
+
+\subsubsection{Direct diagonalization vs. truncation}
+
 
 \section{T-junction}
 I need a supercomputer :/
 
-\subsection{Pali X-gate}
-Exchange 2 and 3
+\subsection{Pauli-X gate}
+Function used following \cite{sahuNoisyBraidingMajorana2026} when exchanging Majoranas 2 and 3 in the Pauli-X gate as seen in their Fig 1C illustrations 2 and 3 (Burde lage min egen figur - hvordan gjør jeg det pent?). We use $\mu_n(\tau)$ from their appendix, where we used the helper function $r(\tau)$.
+\begin{align}
+  r(\tau) = \left\{
+  \begin{aligned}
+    & 0 & \tau \leq 0 \\
+    & \tau^2 (3 - 2 \tau)  & 0 < \tau < 1\\
+    & 1 & \tau \geq 1
+  \end{aligned} 
+\right.
+\end{align}
+Together with their time-dependent definition\footnote{This is not exactly the definition \cite{sahuNoisyBraidingMajorana2026} used; their calling of $r(\tau)$ also allows for a spatially staggered site-by-site ramp using a parameter $\alpha$. This is however only of use when $N > 10$ as for $N=10$ we only ramp 1 site on each arm.}
+\begin{align}
+  \mu_n(\tau) &= \mu_\text{triv} + \left(\mu_\text{topo} - \mu_\text{triv} \right) r(\tau) \\
+    \to \mu_n(\tau) &= \left\{
+  \begin{aligned}
+    & \mu_\text{triv}  & \tau \leq 0 \\
+    & \mu_\text{triv} + \left( \mu_\text{topo} - \mu_\text{triv} \right) r(\tau)  & 0 < \tau < 1\\
+    & \mu_\text{topo} & \tau \geq 1.
+  \end{aligned}
+\right.
+    \label{eq:mu_from_sahuNoisyBraiding}
+\end{align}
+We here wish to check that the Pauli-x operation is realistic. Using the same parameters for $\mu_n$ as shown in \cite{sahuNoisyBraidingMajorana2026} we get Figure\ref{fig:Pauli_x_gate_1_negative_delta}, \ref{fig:Pauli_x_gate_params_1_negative_delta}. We here see that we get the expected four-fold degeneration of the ground state, and there is no energy splitting of the ground state during the time evolution. This means that the information stored in the Majoranas is protected during the operation as there is no disproportionate change in phase.(? - ref. Joakim viste noe med en energi avhengig fase for majoranaene $|0_L\rangle = e^{\phi_1(E_1)}|\gamma_1\rangle + e^{\phi_2(E_2)}|\gamma_2\rangle $) 
+
+When using the same $\mu_n$, but using $\Delta = 1$ for the whole chain we get $8$ degeneracies of the ground state, which is unexpected. Although they also remain degenerate throughout the time evolution this is unexpected as it means there are 8 majorana zero modes for two topological chains. We believe this is due to Josephson currents effectivelly cutting the T-junction into separate chains at the central site(? - Noe å ta tak i når jeg har lest på Josephson currents)
+
+In light of the unexpected results of the degenerations mentioned above we check the energy spectrum of the chain when the whole T-chain is in the topological phase, using $ = |\Delta| = 1, \mu = 0.05$, where we use the appropriate signs for $\Delta$ on each arm as discussed above. We get figure \ref{fig:T_chain_gs_fully_topo}. Here we have a four-fold degeneracy of the lowest energy state with energies $0.00000000e+00 8.49631476e-12 3.12304686e-05 3.12304774e-05$. When attempting $\Delta = 1$ for the whole chain i get completely wrong results, $|a_0|^2 \approx 60. E_0 = 0, E_\text{all other} = -1$.
+
+\begin{figure}
+  \includegraphics[width = \linewidth]{Constant_coeffs_T_chain_Adiabatic_precomputed_Kitaev_RK4_N=10.pdf}
+  \caption{Initial ground state coefficient and energy spectrum for the fully topological T-chain where the bottom arm has negative $\Delta$.}
+  \label{fig:T_chain_gs_fully_topo}
+\end{figure}
+
+If we observe an energy splitting we expect the stored information to vanish and as such we wish to test how the Majorana zero modes respond to a different time evolution of the operation. As such we use $\omega = |\Delta| = 1$ (again as above), with $\{\mu_\text{triv}, \mu_\text{topo}\} = \{0.05, 5, 0.1, 8\}$ idk think of something clever. 
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width = \linewidth]{_negative_delta_nr_states=150T_chain_switch_a_t_reduced_20_1.0_2.0_0.5_Adiabatic_precomputed_Kitaev_RK4_N=10_dt=0.001.pdf}
+    \caption{Probability of the adiabatic basis and the energy levels (subtracted the ground state) for time evolution of the switching of Majoranas 2 and 3 as shown in fig.1c \cite{sahuNoisyBraidingMajorana2026} illustrations 2 and 3. Using $N = 10$, truncation $= 150$, $T=20$, and the parameters of the Hamiltonian as shown in Figure \ref{fig:Pauli_x_gate_params_1_negative_delta}. The ground state energy is four-fold degenerate.}
+    \label{fig:Pauli_x_gate_1_negative_delta}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width = \linewidth]{Revrse_delta_lowr_arm_T_omega_delta_mu_heatmap_T_chain_switch_2_1.0_2.0_0.5_Adiabatic_precomputed_Kitaev_RK4_10_0.001_sparse.pdf}
+    \caption{Time dependencies of the parameters for time evolution of the switching of Majoranas 2 and 3 as shown in fig.1c \cite{sahuNoisyBraidingMajorana2026} illustrations 2 and 3. Used in creating Figure \ref{fig:Pauli_x_gate_params_1_negative_delta}. The whole T-junction has $\omega = 1$. Arms 0 and 1 (or the horizontal chain if you will) have $\Delta = 1$, whereas the vertical chain has $\Delta = -1$. $\mu$ is defined by \ref{eq:mu_from_sahuNoisyBraiding} using $\mu_\text{triv} = 8$, $\mu_\text{topo} = 0.05$.}
+    \label{fig:Pauli_x_gate_params_1_negative_delta}
+\end{figure}
+
 
 \subsection{Pauli Z-gate}
 Exchange 1 and 2 (or 3 and 4)

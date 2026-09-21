@@ -86,8 +86,8 @@
       \strng{authorbibnamehash}{e263e3c3f70989aca20797e29b79e307}
       \strng{authornamehash}{e263e3c3f70989aca20797e29b79e307}
       \strng{authorfullhash}{e263e3c3f70989aca20797e29b79e307}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Properties of Antisymmetric Matrices}
@@ -104,72 +104,59 @@
       \verb https://scipp-legacy.pbsci.ucsc.edu/~haber/ph218/pfaffian15.pdf
       \endverb
     \endentry
-    \entry{aliceaNonAbelianStatisticsTopological2011a}{article}{}
-      \name{author}{5}{}{%
-        {{hash=6324a9f51bb50d2d158aef9f6ab76692}{%
-           family={Alicea},
-           familyi={A\bibinitperiod},
-           given={Jason},
-           giveni={J\bibinitperiod}}}%
-        {{hash=4819830e10597ef59b97d51edfe9970f}{%
-           family={Oreg},
-           familyi={O\bibinitperiod},
-           given={Yuval},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=fb5a46fd4ed4b87a3d2d4d0739c01a5e}{%
-           family={Refael},
-           familyi={R\bibinitperiod},
-           given={Gil},
-           giveni={G\bibinitperiod}}}%
-        {{hash=467a3f70031d1a488cd12e8776a0f30c}{%
-           family={Von\bibnamedelima Oppen},
-           familyi={V\bibinitperiod\bibinitdelim O\bibinitperiod},
-           given={Felix},
-           giveni={F\bibinitperiod}}}%
-        {{hash=6517de415916ca590fd71a8824004392}{%
-           family={Fisher},
-           familyi={F\bibinitperiod},
-           given={Matthew\bibnamedelimb P.\bibnamedelimi A.},
-           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+    \entry{beenakkerSearchMajoranaFermions2013}{article}{}
+      \name{author}{1}{}{%
+        {{hash=46cbed27ebd2a2972ca82a8c5217c944}{%
+           family={Beenakker},
+           familyi={B\bibinitperiod},
+           given={C.\bibnamedelimi W.\bibnamedelimi J.},
+           giveni={C\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
       }
-      \strng{namehash}{29b4219f55d783d4f8e5f0db9556bea6}
-      \strng{fullhash}{fa2c352080cee9bbc8f3cade381e5bc7}
-      \strng{bibnamehash}{29b4219f55d783d4f8e5f0db9556bea6}
-      \strng{authorbibnamehash}{29b4219f55d783d4f8e5f0db9556bea6}
-      \strng{authornamehash}{29b4219f55d783d4f8e5f0db9556bea6}
-      \strng{authorfullhash}{fa2c352080cee9bbc8f3cade381e5bc7}
+      \strng{namehash}{46cbed27ebd2a2972ca82a8c5217c944}
+      \strng{fullhash}{46cbed27ebd2a2972ca82a8c5217c944}
+      \strng{bibnamehash}{46cbed27ebd2a2972ca82a8c5217c944}
+      \strng{authorbibnamehash}{46cbed27ebd2a2972ca82a8c5217c944}
+      \strng{authornamehash}{46cbed27ebd2a2972ca82a8c5217c944}
+      \strng{authorfullhash}{46cbed27ebd2a2972ca82a8c5217c944}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{1745-2473, 1745-2481}
-      \field{journaltitle}{Nature Physics}
-      \field{langid}{english}
-      \field{month}{5}
-      \field{number}{5}
-      \field{shortjournal}{Nature Phys}
-      \field{title}{Non-{{Abelian}} Statistics and Topological Quantum Information Processing in {{1D}} Wire Networks}
-      \field{urlday}{29}
-      \field{urlmonth}{1}
+      \field{abstract}{This is a colloquium-style introduction to the midgap excitations in superconductors known as Majorana fermions. These elusive particles, equal to their own antiparticle, may or may not exist in Nature as elementary building blocks, but in condensed matter they can be constructed out of electron and hole excitations. What is needed is a superconductor to hide the charge difference, and a topological (Berry) phase to eliminate the energy difference from zero-point motion. A pair of widely separated Majorana fermions, bound to magnetic or electrostatic defects, has non-Abelian exchange statistics. A qubit encoded in this Majorana pair is expected to have an unusually long coherence time. We discuss strategies to detect Majorana fermions in a topological superconductor, as well as possible applications in a quantum computer. The status of the experimental search is reviewed. Contents: I. What Are They? (Their origin in particle physics; Their emergence in superconductors; Their potential for quantum computing) II. How to Make Them (Shockley mechanism; Chiral p-wave superconductors; Topological insulators; Semiconductor heterostructures) III. How to Detect Them (Half-integer conductance quantization; Nonlocal tunneling; 4π-periodic Josephson effect; Thermal metal-insulator transition) IV. How to Use Them (Topological qubits; Read out; Braiding) V. Outlook on the Experimental Progress [scheduled for vol. 4 of Annual Review of Condensed Matter Physics]}
+      \field{day}{1}
+      \field{eprintclass}{cond-mat.mes-hall}
+      \field{eprinttype}{arXiv}
+      \field{issn}{1947-5454, 1947-5462}
+      \field{journaltitle}{Annual Review of Condensed Matter Physics}
+      \field{month}{4}
+      \field{number}{1}
+      \field{shortjournal}{Annu. Rev. Condens. Matter Phys.}
+      \field{title}{Search for {{Majorana}} Fermions in Superconductors}
+      \field{urlday}{20}
+      \field{urlmonth}{9}
       \field{urlyear}{2026}
-      \field{volume}{7}
-      \field{year}{2011}
+      \field{volume}{4}
+      \field{year}{2013}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{412\bibrangedash 417}
-      \range{pages}{6}
+      \field{pages}{113\bibrangedash 136}
+      \range{pages}{24}
       \verb{doi}
-      \verb 10.1038/nphys1915
+      \verb 10.1146/annurev-conmatphys-030212-184337
+      \endverb
+      \verb{eprint}
+      \verb 1112.1950
       \endverb
       \verb{file}
-      \verb C:\Users\axlkl\Zotero\storage\LCWDNGR8\Alicea et al. - 2011 - Non-Abelian statistics and topological quantum information processing in 1D wire networks.pdf
+      \verb C\:\\Users\\axlkl\\Zotero\\storage\\CVI3BP9W\\Beenakker - 2013 - Search for Majorana fermions in superconductors.pdf;C\:\\Users\\axlkl\\Zotero\\storage\\I8AIYKK9\\1112.html
       \endverb
       \verb{urlraw}
-      \verb https://www.nature.com/articles/nphys1915
+      \verb http://arxiv.org/abs/1112.1950
       \endverb
       \verb{url}
-      \verb https://www.nature.com/articles/nphys1915
+      \verb http://arxiv.org/abs/1112.1950
       \endverb
+      \keyw{Condensed Matter - Mesoscale and Nanoscale Physics}
     \endentry
     \entry{aliceaNewDirectionsPursuit2012}{article}{}
       \name{author}{1}{}{%
@@ -225,59 +212,58 @@
       \endverb
       \keyw{Condensed Matter - Strongly Correlated Electrons,Condensed Matter - Superconductivity}
     \endentry
-    \entry{sahuNoisyBraidingMajorana2026}{online}{}
-      \name{author}{2}{}{%
-        {{hash=02fb197f710871034b07d614416670df}{%
-           family={Sahu},
-           familyi={S\bibinitperiod},
-           given={Dibyajyoti},
+    \entry{bonarettiBogoliubovValatinTransformationFermionic2026}{article}{}
+      \name{author}{1}{}{%
+        {{hash=112f5110049774712644579c8af01639}{%
+           family={Bonaretti},
+           familyi={B\bibinitperiod},
+           given={Davide},
            giveni={D\bibinitperiod}}}%
-        {{hash=582d0e9fdde735676a6ad228b0a504ab}{%
-           family={Gangadharaiah},
-           familyi={G\bibinitperiod},
-           given={Suhas},
-           giveni={S\bibinitperiod}}}%
       }
-      \strng{namehash}{abc0f366460e55441bed7494ff9d6b1d}
-      \strng{fullhash}{abc0f366460e55441bed7494ff9d6b1d}
-      \strng{bibnamehash}{abc0f366460e55441bed7494ff9d6b1d}
-      \strng{authorbibnamehash}{abc0f366460e55441bed7494ff9d6b1d}
-      \strng{authornamehash}{abc0f366460e55441bed7494ff9d6b1d}
-      \strng{authorfullhash}{abc0f366460e55441bed7494ff9d6b1d}
+      \strng{namehash}{112f5110049774712644579c8af01639}
+      \strng{fullhash}{112f5110049774712644579c8af01639}
+      \strng{bibnamehash}{112f5110049774712644579c8af01639}
+      \strng{authorbibnamehash}{112f5110049774712644579c8af01639}
+      \strng{authornamehash}{112f5110049774712644579c8af01639}
+      \strng{authorfullhash}{112f5110049774712644579c8af01639}
       \field{sortinit}{6}
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{abstract}{Majorana zero modes have emerged as one of the most promising platforms for topological quantum computation, since their non-Abelian braiding statistics allow quantum information to be encoded nonlocally and manipulated through braiding operations that are, in principle, protected against local perturbations. In practice, however, a braid is only as robust as its physical implementation: finite-time operation, residual couplings, and environmental noise can all convert local excitations into logical errors during the exchange process. Here, we address this question through a microscopic comparison of two representative braiding architectures, a nanowire trijunction and a quantum-dot-assisted setup, simulating the full time-dependent Bogoliubov--de Gennes dynamics under both noiseless and noisy conditions. We show that the dot-assisted architecture consistently achieves a lower error over a shorter timescale than the trijunction, owing to its more localized exchange mechanism. This advantage persists in the presence of noise, and a spatially resolved analysis further reveals that, in the dot-assisted geometry, fast noise localized on the dot produces a smaller error than equivalent noise on the wires, whereas slow, quasi-static noise on the dot becomes the dominant limitation. Taken together, these findings link the different error contributions directly to device geometry, pointing to concrete design principles for noise-resilient Majorana-based quantum gates.}
-      \field{day}{11}
-      \field{hour}{1}
-      \field{minute}{42}
-      \field{month}{8}
-      \field{pubstate}{prepublished}
-      \field{second}{55}
-      \field{shorttitle}{Noisy {{Braiding}} of {{Majorana Modes}}}
-      \field{timezone}{Z}
-      \field{title}{Noisy {{Braiding}} of {{Majorana Modes}}: {{A Comparison}} of {{Nanowire Trijunction}} and {{Quantum-Dot-Assisted Architectures}}}
-      \field{urlday}{19}
-      \field{urlmonth}{8}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A self-contained treatment of the Bogoliubov-Valatin transformation for homogeneous fermionic Hamiltonians is presented. The aim is to provide a quick reference that may also serve as supplementary material for a graduate-level course, and that can be understood with quantum mechanics knowledge up to the level of the second quantization's rules. The objective of the transformation is to cast a quadratic Hamiltonian into a diagonal form that resembles the Hamiltonian of a system of non-interacting particles. To obtain this, the first step consists in putting its coefficient matrix into its canonical form; the transformation can always be performed on fermionic Hamiltonians, only some care must be taken when this form is singular. Having explained how to cast a general matrix into its standard form, a complete description of the transformation is provided; a novel procedure is proposed here for the singular matrix case.}
+      \field{day}{1}
+      \field{eprintclass}{cond-mat.other}
+      \field{eprinttype}{arXiv}
+      \field{issn}{0002-9505, 1943-2909}
+      \field{journaltitle}{American Journal of Physics}
+      \field{month}{3}
+      \field{number}{3}
+      \field{title}{On the {{Bogoliubov-Valatin}} Transformation for Fermionic {{Hamiltonians}} without a Linear Part}
+      \field{urlday}{11}
+      \field{urlmonth}{9}
       \field{urlyear}{2026}
-      \field{version}{1}
+      \field{volume}{94}
       \field{year}{2026}
       \field{dateera}{ce}
       \field{urldateera}{ce}
+      \field{pages}{239\bibrangedash 244}
+      \range{pages}{6}
       \verb{doi}
-      \verb 10.48550/ARXIV.2608.09416
+      \verb 10.1119/5.0291967
+      \endverb
+      \verb{eprint}
+      \verb 2512.12100
       \endverb
       \verb{file}
-      \verb C:\Users\axlkl\Zotero\storage\SCWLCPK5\Sahu and Gangadharaiah - 2026 - Noisy Braiding of Majorana Modes A Comparison of Nanowire Trijunction and Quantum-Dot-Assisted Arch.pdf
+      \verb C:\Users\axlkl\Zotero\storage\2QECSVHG\Bonaretti - 2026 - On the Bogoliubov-Valatin transformation for fermionic Hamiltonians without a linear part.pdf
       \endverb
       \verb{urlraw}
-      \verb https://arxiv.org/abs/2608.09416
+      \verb http://arxiv.org/abs/2512.12100
       \endverb
       \verb{url}
-      \verb https://arxiv.org/abs/2608.09416
+      \verb http://arxiv.org/abs/2512.12100
       \endverb
-      \keyw{FOS: Physical sciences,Mesoscale and Nanoscale Physics (cond-mat.mes-hall),Other Condensed Matter (cond-mat.other)}
+      \keyw{Condensed Matter - Other Condensed Matter,Quantum Physics}
     \endentry
   \enddatalist
 \endrefsection

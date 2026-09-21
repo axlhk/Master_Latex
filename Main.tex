@@ -38,20 +38,22 @@ providing the world with infinite porridge}
 
 
 \begin{abstract}
-    Born to dilly dally, forced to be batman
+This thesis begins by reviewing Kitaevs original article on the Kitaev chain \cite{kitaevUnpairedMajoranaFermions2001a}, a one-dimensional superconducting chain of spinless fermions. We outline solutions of this model where Majorana zero modes arise at the edges, providing a basis for topologically protected qubits. Further we explore how the Kitaev chain can be used as a qubit, specifically studying the T-chain geometry, showing that this system can implement the Pauli-X and Pauli-Y quantum gates by braiding of Majoranas. But we also show that this system does not provide the basis for a complete quantum computer, and discuss the missing operations.
+
+We explore methods of numerical simulations of the model, implementing both an adiabatic method allowing for truncation of higher energy states in hopes of speeding up numerical simulations while maintaining accuracy, and direct diagonalization of the full spectrum (for comparison). Initial testing proves to replicate the results of a previous student for the case of cutting a chain, an operation in which a single chain starts with all sites in the topologically non-trivial phase, and then gradually turning the hopping and pairing terms of the central bond to zero, before gradually turning them on again. Further we simulate the Pauli-X and -Y gates, in which two different pairs of majoranas are exchanged, showing that the ground state degeneracy is preserved throughout the operation. For the numerical results we specifically discuss the evolution of the ground state energies for varying total times of the operation $T$, varying levels of truncation, and the results are heavily restricted in the total number of sites on the chain, at most reaching $N = 13$ sites for a simulation. [Her vil jeg legge inn resultater].
 \end{abstract}
 
 \tableofcontents
 
-\include{chapters/Introduction}
+% \include{chapters/Introduction}
 
 \include{chapters/Kitaev_Chain}
 
-\include{chapters/Quantum_Computing}
+% \include{chapters/Quantum_Computing}
 
-\include{chapters/Methods}
+% \include{chapters/Methods}
 
-\include{chapters/Results}
+% \include{chapters/Results}
 
 
 \printbibliography
