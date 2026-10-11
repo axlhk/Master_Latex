@@ -1,5 +1,5 @@
 \chapter{Numerical methods}
-In this thesis we have numerically simulated the Kitaev chain T-junction. We have chosen to do so using the adiabatic approximation in hopes of reducing the otherwise overwhelming demand for computational power, aiming to truncate the state space while preserving numerical accuracy. In order to test the accuracy we have also simulated the system by direct diagonalization. For integration we have used RK4 as it is relatively simple and produces accurate results, although it is not symplectic meaning it can drift from the true result if the time step is not sufficiently small.
+In this thesis we have numerically simulated the Kitaev chain T-junction. We have chosen to do so using the adiabatic approximation in hopes of reducing the otherwise overwhelming demand for computational power, aiming to truncate the state space while preserving numerical accuracy. In order to test the accuracy of the adiabatic approach we have also simulated the system by direct diagonalization for comparison. For integration we have used RK4 as it is relatively simple and produces accurate results, although it is not symplectic meaning it can drift from the true result if the time step is not sufficiently small.
 
 This chapter covers the theory behind the methods used. It is meant mainly as an instruction on how to replicate the results, and contains very little to no interesting information about the physics of the Kitaev chain. Most readers will find this section at best dry, and we have theorized it could function as a sleep aid.
 
@@ -88,7 +88,7 @@ Accuracy
 
 
 \section{Code structure}
-I used UiOGPT to help write and debug the code.
+I used UiOGPT to help debug the code.
 
 \section{Setting up the Kitaev chain Hamiltonian matrix}
 Using original Hamiltonian $\ref{eq:Original_Kitaev_Hamiltonian}$.

@@ -4,18 +4,18 @@ The Kitaev chain is a toy model of a one dimensional spinless p-wave superconduc
     H =& \sum_j\left[ - \omega \left(a_j^\dagger a_{j+1} + a_{j+1}^\dagger a_j  \right) - \mu \left(a_j^\dagger  a_j - \frac{1}{2} \right) + \Delta a_j a_{j+1} + \Delta^* a_{j+1}^\dagger a_j^\dagger \right]
     \label{eq:Original_Kitaev_Hamiltonian}
 \end{align}
-where $a_j$ and $a_j^\dagger$ are annihilation and creation operators for the fermionic sites $j = 1, 2, ..., L$ in the chain, where $L$ (sometimes $N$) is the total amount of sites. $\omega$ is a hopping amplitude, $\mu$ is the chemical potential, and $\Delta = |\Delta|e^{i\theta}$ is the induced superconducting gap. The Hamiltonian serves to give rise to zero energy Majorana fermion quasiparticles at its boundaries. Simply put, these Majorana fermions are theorized to be useful as qubits, and a network of chains can be used for quantum computation. 
+where $a_j$ and $a_j^\dagger$ are annihilation and creation operators for the fermionic sites $j = 1, 2, \cdots, L$ in the chain, where $L$ (also denoted $N$ for the T-junction later) is the total amount of sites. For the $\omega, \Delta$ terms we count the bonds, ranging $j = 1, 2, \cdots, L-1$. The parameter $\omega$ is the hopping amplitude, $\mu$ is the chemical potential, and $\Delta = |\Delta|e^{i\theta}$ is the induced superconducting gap. All of which can be made time dependent. The Hamiltonian serves to give rise to Majorana zero modes (MZMs) at its boundaries. Simply put, these MZMs are theorized to be useful as qubits, and a network of chains can be used for quantum computation. 
 
-Majorana fermions are interesting candidates for qubits as their topological nature provides robustness against local perturbations and certain sources of decoherence. Their non-Abelian nature allows for braiding, where the majorana fermions exchange position and information about the path is stored in the wavefunction. This is the core of the process that allows computation to take place, and we will study this closer in a later chapter \ref{chap:Quantum_computation}. 
+MZMs are interesting candidates for qubits as their topological nature provides robustness against local perturbations and certain sources of decoherence. Their non-Abelian nature allows for braiding, where the MZMs exchange position and information about the path is stored in the wavefunction. This is the core of the process that allows computation to take place, and we will study this closer in a later chapter \ref{chap:Quantum_computation}. 
 
-In the first two sections \ref{sec:Majorana_Fermions}, \ref{sec:Phases_Kitaev_chain} (and this heading) of this chapter we closely follow the original theory laid out by Kitaev  \cite{kitaevUnpairedMajoranaFermions2001a}, re-deriving the main results and filling in with intermediate steps and discussion for clarity. More specifically we cover the origin of the Majorana fermions and the phases of the Kitaev chain. We also study BdG formalism and apply it to the Kitaev chain as parts of the phase discussion is based on these results. Further the BdG formalism can also offer great reductions in the dimensions of the problem greatly, and is as such a common formalism throughout the field. 
+In the first two sections \ref{sec:Majorana_Fermions}, \ref{sec:Phases_Kitaev_chain} of this chapter (and this heading) we closely follow the original theory laid out by Kitaev  \cite{kitaevUnpairedMajoranaFermions2001a}, re-deriving the main results and filling in with intermediate steps and discussion for clarity, with an addition of supplementary subsections. More specifically we cover the origin of the MZMs and the phases of the Kitaev chain. We also study BdG formalism and apply it to the Kitaev chain as parts of the phase discussion is based on these results. 
 
-\section{Majorana fermions} \label{sec:Majorana_Fermions}
-A Majorana fermion is a particle that is its own antiparticle. The Majorana operators can be defined as
+\section{Majorana fermions in the Kitaev chain} \label{sec:Majorana_Fermions}
+In the context of the Kitaev chain, Majorana fermions are quasiparticles which are `half' of an ordinary fermion and also act as their own antiparticle. The Majorana operators can be defined as
 \begin{align}
     c_{2j-1} = a_j + a_j^\dagger, \hspace{4mm}  c_{2j} = \frac{a_j - a_j^\dagger}{i}, \hspace{4mm} (j = 1, ..., N) \label{eq:majorana_op2j}
 \end{align}
-which are hermitian, and anticommute, meaning they satisfy the relations
+which are hermitian and anticommute, meaning they satisfy the relations
 \begin{align}
     c_m^\dagger = c_m, \hspace{4mm} \{c_l, c_m\} = c_l c_m + c_m c_l = 2 \delta_{lm}, \hspace{4mm} (l,m = 1, ..., 2N). \label{eq:Majorana_Herm_anticomm}
 \end{align}
@@ -23,7 +23,7 @@ Using the definitions of the majorana operators \ref{eq:majorana_op2j} we can fi
 \begin{align}
     a_j^\dagger a_j = \frac{1}{2} \left(1 + i c_{2j-1} c_{2j} \right),
 \end{align}
-where the term $i c_{2j-1} c_{2j}$ corresponds to a phase error. If $c_{2j-1}$ and $c_{2j}$ are not on the same site, but separated in space, then $c_{2j-1} c_{2j}$ would represent an interaction between two separated Majorana sites, requiring the environment to couple the Majorana fermions simultaneously to create the phase error. Physical noise and imperfections are typically local, so placing the Majorana sites far enough away from each other would decrease the risk of a phase error. Further, a single Majorana operator cannot appear by itself in a reasonable Hamiltonian as it would not preserve fermionic parity; flipping the system from an even to odd (or vice versa) number of fermions. As such, the Majorana operators will always come in pairs $c_i c_l$, and thus no parity preserving term can involve just one isolated Majorana. Together this tells us that errors would either have to break parity, or couple both separated Majoranas at once, which is highly unlikely and thus the Majorana fermions are protected from local errors.
+where the term $i c_{2j-1} c_{2j}$ corresponds to a phase error. If $c_{2j-1}$ and $c_{2j}$ are not on the same site, but separated in space, then $c_{2j-1} c_{2j}$ would represent an interaction between two separated Majorana sites, requiring the environment to couple the Majorana fermions simultaneously to create the phase error. Physical noise and imperfections are typically local, so placing the Majorana sites far enough away from each other would decrease the risk of a phase error. Further, a single Majorana operator cannot appear by itself in a reasonable Hamiltonian as it would not preserve fermionic parity; flipping the system from an even to odd (or vice versa) number of fermions. As such, the Majorana operators will always come in pairs $c_i c_l$, and thus no parity preserving term can involve just one isolated Majorana. Together this tells us that errors would either have to break parity, or couple both separated Majoranas at once, which is highly unlikely for separated Majorana sites and thus the Majorana edge states are protected from local errors.
 
 \subsection{Rewriting the Hamiltonian in terms of Majorana operators}
 We can express the Hamiltonian in terms of Majorana operators. As we will see, this transformation will provide insight about the structure of the phases and the emergence of the edge modes. Before doing so we simplify the calculation by hiding the phase $\theta$ in the majorana operators
@@ -55,7 +55,9 @@ In the case where the hopping and superconducting parameters dominate the Hamilt
 \begin{align}
   H = i\sum_{j} \omega c_{2j} c_{2j+1}, \label{eq:H_tdelta_mu0}  
 \end{align}
-where the nearest neighbours between different sites dominate. This is an interesting case as $c_2$ couples to $c_3$, $c_4$ couples to $c_5$, and so on. But $c_1$ and $c_{2L}$, the Majorana edge states, do not appear in the Hamiltonian. They have however not disappeared physically, but rather remain as zero-energy Majorana modes localized at the edges of the wire. Together they form a nonlocal fermionic zero mode. This is the most important insight from the transformation of the Hamiltonian as these are the states we were looking to create.
+where the nearest neighbours between different sites dominate. This is an interesting case as $c_2$ couples to $c_3$, $c_4$ couples to $c_5$, and so on, meaning the majorana operators from different sites pair together. But $c_1$ and $c_{2L}$, the Majorana edge states, do not appear in the Hamiltonian. They have however not disappeared physically, but rather remain as zero-energy Majorana modes localized at the edges of the wire. Together they form a nonlocal fermionic zero mode. This is the most important insight from the transformation of the Hamiltonian as these are the states we were looking to create.
+
+The two cases above can be thought of by a common intuitive picture of a chain of people with two hands. The people represent the sites, and their hands represent the two majorana fermions associated with the site. In the trivial case everyone is holding their own hands, representing how the majorana fermions have paired together at the same site. Whereas in the topologically non-trivial case the people have let go of their own hands, and are now holding hands with their neighbours, representing how the majorana fermions are now paired with the majorana of the neighboring site. Now there are suddenly two open hands: one at each end, representing the two topologically separated majoranas.
 
 We can now define new annihilation and creation operators spanning the sites $j$ and $j+1$
 \begin{align}
@@ -141,34 +143,23 @@ Where we used that $\{b_m',b_m''\} = 0$ as they are separate components of $b$. 
 
 The key take-away here is that the Kitaev chain Hamiltonian, due to being quadratic, can be diagonalized into independent quasi particles $\tilde{a}_m$ with energies $\epsilon_m$. This is how the problem can be reduced from a $2^L$-dimensional many-body problem to single-particle energies and modes on a $2L \times 2L$ matrix using BdG formalism as we will later cover \ref{sec:BdG}.
 
-\subsection{Properties of Majorana fermions}
-As the previous subsection also started by stating, a majorana fermion is a particle that is its own antiparticle. In other words, it obeys
+\subsection{Properties of Majorana fermion quasiparticles}
+Let us take a minute to think about what a Majorana fermion quasiparticle really is. As the previous subsection also started by stating, a majorana fermion is a particle that is its own antiparticle. In other words, it obeys
 \begin{align}
     c = c^\dagger.
 \end{align}
-At first glance\footnote{In fact, 6 months of first glances for some} it might appear to be a fairly tame statement. This is however an incredibly exciting statement which gives the Majorana fermions exciting properties. This equation essentially enforces that applying a majorana fermion annihilation operator is the same as applying a creation operator: removing a majorana fermion is identical to creating one.
+At first glance\footnote{In fact, 6 months of first glances for some} it might appear to be a fairly tame statement. This is however an incredibly exciting statement which gives the Majorana fermions interesting properties. This equation essentially enforces that applying a majorana fermion annihilation operator is equivalent to applying a creation operator: removing a majorana fermion is identical to creating one. 
 
-"an unpaired Majorana at a topologically nontrivial defect must have a counterpart somewhere else in the system" \cite{beenakkerSearchMajoranaFermions2013}
+This completely changes how we need to think about the Majorana fermion compared to a normal fermion. For a normal fermion, when they are brought close, the Pauli principle sets in. 
 
-% To understand these properties we need to take a look at what the hermitian conjugate really means. 
+This is not true for Majorana fermions; they would simply annihilate if brought close together. But they are also two halves of an ordinary fermion, meaning they would not actually annihilate, but rather form a fermionic site. 
 
-% \subsubsection{The complex conjugate}
+And further, the number operator $n = c^\dagger c = c^2 = 1$ no longer makes sense. Asking how many majoranas are in a system is close to meaningless, yet we can still determine how many MZMs there are by studying the degeneracy of the ground state, as we will later do. And one can also define a number operator by looking at the fermionic sites $n_i = d_j^\dagger d_j$. There will also always be an even number of Majorana fermions in a system, although they can be separated in space, which differs from normal fermions which can have both even and odd numbers \cite{beenakkerSearchMajoranaFermions2013} \cite{leijnseIntroductionTopologicalSuperconductivity2012}.
 
-% \subsubsection{The transpose}
-
-% \subsubsection{How to think about the Majorana fermion}
-
-Superconductors - particle hole symmetry
-
-"One peculiar thing about Majorana “fermions” is that no state is annihilated by them $\gamma i |\psi \rangle i = 0 \to 0 = \gamma 2 i |\psi i = |\psi i.$ There is no notion of the occupancy of a Majorana
-state. Asking whether a Majorana fermion is occupied is akin to asking whether the dog has Buddha-nature" - $https://nbi.ku.dk/english/theses/masters-theses/asbjoern-rasmussen/Asbj_rnRasmussen.pdf$
-
-What happens to the schrodinger equation? E = 0
-
-Nonlocality?
+These are properties which typically arise from the particle-hole symmetry of superconducting systems, and is in fact an important reason as to why superconductors serve as a hunting ground for Majorana fermions. 
 
 \section{Phases of the Kitaev chain} \label{sec:Phases_Kitaev_chain}
-The Kitaev chain is really only interesting to us due to its promise of Majorana fermions. We have previously seen that these quasiparticles only appear for specific parameters. In other words the Kitaev chain can host several phases where the Majorana fermions are, or are not present. Previously we have referred to these phases as the topologically non-trivial and the topologically trivial phase, respectively. The goal of this section is to further our understanding of which relation of parameters cause the chain to be in which phase, with a specific focus on the distinction between the topological and the trivial phase. 
+The Kitaev chain is really only interesting to us due to its promise of MZMs at its edges. We have previously seen that these quasiparticles only appear for specific parameters. In other words the Kitaev chain can host phases where the MZMs are, or are not present. Previously we have referred to these phases as the topologically non-trivial and the topologically trivial phase, respectively. The goal of this section is to further our understanding of which relation of parameters causes the chain to be in which phase, with a specific focus on the distinction between the topological and the trivial phase. 
 
 \subsection{Phases of the bulk spectrum}
 The bulk spectrum for energy vs. momentum $q$ for a chain of infinite length is given by 
@@ -201,9 +192,9 @@ Meaning the bulk gap closes when $2|\omega| = |\mu|$, defining a phase boundary 
 
 From our previous findings we know that the system will be in the topologically non-trivial phase when $\mu < \omega$ (from the case $\omega = |\Delta| > 0, \mu = 0$), which is in the domain $|\mu| < 2|\omega|$. We here expect that if the parameters change without crossing the bulk gap boundary $2 |\omega| = |\mu|$ the system should remain in the same phase. Further we need $\Delta \neq 0$ to remain in the superconducting phase. Meaning the phases of the system can be divided into 
 \begin{align}
-    2|\omega| > |\mu|, \Delta \neq 0 &: \text{Topologically non-trivial superconductor (Majorana edge states)}. \notag \\
+    2|\omega| > |\mu|, \Delta \neq 0 &: \text{Topologically non-trivial superconductor (MZMs)}. \notag \\
     2|\omega| = |\mu|, \Delta \neq 0 &: \text{The superconducting bulk gap closes (phase boundary)}. \notag \\
-    2|\omega| < |\mu|, \Delta \neq 0 &: \text{Topologically trivial superconductor (no Majorana edge states)}.\notag \\
+    2|\omega| < |\mu|, \Delta \neq 0 &: \text{Topologically trivial superconductor (no MZMs)}.\notag \\
     2|\omega| > |\mu|, \Delta = 0 &: \text{Gapless metal}. \notag \\
     2|\omega| < |\mu|, \Delta = 0 &: \text{Gapped insulator}.\notag
 \end{align}
@@ -223,9 +214,7 @@ The values $a, b, c$ for their respective $\beta$ will follow from the Hamiltoni
     \left[H, b'\right] &= \sum_{l=1}^L \beta'_j \left[H, c_{2l-1}\right]\\
     &= \sum_{l=1}^L \beta'_j \left( i \mu \delta_{jl} c_{2j} + i (\omega + |\Delta|) \delta_{l, j+1} c_{2j} - i (- \omega + |\Delta|) \delta_{lj} c_{2j+2}\right)\\
     &= i \sum_{j=1}^L \mu \beta_j' c_{2j} + i \sum_{j=1}^{L-1} \beta_{j+1}' (\omega + |\Delta|) c_{2j} - \sum_{j=2}^{L-1} \beta_{j-1}' (-\omega + |\Delta|)c_{2j} \\
-    &= 0 \\
-    \left[H, b'' \right] &= -i \sum_{j=1}^L \mu \beta_{j}'' c_{2j-1} - i \sum_{j=2}^{L-1} \beta_{j-1}'' (\omega + |\Delta|) c_{2j-1} + i \sum_{j=1} \beta_{j+1} (-\omega + |\Delta|) c_{2j-1} \\
-    &= 0 .
+    \left[H, b'' \right] &= -i \sum_{j=1}^L \mu \beta_{j}'' c_{2j-1} - i \sum_{j=2}^{L-1} \beta_{j-1}'' (\omega + |\Delta|) c_{2j-1} + i \sum_{j=1} \beta_{j+1} (-\omega + |\Delta|) c_{2j-1}.
 \end{align}
 Where we used $\{c_m c_n, c_l\} = 2(\delta_{ln} c_m - \delta_{lm} c_n)$, crossed out terms where $\delta_{l+1, j}$ will always be 0, and redefined $j = j+1$ in the $c_{2j+2}$ term to make all terms $c_{2j}$. These terms are general. In the bulk, the three sums can be combined into one as we can ignore the boundary cases $j=1$ and $j = L$. And at the boundaries one of the three terms will be irrelevant (as we would have a missing site), but the statement $[H, b'] = [H, b''] = 0$ still holds true and gives the boundary conditions. Our problem now reduces to finding $\beta_j$ that are localized near a boundary and satisfy the above equations. Looking at the bulk we see that we can try solutions on the form $\beta_j' = x^j, \beta_j'' = x^{-j}$, and that the equations then will reduce to the same characteristic equation 
 \begin{align}
@@ -249,7 +238,7 @@ Before doing so we must clarify our expectations. If the zero mode $b'$ denotes 
 
 If however one solution is smaller than $1$, and the other is larger, $|x_\pm| < 1, |x_\mp| > 1$, we see that the zero modes $b', b''$ become a sum of one element approaching $0$, and another approaching $\infty$. In other words, one component is `localized' at an end, while the other is growing into the bulk. This is not a localized zero mode. If this were to produce a localized zero mode at one end of the chain, we'd need one of the $\alpha_\pm = 0$. This however breaks with boundary conditions. If we check the simplest missing state at the end of a chain $j=0$ for $b'$ we see that $\beta_0' = \alpha_+' + \alpha_-' = 0$, which is impossible to satisfy if one $\alpha_\pm = 0$, and the other $\alpha_\mp \neq 0$. Similar arguments can be made for both ends of the chain for both $b', b''$. As such, we expect the case $|x_\pm| < 1, |x_\mp| > 1$ to produce no localized zero modes.
 
-Figuring out when $|x_\pm|$ is larger than or smaller than $1$ is not directly obvious, but it can done with a mathematical trick. If we cast $|x_\pm|$ into the complex plane and setting $|x_\pm| = 1 = e^{i\theta}$ to be the unit sphere, we can figure out the conditions on the parameters when $|x_\pm|$ crosses the unit sphere. Plugging this into our characteristic equation \ref{eq:characteristic_eq_x_boundaries} we find 
+Figuring out when $|x_\pm|$ is larger than or smaller than $1$ is not directly obvious, but it can be done with a mathematical trick. If we cast $|x_\pm|$ into the complex plane and setting $|x_\pm| = 1 = e^{i\theta}$ to be the unit sphere, we can figure out the conditions on the parameters when $|x_\pm|$ crosses the unit sphere. Plugging this into our characteristic equation \ref{eq:characteristic_eq_x_boundaries} we find 
 \begin{align}
     \left(\omega + |\Delta|\right) e^{i\theta} + \mu + \left(\omega - |\Delta| \right) e^{-i\theta} &= 0 \\
     2\omega \cos(\theta) + 2 i |\Delta| \sin(\theta) + \mu &= 0
@@ -281,12 +270,14 @@ If we again consider $\omega = |\Delta|$ we find
 \end{align}
 In this case we have Majorana zero modes $b'$ localized near $j=0$, and $b''$ near $j = L$. And if we change the sign convenction to $-\omega > |\mu|$, we simply flip the position of $b'$ and $b''$. This confirms our initial expectation that the zero modes will remain in the system when the parameters are changed, as long as $|\Delta| \neq 0$ and we do not cross the boundary from the domain $2|\omega| > |\mu|$ to $2|\omega| < |\mu|$.
 
-\subsection{Topological phase diagram}
-From this we get the plot of topological values in Eivinds(?)
+% \subsection{Topological phase diagram}
+% From this we get the plot of topological values in Eivinds(?)
 
 
 \subsection{Overlap of the Majorana wave functions}
-Up until this point, the discussion has really been for either a periodic chain, or a chain with $L \to \infty$. But in a realistic system, we'd have a finite $L$. 
+Up until this point, the discussion has really been for either a periodic chain, or a chain with $L \to \infty$. But in a realistic system, we'd have a finite $L$.
+
+%This for example technically changes the commutator $[H, b'] \neq 0$
 
 Previously, when we said the Majorana zero modes were localized at an end of the chain, we said so because the coefficient of the majorana operator in $b', b''$ we either falling off or increasing exponentially with $j$. This means that they are not truly localized, but have a tail which falls off exponentially from their respective end of the chain.
 
@@ -294,6 +285,8 @@ Previously, when we said the Majorana zero modes were localized at an end of the
 
 
 \section{BdG} \label{sec:BdG}
+BdG formalism can also offer great reductions in the dimensions of the problem, and is as such a common formalism throughout the field. 
+
 \subsection{General BdG form and Nambu basis}
 "the objective of the transformation is to cast a quadratic Hamiltonian into a diagonal form
 that resembles the Hamiltonian of a system of non-interacting particles." - \cite{bonarettiBogoliubovValatinTransformationFermionic2026}

@@ -72,6 +72,590 @@
       \endverb
       \keyw{Condensed Matter - Mesoscale and Nanoscale Physics,Quantum Physics}
     \endentry
+    \entry{majoranaTeoriaSimmetricaDellelettrone1937}{article}{}
+      \name{author}{1}{}{%
+        {{hash=aaadf7ff4ae686b63f5713ce905b654c}{%
+           family={Majorana},
+           familyi={M\bibinitperiod},
+           given={Ettore},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{aaadf7ff4ae686b63f5713ce905b654c}
+      \strng{fullhash}{aaadf7ff4ae686b63f5713ce905b654c}
+      \strng{bibnamehash}{aaadf7ff4ae686b63f5713ce905b654c}
+      \strng{authorbibnamehash}{aaadf7ff4ae686b63f5713ce905b654c}
+      \strng{authornamehash}{aaadf7ff4ae686b63f5713ce905b654c}
+      \strng{authorfullhash}{aaadf7ff4ae686b63f5713ce905b654c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Si dimostra la possibilità di pervenire a una piena simmetrizzazione formale della teoria quantistica dell’elettrone e del positrone facendo uso di un nuovo processo di quantizzazione. Il significato delle equazioni diDiracne risulta alquanto modificato e non vi è più luogo a parlare di stati di energia negativa; nè a presumere per ogni altro tipo di particelle, partieolarmente neutre, l’esistenza di « antiparticelle » corrispondenti ai « vuoti » cut energia negativa.}
+      \field{day}{1}
+      \field{issn}{1827-6121}
+      \field{journaltitle}{Il Nuovo Cimento (1924-1942)}
+      \field{month}{4}
+      \field{number}{4}
+      \field{shortjournal}{Il Nuovo Cimento (1924-1942)}
+      \field{title}{Teoria Simmetrica Dell’elettrone e Del Positrone}
+      \field{volume}{14}
+      \field{year}{1937}
+      \field{dateera}{ce}
+      \field{pages}{171\bibrangedash 184}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1007/BF02961314
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/BF02961314
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/BF02961314
+      \endverb
+    \endentry
+    \entry{klitzingNewMethodHighAccuracy1980}{article}{}
+      \name{author}{3}{}{%
+        {{hash=2cb9bfbfb5424be2b7859c8ad90f43dc}{%
+           family={Klitzing},
+           familyi={K\bibinitperiod},
+           given={K.\bibnamedelimi V.},
+           giveni={K\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=f0cc80344097f24f7d5432206cd7ae0f}{%
+           family={Dorda},
+           familyi={D\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=5cb5cac742cf7e9af7ad8808e35e3bf0}{%
+           family={Pepper},
+           familyi={P\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{c3bf64afe5b5f0dcb5f602823c1a55b6}
+      \strng{fullhash}{c3bf64afe5b5f0dcb5f602823c1a55b6}
+      \strng{bibnamehash}{c3bf64afe5b5f0dcb5f602823c1a55b6}
+      \strng{authorbibnamehash}{c3bf64afe5b5f0dcb5f602823c1a55b6}
+      \strng{authornamehash}{c3bf64afe5b5f0dcb5f602823c1a55b6}
+      \strng{authorfullhash}{c3bf64afe5b5f0dcb5f602823c1a55b6}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{11}
+      \field{issn}{0031-9007}
+      \field{journaltitle}{Physical Review Letters}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{6}
+      \field{shortjournal}{Phys. Rev. Lett.}
+      \field{title}{New {{Method}} for {{High-Accuracy Determination}} of the {{Fine-Structure Constant Based}} on {{Quantized Hall Resistance}}}
+      \field{urlday}{23}
+      \field{urlmonth}{9}
+      \field{urlyear}{2026}
+      \field{volume}{45}
+      \field{year}{1980}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{494\bibrangedash 497}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.45.494
+      \endverb
+      \verb{file}
+      \verb C:\Users\axlkl\Zotero\storage\YU6EKXVG\Klitzing et al. - 1980 - New Method for High-Accuracy Determination of the Fine-Structure Constant Based on Quantized Hall Re.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.45.494
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.45.494
+      \endverb
+    \endentry
+    \entry{thoulessQuantizedHallConductance1982}{article}{}
+      \name{author}{4}{}{%
+        {{hash=519fb52f442999f67395a2149283b508}{%
+           family={Thouless},
+           familyi={T\bibinitperiod},
+           given={D.\bibnamedelimi J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=3018d78c6d14f7426813b97ce1f11fd7}{%
+           family={Kohmoto},
+           familyi={K\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8da4516d16ad7633b2a7b4989957e471}{%
+           family={Nightingale},
+           familyi={N\bibinitperiod},
+           given={M.\bibnamedelimi P.},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=01b23b15216f9e61dc2d1f193ac6fc23}{%
+           family={Den\bibnamedelima Nijs},
+           familyi={D\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f7044af62fefe3eca10065f802e7b478}
+      \strng{fullhash}{4a337d5dc738701f7e90a671dd365127}
+      \strng{bibnamehash}{f7044af62fefe3eca10065f802e7b478}
+      \strng{authorbibnamehash}{f7044af62fefe3eca10065f802e7b478}
+      \strng{authornamehash}{f7044af62fefe3eca10065f802e7b478}
+      \strng{authorfullhash}{4a337d5dc738701f7e90a671dd365127}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{9}
+      \field{issn}{0031-9007}
+      \field{journaltitle}{Physical Review Letters}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{6}
+      \field{shortjournal}{Phys. Rev. Lett.}
+      \field{title}{Quantized {{Hall Conductance}} in a {{Two-Dimensional Periodic Potential}}}
+      \field{urlday}{23}
+      \field{urlmonth}{9}
+      \field{urlyear}{2026}
+      \field{volume}{49}
+      \field{year}{1982}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{405\bibrangedash 408}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.49.405
+      \endverb
+      \verb{file}
+      \verb C:\Users\axlkl\Zotero\storage\Y5NGBBUH\Thouless et al. - 1982 - Quantized Hall Conductance in a Two-Dimensional Periodic Potential.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.49.405
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.49.405
+      \endverb
+    \endentry
+    \entry{hasanColloquiumTopologicalInsulators2010}{article}{}
+      \name{author}{2}{}{%
+        {{hash=92e3f7c076de9dde3b98c8f43284641f}{%
+           family={Hasan},
+           familyi={H\bibinitperiod},
+           given={M.\bibnamedelimi Z.},
+           giveni={M\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+        {{hash=a69ae6e73333e494a991e5c0810d2bc2}{%
+           family={Kane},
+           familyi={K\bibinitperiod},
+           given={C.\bibnamedelimi L.},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{c0a6c09729e65e3903cbf01077bbb803}
+      \strng{fullhash}{c0a6c09729e65e3903cbf01077bbb803}
+      \strng{bibnamehash}{c0a6c09729e65e3903cbf01077bbb803}
+      \strng{authorbibnamehash}{c0a6c09729e65e3903cbf01077bbb803}
+      \strng{authornamehash}{c0a6c09729e65e3903cbf01077bbb803}
+      \strng{authorfullhash}{c0a6c09729e65e3903cbf01077bbb803}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{8}
+      \field{issn}{0034-6861, 1539-0756}
+      \field{journaltitle}{Reviews of Modern Physics}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{4}
+      \field{shortjournal}{Rev. Mod. Phys.}
+      \field{shorttitle}{\mkbibemph{Colloquium}}
+      \field{title}{\mkbibemph{Colloquium} : {{Topological}} Insulators}
+      \field{urlday}{23}
+      \field{urlmonth}{9}
+      \field{urlyear}{2026}
+      \field{volume}{82}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{3045\bibrangedash 3067}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1103/RevModPhys.82.3045
+      \endverb
+      \verb{file}
+      \verb C:\Users\axlkl\Zotero\storage\VL678E5Z\Hasan and Kane - 2010 - Colloquium Topological insulators.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/RevModPhys.82.3045
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/RevModPhys.82.3045
+      \endverb
+    \endentry
+    \entry{frolovDataSharingHelps2026}{article}{}
+      \name{author}{12}{}{%
+        {{hash=10f4e96a05ff408c09a2cb73d330494a}{%
+           family={Frolov},
+           familyi={F\bibinitperiod},
+           given={S.\bibnamedelimi M.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=c7cc964df728a70ad780d497f5485ea8}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=14fd6c4762d5113df9a2a4c45d09c456}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=0f60fb19d048e40c3e2510ca11e6fed2}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=c7d128790b9aa1cfb180503534627fb9}{%
+           family={Byard},
+           familyi={B\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=77e5027c72319566ff8f25caf3aeabfc}{%
+           family={Mudi},
+           familyi={M\bibinitperiod},
+           given={S.\bibnamedelimi R.},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=38241eaee18102cab15a125b0654c7da}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=07349b2d6e0c9eb182e02b20599074ac}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={A.-H.},
+           giveni={A\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=cbc638aee2b40f55dc22107df7b7d421}{%
+           family={Hocevar},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=244e8bf6232eb38e08fcdca8ec34bf28}{%
+           family={Gupta},
+           familyi={G\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d02460728e3a998ffb805a766c5d6b00}{%
+           family={Riggert},
+           familyi={R\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=290abe064bc6a774a36a60b6cd454b13}{%
+           family={Pribiag},
+           familyi={P\bibinitperiod},
+           given={V.\bibnamedelimi S.},
+           giveni={V\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Association for the Advancement of Science}%
+      }
+      \strng{namehash}{d8c4dec8288aa0c6fbe3f8787ad7f343}
+      \strng{fullhash}{19dfdd0fa4bbf4166b18f5c928b2e41a}
+      \strng{bibnamehash}{d8c4dec8288aa0c6fbe3f8787ad7f343}
+      \strng{authorbibnamehash}{d8c4dec8288aa0c6fbe3f8787ad7f343}
+      \strng{authornamehash}{d8c4dec8288aa0c6fbe3f8787ad7f343}
+      \strng{authorfullhash}{19dfdd0fa4bbf4166b18f5c928b2e41a}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Manipulating the topology of electronic bands can realize new states of matter, with possible implications for information technology. A central question is how to tell whether a topological regime has been achieved. Experiments are often guided by a prediction of a distinct and self-explanatory signal called “the smoking gun.” However, in micrometer- or nanometer-scale specimens, phenomenology can mimic the anticipated behavior without containing the exotic states. We show limited data that are consistent with the presence of four topological phenomena; by considering additional data, we identified the most likely origins of the observed patterns as trivial. We argue that the reliability of smoking gun–type claims can be greatly enhanced by releasing comprehensive datasets, discussing alternative scenarios, and disclosing the total volume of study.}
+      \field{day}{8}
+      \field{journaltitle}{Science}
+      \field{month}{1}
+      \field{number}{6781}
+      \field{title}{Data Sharing Helps Avoid “Smoking Gun” Claims of Topological Milestones}
+      \field{urlday}{24}
+      \field{urlmonth}{9}
+      \field{urlyear}{2026}
+      \field{volume}{391}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{137\bibrangedash 142}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1126/science.adk9181
+      \endverb
+      \verb{file}
+      \verb C:\Users\axlkl\Zotero\storage\VRFUYWBH\Frolov et al. - 2026 - Data sharing helps avoid “smoking gun” claims of topological milestones.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.science.org/doi/10.1126/science.adk9181
+      \endverb
+      \verb{url}
+      \verb https://www.science.org/doi/10.1126/science.adk9181
+      \endverb
+    \endentry
+    \entry{nayakNonAbelianAnyonsTopological2008}{article}{}
+      \name{author}{5}{}{%
+        {{hash=dd56b3b91c286d5829b2538b9863d017}{%
+           family={Nayak},
+           familyi={N\bibinitperiod},
+           given={Chetan},
+           giveni={C\bibinitperiod}}}%
+        {{hash=8129c2a9c928bf3c21cf74dd4cf4f79c}{%
+           family={Simon},
+           familyi={S\bibinitperiod},
+           given={Steven\bibnamedelima H.},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=35caeb62dec2a811e2bdb475824dfcba}{%
+           family={Stern},
+           familyi={S\bibinitperiod},
+           given={Ady},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2209635e71ebe540c155f110135f46be}{%
+           family={Freedman},
+           familyi={F\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e07a6db89e13158227f53a065505b411}{%
+           family={Sarma},
+           familyi={S\bibinitperiod},
+           given={Sankar\bibnamedelima Das},
+           giveni={S\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{92a7a96b72cf6ad0f62d43ce0e4e9f6b}
+      \strng{fullhash}{7972e289a83c1884fc290e55c436dc6a}
+      \strng{bibnamehash}{92a7a96b72cf6ad0f62d43ce0e4e9f6b}
+      \strng{authorbibnamehash}{92a7a96b72cf6ad0f62d43ce0e4e9f6b}
+      \strng{authornamehash}{92a7a96b72cf6ad0f62d43ce0e4e9f6b}
+      \strng{authorfullhash}{7972e289a83c1884fc290e55c436dc6a}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Topological quantum computation has recently emerged as one of the most exciting approaches to constructing a fault-tolerant quantum computer. The proposal relies on the existence of topological states of matter whose quasiparticle excitations are neither bosons nor fermions, but are particles known as \{\textbackslash it Non-Abelian anyons\}, meaning that they obey \{\textbackslash it non-Abelian braiding statistics\}. Quantum information is stored in states with multiple quasiparticles, which have a topological degeneracy. The unitary gate operations which are necessary for quantum computation are carried out by braiding quasiparticles, and then measuring the multi-quasiparticle states. The fault-tolerance of a topological quantum computer arises from the non-local encoding of the states of the quasiparticles, which makes them immune to errors caused by local perturbations. To date, the only such topological states thought to have been found in nature are fractional quantum Hall states, most prominently the ν=5/2 state, although several other prospective candidates have been proposed in systems as disparate as ultra-cold atoms in optical lattices and thin film superconductors. In this review article, we describe current research in this field, focusing on the general theoretical concepts of non-Abelian statistics as it relates to topological quantum computation, on understanding non-Abelian quantum Hall states, on proposed experiments to detect non-Abelian anyons, and on proposed architectures for a topological quantum computer. We address both the mathematical underpinnings of topological quantum computation and the physics of the subject using the ν=5/2 fractional quantum Hall state as the archetype of a non-Abelian topological state enabling fault-tolerant quantum computation.}
+      \field{day}{12}
+      \field{eprintclass}{cond-mat.str-el}
+      \field{eprinttype}{arXiv}
+      \field{issn}{0034-6861, 1539-0756}
+      \field{journaltitle}{Reviews of Modern Physics}
+      \field{month}{9}
+      \field{number}{3}
+      \field{shortjournal}{Rev. Mod. Phys.}
+      \field{title}{Non-{{Abelian Anyons}} and {{Topological Quantum Computation}}}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2026}
+      \field{volume}{80}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1083\bibrangedash 1159}
+      \range{pages}{77}
+      \verb{doi}
+      \verb 10.1103/RevModPhys.80.1083
+      \endverb
+      \verb{eprint}
+      \verb 0707.1889
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\axlkl\\Zotero\\storage\\Q6VIPKKY\\Nayak et al. - 2008 - Non-Abelian Anyons and Topological Quantum Computation.pdf;C\:\\Users\\axlkl\\Zotero\\storage\\6NRABDSS\\0707.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/0707.1889
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/0707.1889
+      \endverb
+      \keyw{Condensed Matter - Mesoscale and Nanoscale Physics,Condensed Matter - Strongly Correlated Electrons}
+    \endentry
+    \entry{groverFastQuantumMechanical1996}{online}{}
+      \name{author}{1}{}{%
+        {{hash=619ef89ee12058aba6b0df9b17b11ca3}{%
+           family={Grover},
+           familyi={G\bibinitperiod},
+           given={Lov\bibnamedelima K.},
+           giveni={L\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{619ef89ee12058aba6b0df9b17b11ca3}
+      \strng{fullhash}{619ef89ee12058aba6b0df9b17b11ca3}
+      \strng{bibnamehash}{619ef89ee12058aba6b0df9b17b11ca3}
+      \strng{authorbibnamehash}{619ef89ee12058aba6b0df9b17b11ca3}
+      \strng{authornamehash}{619ef89ee12058aba6b0df9b17b11ca3}
+      \strng{authorfullhash}{619ef89ee12058aba6b0df9b17b11ca3}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Imagine a phone directory containing N names arranged in completely random order. In order to find someone's phone number with a 50\% probability, any classical algorithm (whether deterministic or probabilistic) will need to look at a minimum of N/2 names. Quantum mechanical systems can be in a superposition of states and simultaneously examine multiple names. By properly adjusting the phases of various operations, successful computations reinforce each other while others interfere randomly. As a result, the desired phone number can be obtained in only O(sqrt(N)) steps. The algorithm is within a small constant factor of the fastest possible quantum mechanical algorithm.}
+      \field{day}{19}
+      \field{eprinttype}{arXiv}
+      \field{month}{11}
+      \field{pubstate}{prepublished}
+      \field{title}{A Fast Quantum Mechanical Algorithm for Database Search}
+      \field{urlday}{8}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{1996}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.quant-ph/9605043
+      \endverb
+      \verb{eprint}
+      \verb quant-ph/9605043
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\axlkl\\Zotero\\storage\\NXCWSVY4\\Grover - 1996 - A fast quantum mechanical algorithm for database search.pdf;C\:\\Users\\axlkl\\Zotero\\storage\\I778KQTZ\\9605043.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/quant-ph/9605043
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/quant-ph/9605043
+      \endverb
+      \keyw{Quantum Physics}
+    \endentry
+    \entry{shorPolynomialTimeAlgorithmsPrime}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=7082a9c99d5d51479d4cfba6bbac2d30}{%
+           family={Shor},
+           familyi={S\bibinitperiod},
+           given={Peter\bibnamedelima W.},
+           giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{fullhash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{bibnamehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{authorbibnamehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{authornamehash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \strng{authorfullhash}{7082a9c99d5d51479d4cfba6bbac2d30}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A digital computer is generally believed to be an efficient universal computing device; that is, it is believed able to simulate any physical computing device with an increase in computation time of at most a polynomial factor. This may not be true when quantum mechanics is taken into consideration. This paper considers factoring integers and finding discrete logarithms, two problems which are generally thought to be hard on a classical computer and have been used as the basis of several proposed cryptosystems. Efficient randomized algorithms are given for these two problems on a hypothetical quantum computer. These algorithms take a number of steps polynomial in the input size, e.g., the number of digits of the integer to be factored.}
+      \field{eprinttype}{arXiv}
+      \field{title}{Polynomial-{{Time Algorithms}} for {{Prime Factorization}} and {{Discrete Logarithms}} on a {{Quantum Computer}}}
+      \field{urlday}{8}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1137/S0097539795293172
+      \endverb
+      \verb{eprint}
+      \verb quant-ph/9508027
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\axlkl\\Zotero\\storage\\99GKY2TQ\\Shor - Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer.pdf;C\:\\Users\\axlkl\\Zotero\\storage\\KNBYXUF6\\9508027.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/quant-ph/9508027
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/quant-ph/9508027
+      \endverb
+      \keyw{Quantum Physics}
+    \endentry
+    \entry{feynmanSimulatingPhysicsComputers1982}{article}{}
+      \name{author}{1}{}{%
+        {{hash=aac54ccf9c76aa4ba4310ed1334be7d8}{%
+           family={Feynman},
+           familyi={F\bibinitperiod},
+           given={Richard\bibnamedelima P.},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{aac54ccf9c76aa4ba4310ed1334be7d8}
+      \strng{fullhash}{aac54ccf9c76aa4ba4310ed1334be7d8}
+      \strng{bibnamehash}{aac54ccf9c76aa4ba4310ed1334be7d8}
+      \strng{authorbibnamehash}{aac54ccf9c76aa4ba4310ed1334be7d8}
+      \strng{authornamehash}{aac54ccf9c76aa4ba4310ed1334be7d8}
+      \strng{authorfullhash}{aac54ccf9c76aa4ba4310ed1334be7d8}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{issn}{1572-9575}
+      \field{journaltitle}{International Journal of Theoretical Physics}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{6}
+      \field{shortjournal}{Int J Theor Phys}
+      \field{title}{Simulating Physics with Computers}
+      \field{urlday}{8}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{21}
+      \field{year}{1982}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{467\bibrangedash 488}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1007/BF02650179
+      \endverb
+      \verb{file}
+      \verb C:\Users\axlkl\Zotero\storage\EJ5M3ZVS\Feynman - 1982 - Simulating physics with computers.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/BF02650179
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/BF02650179
+      \endverb
+      \keyw{Calcite,Cellular Automaton,Quantum Mechanic,Quantum System,Wigner Function}
+    \endentry
+    \entry{aharonovFaultTolerantQuantumComputation1999}{online}{}
+      \name{author}{2}{}{%
+        {{hash=4000a75f6a9e7ba12838755d51937e22}{%
+           family={Aharonov},
+           familyi={A\bibinitperiod},
+           given={Dorit},
+           giveni={D\bibinitperiod}}}%
+        {{hash=41eb128ae71f8745a6089159ac4aaf4e}{%
+           family={Ben-Or},
+           familyi={B\bibinithyphendelim O\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{8970ec19a2792de36bb8d7c68c49c0ce}
+      \strng{fullhash}{8970ec19a2792de36bb8d7c68c49c0ce}
+      \strng{bibnamehash}{8970ec19a2792de36bb8d7c68c49c0ce}
+      \strng{authorbibnamehash}{8970ec19a2792de36bb8d7c68c49c0ce}
+      \strng{authornamehash}{8970ec19a2792de36bb8d7c68c49c0ce}
+      \strng{authorfullhash}{8970ec19a2792de36bb8d7c68c49c0ce}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper proves the threshold result, which asserts that quantum computation can be made robust against errors and inaccuracies, when the error rate, \$η\$, is smaller than a constant threshold, \$η\_c\$. The result holds for a very general, not necessarily probabilistic noise model, for quantum particles with any number of states, and is also generalized to one dimensional quantum computers with only nearest neighbor interactions. No measurements, or classical operations, are required during the quantum computation. The proceeding version was very succinct, and here we fill all the missing details, and elaborate on many parts of the proof. In particular, we devote a section for a discussion of universality issues and proofs that the sets of gates that we use are universal. Another section is devoted to a rigorous proof that fault tolerance can be achieved in the presence of general non probabilistic noise. The systematic structure of the fault tolerant procedures for polynomial codes is explained in length. The proof that the concatenation scheme works is written in a clearer way. The paper also contains new and significantly simpler proofs for most of the known results which we use. For example, we give a simple proof that it suffices to correct bit and phase flips, we significantly simplify Calderbank and Shor's original proof of the correctness of CSS codes. We also give a simple proof of the fact that two-qubit gates are universal. The paper thus provides a self contained and complete proof for universal fault tolerant quantum computation.}
+      \field{day}{30}
+      \field{eprinttype}{arXiv}
+      \field{month}{6}
+      \field{pubstate}{prepublished}
+      \field{title}{Fault-{{Tolerant Quantum Computation With Constant Error Rate}}}
+      \field{urlday}{8}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{1999}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.quant-ph/9906129
+      \endverb
+      \verb{eprint}
+      \verb quant-ph/9906129
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\axlkl\\Zotero\\storage\\XKFTKC75\\Aharonov and Ben-Or - 1999 - Fault-Tolerant Quantum Computation With Constant Error Rate.pdf;C\:\\Users\\axlkl\\Zotero\\storage\\46HPYDJ7\\9906129.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/quant-ph/9906129
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/quant-ph/9906129
+      \endverb
+      \keyw{Quantum Physics}
+    \endentry
     \entry{zotero-item-34}{misc}{}
       \name{author}{1}{}{%
         {{hash=e263e3c3f70989aca20797e29b79e307}{%
@@ -86,8 +670,8 @@
       \strng{authorbibnamehash}{e263e3c3f70989aca20797e29b79e307}
       \strng{authornamehash}{e263e3c3f70989aca20797e29b79e307}
       \strng{authorfullhash}{e263e3c3f70989aca20797e29b79e307}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Properties of Antisymmetric Matrices}
@@ -118,8 +702,8 @@
       \strng{authorbibnamehash}{46cbed27ebd2a2972ca82a8c5217c944}
       \strng{authornamehash}{46cbed27ebd2a2972ca82a8c5217c944}
       \strng{authorfullhash}{46cbed27ebd2a2972ca82a8c5217c944}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This is a colloquium-style introduction to the midgap excitations in superconductors known as Majorana fermions. These elusive particles, equal to their own antiparticle, may or may not exist in Nature as elementary building blocks, but in condensed matter they can be constructed out of electron and hole excitations. What is needed is a superconductor to hide the charge difference, and a topological (Berry) phase to eliminate the energy difference from zero-point motion. A pair of widely separated Majorana fermions, bound to magnetic or electrostatic defects, has non-Abelian exchange statistics. A qubit encoded in this Majorana pair is expected to have an unusually long coherence time. We discuss strategies to detect Majorana fermions in a topological superconductor, as well as possible applications in a quantum computer. The status of the experimental search is reviewed. Contents: I. What Are They? (Their origin in particle physics; Their emergence in superconductors; Their potential for quantum computing) II. How to Make Them (Shockley mechanism; Chiral p-wave superconductors; Topological insulators; Semiconductor heterostructures) III. How to Detect Them (Half-integer conductance quantization; Nonlocal tunneling; 4π-periodic Josephson effect; Thermal metal-insulator transition) IV. How to Use Them (Topological qubits; Read out; Braiding) V. Outlook on the Experimental Progress [scheduled for vol. 4 of Annual Review of Condensed Matter Physics]}
@@ -158,6 +742,65 @@
       \endverb
       \keyw{Condensed Matter - Mesoscale and Nanoscale Physics}
     \endentry
+    \entry{leijnseIntroductionTopologicalSuperconductivity2012}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d2b85c29f3de1b35b56c5d85bb89684c}{%
+           family={Leijnse},
+           familyi={L\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=533d63e82c5527c01b821ca32839ab68}{%
+           family={Flensberg},
+           familyi={F\bibinitperiod},
+           given={Karsten},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{f20e726625c11d076faeb8480928be2b}
+      \strng{fullhash}{f20e726625c11d076faeb8480928be2b}
+      \strng{bibnamehash}{f20e726625c11d076faeb8480928be2b}
+      \strng{authorbibnamehash}{f20e726625c11d076faeb8480928be2b}
+      \strng{authornamehash}{f20e726625c11d076faeb8480928be2b}
+      \strng{authorfullhash}{f20e726625c11d076faeb8480928be2b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This short review article provides a pedagogical introduction to the rapidly growing research field of Majorana fermions in topological superconductors. We first discuss in some details the simplest "toy model" in which Majoranas appear, namely a one-dimensional tight-binding representation of a p-wave superconductor, introduced more than ten years ago by Kitaev. We then give a general introduction to the remarkable properties of Majorana fermions in condensed matter systems, such as their intrinsically non-local nature and exotic exchange statistics, and explain why these quasiparticles are suspected to be especially well suited for low-decoherence quantum information processing. We also discuss the experimentally promising (and perhaps already successfully realized) possibility of creating topological superconductors using semiconductors with strong spin-orbit coupling, proximity-coupled to standard s-wave superconductors and exposed to a magnetic field. The goal is to provide an introduction to the subject for experimentalists or theorists who are new to the field, focusing on the aspects which are most important for understanding the basic physics. The text should be accessible for readers with a basic understanding of quantum mechanics and second quantization, and does not require knowledge of quantum field theory or topological states of matter.}
+      \field{day}{5}
+      \field{eprintclass}{cond-mat}
+      \field{eprinttype}{arXiv}
+      \field{issn}{0268-1242, 1361-6641}
+      \field{journaltitle}{Semiconductor Science and Technology}
+      \field{month}{12}
+      \field{number}{12}
+      \field{shortjournal}{Semicond. Sci. Technol.}
+      \field{title}{Introduction to Topological Superconductivity and {{Majorana}} Fermions}
+      \field{urlday}{29}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{volume}{27}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{124003}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/0268-1242/27/12/124003
+      \endverb
+      \verb{eprint}
+      \verb 1206.1736
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\axlkl\\Zotero\\storage\\8XIV3BKM\\Leijnse and Flensberg - 2012 - Introduction to topological superconductivity and Majorana fermions.pdf;C\:\\Users\\axlkl\\Zotero\\storage\\A7K6VKVZ\\1206.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1206.1736
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1206.1736
+      \endverb
+      \keyw{Condensed Matter - Mesoscale and Nanoscale Physics,Condensed Matter - Superconductivity,Quantum Physics}
+    \endentry
     \entry{aliceaNewDirectionsPursuit2012}{article}{}
       \name{author}{1}{}{%
         {{hash=6324a9f51bb50d2d158aef9f6ab76692}{%
@@ -172,8 +815,8 @@
       \strng{authorbibnamehash}{6324a9f51bb50d2d158aef9f6ab76692}
       \strng{authornamehash}{6324a9f51bb50d2d158aef9f6ab76692}
       \strng{authorfullhash}{6324a9f51bb50d2d158aef9f6ab76692}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The 1937 theoretical discovery of Majorana fermions--whose defining property is that they are their own anti-particles--has since impacted diverse problems ranging from neutrino physics and dark matter searches to the fractional quantum Hall effect and superconductivity. Despite this long history the unambiguous observation of Majorana fermions nevertheless remains an outstanding goal. This review article highlights recent advances in the condensed matter search for Majorana that have led many in the field to believe that this quest may soon bear fruit. We begin by introducing in some detail exotic `topological' one- and two-dimensional superconductors that support Majorana fermions at their boundaries and at vortices. We then turn to one of the key insights that arose during the past few years; namely, that it is possible to `engineer' such exotic superconductors in the laboratory by forming appropriate heterostructures with ordinary s-wave superconductors. Numerous proposals of this type are discussed, based on diverse materials such as topological insulators, conventional semiconductors, ferromagnetic metals, and many others. The all-important question of how one experimentally detects Majorana fermions in these setups is then addressed. We focus on three classes of measurements that provide smoking-gun Majorana signatures: tunneling, Josephson effects, and interferometry. Finally, we discuss the most remarkable properties of condensed matter Majorana fermions--the non-Abelian exchange statistics that they generate and their associated potential for quantum computation.}
@@ -226,8 +869,8 @@
       \strng{authorbibnamehash}{112f5110049774712644579c8af01639}
       \strng{authornamehash}{112f5110049774712644579c8af01639}
       \strng{authorfullhash}{112f5110049774712644579c8af01639}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{A self-contained treatment of the Bogoliubov-Valatin transformation for homogeneous fermionic Hamiltonians is presented. The aim is to provide a quick reference that may also serve as supplementary material for a graduate-level course, and that can be understood with quantum mechanics knowledge up to the level of the second quantization's rules. The objective of the transformation is to cast a quadratic Hamiltonian into a diagonal form that resembles the Hamiltonian of a system of non-interacting particles. To obtain this, the first step consists in putting its coefficient matrix into its canonical form; the transformation can always be performed on fermionic Hamiltonians, only some care must be taken when this form is singular. Having explained how to cast a general matrix into its standard form, a complete description of the transformation is provided; a novel procedure is proposed here for the singular matrix case.}
@@ -264,6 +907,127 @@
       \verb http://arxiv.org/abs/2512.12100
       \endverb
       \keyw{Condensed Matter - Other Condensed Matter,Quantum Physics}
+    \endentry
+    \entry{aliceaNonAbelianStatisticsTopological2011a}{article}{}
+      \name{author}{5}{}{%
+        {{hash=6324a9f51bb50d2d158aef9f6ab76692}{%
+           family={Alicea},
+           familyi={A\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4819830e10597ef59b97d51edfe9970f}{%
+           family={Oreg},
+           familyi={O\bibinitperiod},
+           given={Yuval},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=fb5a46fd4ed4b87a3d2d4d0739c01a5e}{%
+           family={Refael},
+           familyi={R\bibinitperiod},
+           given={Gil},
+           giveni={G\bibinitperiod}}}%
+        {{hash=467a3f70031d1a488cd12e8776a0f30c}{%
+           family={Von\bibnamedelima Oppen},
+           familyi={V\bibinitperiod\bibinitdelim O\bibinitperiod},
+           given={Felix},
+           giveni={F\bibinitperiod}}}%
+        {{hash=6517de415916ca590fd71a8824004392}{%
+           family={Fisher},
+           familyi={F\bibinitperiod},
+           given={Matthew\bibnamedelimb P.\bibnamedelimi A.},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{29b4219f55d783d4f8e5f0db9556bea6}
+      \strng{fullhash}{fa2c352080cee9bbc8f3cade381e5bc7}
+      \strng{bibnamehash}{29b4219f55d783d4f8e5f0db9556bea6}
+      \strng{authorbibnamehash}{29b4219f55d783d4f8e5f0db9556bea6}
+      \strng{authornamehash}{29b4219f55d783d4f8e5f0db9556bea6}
+      \strng{authorfullhash}{fa2c352080cee9bbc8f3cade381e5bc7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1745-2473, 1745-2481}
+      \field{journaltitle}{Nature Physics}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{5}
+      \field{shortjournal}{Nature Phys}
+      \field{title}{Non-{{Abelian}} Statistics and Topological Quantum Information Processing in {{1D}} Wire Networks}
+      \field{urlday}{29}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{volume}{7}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{412\bibrangedash 417}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1038/nphys1915
+      \endverb
+      \verb{file}
+      \verb C:\Users\axlkl\Zotero\storage\LCWDNGR8\Alicea et al. - 2011 - Non-Abelian statistics and topological quantum information processing in 1D wire networks.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/nphys1915
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/nphys1915
+      \endverb
+    \endentry
+    \entry{sahuNoisyBraidingMajorana2026}{online}{}
+      \name{author}{2}{}{%
+        {{hash=02fb197f710871034b07d614416670df}{%
+           family={Sahu},
+           familyi={S\bibinitperiod},
+           given={Dibyajyoti},
+           giveni={D\bibinitperiod}}}%
+        {{hash=582d0e9fdde735676a6ad228b0a504ab}{%
+           family={Gangadharaiah},
+           familyi={G\bibinitperiod},
+           given={Suhas},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{abc0f366460e55441bed7494ff9d6b1d}
+      \strng{fullhash}{abc0f366460e55441bed7494ff9d6b1d}
+      \strng{bibnamehash}{abc0f366460e55441bed7494ff9d6b1d}
+      \strng{authorbibnamehash}{abc0f366460e55441bed7494ff9d6b1d}
+      \strng{authornamehash}{abc0f366460e55441bed7494ff9d6b1d}
+      \strng{authorfullhash}{abc0f366460e55441bed7494ff9d6b1d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Majorana zero modes have emerged as one of the most promising platforms for topological quantum computation, since their non-Abelian braiding statistics allow quantum information to be encoded nonlocally and manipulated through braiding operations that are, in principle, protected against local perturbations. In practice, however, a braid is only as robust as its physical implementation: finite-time operation, residual couplings, and environmental noise can all convert local excitations into logical errors during the exchange process. Here, we address this question through a microscopic comparison of two representative braiding architectures, a nanowire trijunction and a quantum-dot-assisted setup, simulating the full time-dependent Bogoliubov--de Gennes dynamics under both noiseless and noisy conditions. We show that the dot-assisted architecture consistently achieves a lower error over a shorter timescale than the trijunction, owing to its more localized exchange mechanism. This advantage persists in the presence of noise, and a spatially resolved analysis further reveals that, in the dot-assisted geometry, fast noise localized on the dot produces a smaller error than equivalent noise on the wires, whereas slow, quasi-static noise on the dot becomes the dominant limitation. Taken together, these findings link the different error contributions directly to device geometry, pointing to concrete design principles for noise-resilient Majorana-based quantum gates.}
+      \field{day}{11}
+      \field{hour}{1}
+      \field{minute}{42}
+      \field{month}{8}
+      \field{pubstate}{prepublished}
+      \field{second}{55}
+      \field{shorttitle}{Noisy {{Braiding}} of {{Majorana Modes}}}
+      \field{timezone}{Z}
+      \field{title}{Noisy {{Braiding}} of {{Majorana Modes}}: {{A Comparison}} of {{Nanowire Trijunction}} and {{Quantum-Dot-Assisted Architectures}}}
+      \field{urlday}{19}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{version}{1}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/ARXIV.2608.09416
+      \endverb
+      \verb{file}
+      \verb C:\Users\axlkl\Zotero\storage\SCWLCPK5\Sahu and Gangadharaiah - 2026 - Noisy Braiding of Majorana Modes A Comparison of Nanowire Trijunction and Quantum-Dot-Assisted Arch.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2608.09416
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2608.09416
+      \endverb
+      \keyw{FOS: Physical sciences,Mesoscale and Nanoscale Physics (cond-mat.mes-hall),Other Condensed Matter (cond-mat.other)}
     \endentry
   \enddatalist
 \endrefsection

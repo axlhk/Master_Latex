@@ -1,9 +1,12 @@
 \chapter{Quantum computation} \label{chap:Quantum_computation}
 The main idea for using Majorana fermions for quantum computation is through a process called braiding. In this process the Majoranas are spatially rotated around eachother, producing a difference in phase. In 1D this is however hard to do: If two Majoranas meet, they simply combine into a normal fermion, allowing the stored information to decohere. Several methods are being discussed to overcome this obstacle, and we will closer study especially one of them; the T-junction. In this junction we will show that one can perform the Pauli X and Z gates (and therefore also Y) but we still need an extra gate, not provided by topologically protected operations, in order to create a general quantum computer.
 
+"A topological quantum computer is constructed using a system in a non-Abelian topological phase. A computation is
+performed by creating quasiparticles, braiding them, and measuring their final state. " \cite{nayakNonAbelianAnyonsTopological2008}
+
 \section{Logical qubits from Majorana modes}
 
-\subsection{Degenerate ground states}
+\subsection{Degenerate ground states} \label{subsec:Degenerate_ground_states}
 Recalling the previously discussed Kitaev chain Hamiltonian, and the following definition using the Majorana operators $c_{m}$ with properties 
 \begin{align}
     d_j &= \frac{1}{2} \left(c_{2j} + i c_{2j+1} \right) \\
@@ -17,6 +20,9 @@ We recall that in the trivial phase, Majoranas on all sites pair up into ordinar
     f_{ij}^2 &= \left(f_{ij}^\dagger\right)^2 = 0
 \end{align}
 These correspond to zero-energy modes, and can give rise to $2^M$ degenerate ground states which can be labeled by occupation numbers $n_j = f_j^\dagger f_j = 0, 1$. 
+
+The MZMs need to remain degenerate throughout the operation otherwise they will lose information
+(? - ref. Joakim viste noe med en energi avhengig fase for majoranaene $|0_L\rangle = e^{\phi_1(E_1)}|\gamma_1\rangle + e^{\phi_2(E_2)}|\gamma_2\rangle $) 
 
 \subsection{Logical basis states}
 \subsubsection{Four Majoranas - a proper qubit}
@@ -47,6 +53,12 @@ Overlap decays as exp(-L / xi)
 
 
 \section{Braiding and non-abelian statistics (exchange of Majoranas)}
+
+nu = 5/2 Qubits and Gates P.52 \cite{nayakNonAbelianAnyonsTopological2008}
+- Finn koblingen nu=5/2 til Kitaev chain.
+
+\subsection{Non-abelian anyons}
+Leinaas
 
 \subsection{General result}
 Berry phase
@@ -89,17 +101,27 @@ The T-junction is a proposed architecture for allowing braiding with a 1D Kitaev
     \caption{}
     \label{fig:T_junction}
 \end{figure}
+This figure should contain a numbering of the sites and bonds as the code uses them; starting at 0 on the central site and counting outwards, starting with the left arm, then the right, then the bottom.
 
-
-\subsubsection{Exchange of two Majoranas}
+\subsubsection{Exchange of two Majoranas} \label{subsubsec:Exchange_of_two_Majoranas}
 Pali x y z gates
 
 Double switches = rotations? (Drawing from meeting with Joakim)
+
+\begin{figure}
+    \centering
+    % \includegraphics{T-junction}
+    \caption{}
+    \label{fig:Pauli-X_gate}
+\end{figure}
 
 \subsubsection{Network of wires}
 
 \subsubsection{Josephson currents}
 Ex. effect on the Pauli-X gate
+
+\subsubsection{Smallest T-junction}
+Proving that one actually only needs $N = 7$ (or $L$ = 5) to have 4 MZMs (Eivind said this was possible).
 
 \subsection{Quantum dots}
 

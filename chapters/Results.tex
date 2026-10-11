@@ -3,12 +3,10 @@ Eivind the GOAT
 
 What do plots in the adiabatic basis actually tell us?
 
-\section{Splitting the chain}
-
+\section{Splitting the chain and moving MZMs}
 
 \subsection{Replicating results}
 A previous masters student also did this. Boom i replicated his results life is good
-
 
 % eivind cut means that it's not the central bond thats cut, but rather one out to the side. This matches Eivinds new code. 
 
@@ -41,7 +39,7 @@ A previous masters student also did this. Boom i replicated his results life is 
 %     \label{fig:5}
 % \end{figure}
 
-Adiabatic evolution produces correct adiabatic basis coefficients for just low truncation (trunc = 10) and high dt (dt = 0.1). But the energy spectrum is completely off.
+% Adiabatic evolution produces correct adiabatic basis coefficients for just low truncation (trunc = 10) and high dt (dt = 0.1). But the energy spectrum is completely off.
 
 
 
@@ -57,65 +55,99 @@ Do trunc = 4, 10, 150, 250?
     \caption{The 4 lowest energy states from the time evolution $(T=20)$ of a single chain of $N=10$ sites truncated to the 150 lowest energy states.}
     \label{}
 \end{figure}
+1
+
+1
+
+1
+
+1
+
+1
+
 
 \subsubsection{Direct diagonalization vs. truncation}
 
+\subsection{Moving MZMs along the chain} \label{subsec:Moving_MZMs_along_the_chain}
+Checking that moving is not problematic
+- Use same times as used in T-junction already
 
 \section{T-junction}
 I need a supercomputer :/
 
+\subsection{Moving around intersection} \label{subsec:Moving_around_intersections}
+Josepshon current issues 
+
 \subsection{Pauli-X gate}
-Function used following \cite{sahuNoisyBraidingMajorana2026} when exchanging Majoranas 2 and 3 in the Pauli-X gate as seen in their Fig 1C illustrations 2 and 3 (Burde lage min egen figur - hvordan gjør jeg det pent?). We use $\mu_n(\tau)$ from their appendix, where we used the helper function $r(\tau)$.
+As previously discussed \ref{subsubsec:Exchange_of_two_Majoranas}, the Pauli-X gate is incorporated by exchanging MZMs 2 and 3 as seen in Figure \ref{fig:Pauli-X_gate}. From previous results \ref{subsec:Moving_MZMs_along_the_chain} we know that moving the MZMs along a chain by a time-dependent chemical potential $\mu(\tau)$ is unproblematic as long as $\mu$ is changed slowly enough. And moving them through the intersection is unproblematic as long as the superconducting term $\Delta$ has the appropriate sign to avoid problems with the Josepshon current \ref{subsec:Moving_around_intersections}. Therefore, from a simulation standpoint, the only interesting part left of the Pauli-X gate operation is the central operation where MZMs 2 and 3 are switched through the central site. To simulate this we will be using $N = 10$ sites, and unless stated otherwise we will be using a truncation $\text{trunc} = 150$ and timestep $d\tau = 10^{-3}$. We follow the parameters used \cite{sahuNoisyBraidingMajorana2026}: Keeping the hopping term $\omega = 1$ and superconducting term $|\Delta| = 1$ constant, while moving the MZMs around by a time-dependent chemical potential 
+\begin{align}
+  \mu_n(\tau) &= \mu_\text{triv} + \left(\mu_\text{topo} - \mu_\text{triv} \right) r(\tau), \\
+\end{align}
+defined by a helper function \footnote{This is not exactly the definition \cite{sahuNoisyBraidingMajorana2026} used; their calling of $r(\tau)$ also allows for a spatially staggered site-by-site ramp using a parameter $\alpha$. This is however only of use when $N > 10$ as for $N=10$ we only ramp 1 site on each arm.}. 
 \begin{align}
   r(\tau) = \left\{
   \begin{aligned}
     & 0 & \tau \leq 0 \\
     & \tau^2 (3 - 2 \tau)  & 0 < \tau < 1\\
     & 1 & \tau \geq 1
-  \end{aligned} 
-\right.
+  \end{aligned} \label{eq:r(tau)_Pauli_x}
+  \right. .
 \end{align}
-Together with their time-dependent definition\footnote{This is not exactly the definition \cite{sahuNoisyBraidingMajorana2026} used; their calling of $r(\tau)$ also allows for a spatially staggered site-by-site ramp using a parameter $\alpha$. This is however only of use when $N > 10$ as for $N=10$ we only ramp 1 site on each arm.}
+Giving 
 \begin{align}
-  \mu_n(\tau) &= \mu_\text{triv} + \left(\mu_\text{topo} - \mu_\text{triv} \right) r(\tau) \\
-    \to \mu_n(\tau) &= \left\{
+  \to \mu_n(\tau) &= \left\{
   \begin{aligned}
     & \mu_\text{triv}  & \tau \leq 0 \\
-    & \mu_\text{triv} + \left( \mu_\text{topo} - \mu_\text{triv} \right) r(\tau)  & 0 < \tau < 1\\
+    & \mu_\text{triv} + \left( \mu_\text{topo} - \mu_\text{triv} \right) \tau^2 (3 - 2 \tau)  & 0 < \tau < 1\\
     & \mu_\text{topo} & \tau \geq 1.
-  \end{aligned}
-\right.
-    \label{eq:mu_from_sahuNoisyBraiding}
+  \end{aligned} 
+\right. \label{eq:mu(tau)_Pauli_x}
 \end{align}
-We here wish to check that the Pauli-x operation is realistic. Using the same parameters for $\mu_n$ as shown in \cite{sahuNoisyBraidingMajorana2026} we get Figure\ref{fig:Pauli_x_gate_1_negative_delta}, \ref{fig:Pauli_x_gate_params_1_negative_delta}. We here see that we get the expected four-fold degeneration of the ground state, and there is no energy splitting of the ground state during the time evolution. This means that the information stored in the Majoranas is protected during the operation as there is no disproportionate change in phase.(? - ref. Joakim viste noe med en energi avhengig fase for majoranaene $|0_L\rangle = e^{\phi_1(E_1)}|\gamma_1\rangle + e^{\phi_2(E_2)}|\gamma_2\rangle $) 
+Where $\mu_\text{triv} = 8, \mu_\text{topo} = 0.05$. These values allow us to perform our desired simulations, and also allow us to cross-check with their findings if relevant.
 
-When using the same $\mu_n$, but using $\Delta = 1$ for the whole chain we get $8$ degeneracies of the ground state, which is unexpected. Although they also remain degenerate throughout the time evolution this is unexpected as it means there are 8 majorana zero modes for two topological chains. We believe this is due to Josephson currents effectivelly cutting the T-junction into separate chains at the central site(? - Noe å ta tak i når jeg har lest på Josephson currents)
-
-In light of the unexpected results of the degenerations mentioned above we check the energy spectrum of the chain when the whole T-chain is in the topological phase, using $ = |\Delta| = 1, \mu = 0.05$, where we use the appropriate signs for $\Delta$ on each arm as discussed above. We get figure \ref{fig:T_chain_gs_fully_topo}. Here we have a four-fold degeneracy of the lowest energy state with energies $0.00000000e+00 8.49631476e-12 3.12304686e-05 3.12304774e-05$. When attempting $\Delta = 1$ for the whole chain i get completely wrong results, $|a_0|^2 \approx 60. E_0 = 0, E_\text{all other} = -1$.
-
-\begin{figure}
-  \includegraphics[width = \linewidth]{Constant_coeffs_T_chain_Adiabatic_precomputed_Kitaev_RK4_N=10.pdf}
-  \caption{Initial ground state coefficient and energy spectrum for the fully topological T-chain where the bottom arm has negative $\Delta$.}
-  \label{fig:T_chain_gs_fully_topo}
-\end{figure}
-
-If we observe an energy splitting we expect the stored information to vanish and as such we wish to test how the Majorana zero modes respond to a different time evolution of the operation. As such we use $\omega = |\Delta| = 1$ (again as above), with $\{\mu_\text{triv}, \mu_\text{topo}\} = \{0.05, 5, 0.1, 8\}$ idk think of something clever. 
-
-
-\begin{figure}
-    \centering
-    \includegraphics[width = \linewidth]{_negative_delta_nr_states=150T_chain_switch_a_t_reduced_20_1.0_2.0_0.5_Adiabatic_precomputed_Kitaev_RK4_N=10_dt=0.001.pdf}
-    \caption{Probability of the adiabatic basis and the energy levels (subtracted the ground state) for time evolution of the switching of Majoranas 2 and 3 as shown in fig.1c \cite{sahuNoisyBraidingMajorana2026} illustrations 2 and 3. Using $N = 10$, truncation $= 150$, $T=20$, and the parameters of the Hamiltonian as shown in Figure \ref{fig:Pauli_x_gate_params_1_negative_delta}. The ground state energy is four-fold degenerate.}
-    \label{fig:Pauli_x_gate_1_negative_delta}
-\end{figure}
+The parameters of this simulation are visualized in Figure \ref{fig:Pauli_x_gate_params_1_negative_delta}. The site and bond index follow Figure \ref{fig:T_junction}. This shows a constant hopping parameter and superconducting term, with the superconducting term being negative on the vertical arm. The interesting part of the figure is $\mu(j, \tau)$, showing how the central site is always in the non-trivial phase. While the first site on the left arm slowly goes from the non-trivial to the trivial phase, and the first site on the right arm the does opposite.
 
 \begin{figure}
     \centering
     \includegraphics[width = \linewidth]{Revrse_delta_lowr_arm_T_omega_delta_mu_heatmap_T_chain_switch_2_1.0_2.0_0.5_Adiabatic_precomputed_Kitaev_RK4_10_0.001_sparse.pdf}
-    \caption{Time dependencies of the parameters for time evolution of the switching of Majoranas 2 and 3 as shown in fig.1c \cite{sahuNoisyBraidingMajorana2026} illustrations 2 and 3. Used in creating Figure \ref{fig:Pauli_x_gate_params_1_negative_delta}. The whole T-junction has $\omega = 1$. Arms 0 and 1 (or the horizontal chain if you will) have $\Delta = 1$, whereas the vertical chain has $\Delta = -1$. $\mu$ is defined by \ref{eq:mu_from_sahuNoisyBraiding} using $\mu_\text{triv} = 8$, $\mu_\text{topo} = 0.05$.}
+    \caption{Time dependent parameters for time evolution of the switching of Majoranas 2 and 3 as shown in Figure \ref{fig:Pauli-X_gate}. The whole T-junction has $\omega = 1$. The horizontal arms have $\Delta = 1$, whereas the vertical arm has $\Delta = -1$. $\mu$ is defined by equation \ref{eq:mu(tau)_Pauli_x}, using $\mu_\text{triv} = 8$, $\mu_\text{topo} = 0.05$.}
     \label{fig:Pauli_x_gate_params_1_negative_delta}
 \end{figure}
 
+Our theoretical understanding of the appropriate sign for $\Delta$ to avoid problems with the Josepshon current was only earned after initial testing with the code. Initially we used $\Delta = 1$ for the whole T-junction, and we will therefore also be discussing these results. 
+
+\subsubsection{Equal sign on the superconducting term for the whole T-junction}
+When using $\Delta = 1$ for the whole chain we get $8$ degeneracies of the ground state, which is unexpected. Although these $8$ states remain degenerate throughout the time evolution this is unexpected as it means there are $8$ MZMs for two topological chains. We believe this is due to Josephson currents effectively cutting the T-junction into separate chains at the central site.
+
+In light of the unexpected results of the degenerations mentioned above we check the energy spectrum of the chain when the whole T-chain is in the topological phase $\mu = \mu_\text{topo}$. When attempting $\Delta = 1$ for the whole chain we get an unnormalized ground state probability $|a_0|^2 \approx 60$, and $E_0 = 0, E_\text{all other} = -1$. This is very much unphysical, and is evidence something is horribly wrong. This result was made with a high truncation $\text{trunc} = 500$, as this is only the first timestep of the simulation, and is as such much less computationally expensive to produce. Further, a high truncation provides a lot more detailed picture of the energy spectrum \footnote{In hindsight we probably should've kept $\text{trunc} = 150$ for consistency, and $\text{trunc} = 500$ being unnecessarily high. Using $\text{trunc} = 150$ is however highly unlikely to change the conclusion and as such we've kept these results.}.
+
+\subsubsection{Appropriate superconducting term}
+When however using an appropriate superconducting term $\Delta = 1$ for the horizontal arms, and $\Delta = -1$ for the vertical arm, again with $\mu = \mu_\text{topo}$, we get the energy spectrum as shown in Figure \ref{fig:T_chain_gs_fully_topo}. Here we have a four-fold degeneracy of the lowest energy state with energies $E = 0, 8.496 \cdot 10^{-12}, 3.123 \cdot 10^{-5}, 3.123 \cdot 10^{-5}$. This is as expected, and points to the simulation producing physical results for the parameters given.
+\begin{figure}
+  \includegraphics[width = \linewidth]{Constant_coeffs_T_chain_delta_same_Adiabatic_precomputed_Kitaev_RK4_N=10.pdf}
+  \caption{Initial ground state coefficient and energy spectrum for the fully topological T-chain for the appropriate superconducting term where the vertical arm has $\Delta = -1$, and the horizontal arms have $\Delta = 1$.}
+  \label{fig:T_chain_gs_fully_topo}
+\end{figure}
+
+Running the full time-dependent simulation with the appropriate superconducting term we get Figure \ref{fig:Pauli_x_gate_1_negative_delta}. We here see that we get the expected four-fold degeneration of the ground state, and there is no energy splitting of the ground state during the time evolution. The energy also forms energy bands which are symmetrical about $\tau = 0.5$, which is expected as the Hamiltonian returns to its original form as $\tau \to 1$. For higher energy states we observe discontuity. We believe this to be a numerical error which is mostly only problematic during visualization. The energy bands typically consist of degenerate energy levels which are difficult to keep track of numerically as the system evolves and we find new energy levels at each time step. Further we can see that the system starts in the ground state in the adiabatic basis, before ending with nearly all probability split between the first and the third state, with a near $0\%$ probability of finding the system in any other state. 
+
+% This means that the information stored in the Majoranas is protected during the operation as there is no disproportionate change in phase \ref{subsec:Degenerate_ground_states}. 
+
+% And, as we have seen, accurately simulating the Kitaev chain is still computationally demanding even when using the adiabatic approximation.  Therefore we will only be simulating this central switch using $N = 10$. 
+
+% We move the MZMs around by using the chemical potential and a helper function as used in \cite{sahuNoisyBraidingMajorana2026}
+% Function used following \cite{sahuNoisyBraidingMajorana2026} when exchanging Majoranas 2 and 3 in the Pauli-X gate as seen in their Fig 1C illustrations 2 and 3 (Burde lage min egen figur - hvordan gjør jeg det pent?). We use $\mu_n(\tau)$ from their appendix, where we used the helper function $r(\tau)$.
+
+% We here wish to check that the Pauli-X gate operation is realistic.
+
+\begin{figure}
+    \centering
+    \includegraphics[width = \linewidth]{_negative_delta_150T_chain_switch_a_t_reduced_20_1.0_2.0_0.5_Adiabatic_precomputed_Kitaev_RK4_N=10_dt=0.001.pdf}
+    \caption{Probability of the adiabatic basis and the energy levels (subtracted the ground state) for time evolution of the switching of Majoranas 2 and 3 in the central operation of the Pauli-X gate. Using $N = 10$, showing all $\text{trunc} = 150$ states, using $T=20$, and the appropriate parameters $\omega = 1 |\Delta| = 1$ with $\mu(j, \tau)$ as in equation \ref{eq:r(tau)_Pauli_x}. The parameters are visualized in Figure \ref{fig:Pauli_x_gate_params_1_negative_delta}. The ground state energy is four-fold degenerate.}
+    \label{fig:Pauli_x_gate_1_negative_delta}
+\end{figure}
+
+If we observe an energy splitting we expect the stored information to vanish and as such we wish to test how the Majorana zero modes respond to a different time evolution of the operation. As such we use $\omega = |\Delta| = 1$ (again as above), with $\{\mu_\text{triv}, \mu_\text{topo}\} = \left\{ \{0.05, 5\}, \{0.1, 8\} \right\}$... ... ...
 
 \subsection{Pauli Z-gate}
 Exchange 1 and 2 (or 3 and 4)
