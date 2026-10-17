@@ -688,60 +688,6 @@
       \verb https://scipp-legacy.pbsci.ucsc.edu/~haber/ph218/pfaffian15.pdf
       \endverb
     \endentry
-    \entry{beenakkerSearchMajoranaFermions2013}{article}{}
-      \name{author}{1}{}{%
-        {{hash=46cbed27ebd2a2972ca82a8c5217c944}{%
-           family={Beenakker},
-           familyi={B\bibinitperiod},
-           given={C.\bibnamedelimi W.\bibnamedelimi J.},
-           giveni={C\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-      }
-      \strng{namehash}{46cbed27ebd2a2972ca82a8c5217c944}
-      \strng{fullhash}{46cbed27ebd2a2972ca82a8c5217c944}
-      \strng{bibnamehash}{46cbed27ebd2a2972ca82a8c5217c944}
-      \strng{authorbibnamehash}{46cbed27ebd2a2972ca82a8c5217c944}
-      \strng{authornamehash}{46cbed27ebd2a2972ca82a8c5217c944}
-      \strng{authorfullhash}{46cbed27ebd2a2972ca82a8c5217c944}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{This is a colloquium-style introduction to the midgap excitations in superconductors known as Majorana fermions. These elusive particles, equal to their own antiparticle, may or may not exist in Nature as elementary building blocks, but in condensed matter they can be constructed out of electron and hole excitations. What is needed is a superconductor to hide the charge difference, and a topological (Berry) phase to eliminate the energy difference from zero-point motion. A pair of widely separated Majorana fermions, bound to magnetic or electrostatic defects, has non-Abelian exchange statistics. A qubit encoded in this Majorana pair is expected to have an unusually long coherence time. We discuss strategies to detect Majorana fermions in a topological superconductor, as well as possible applications in a quantum computer. The status of the experimental search is reviewed. Contents: I. What Are They? (Their origin in particle physics; Their emergence in superconductors; Their potential for quantum computing) II. How to Make Them (Shockley mechanism; Chiral p-wave superconductors; Topological insulators; Semiconductor heterostructures) III. How to Detect Them (Half-integer conductance quantization; Nonlocal tunneling; 4π-periodic Josephson effect; Thermal metal-insulator transition) IV. How to Use Them (Topological qubits; Read out; Braiding) V. Outlook on the Experimental Progress [scheduled for vol. 4 of Annual Review of Condensed Matter Physics]}
-      \field{day}{1}
-      \field{eprintclass}{cond-mat.mes-hall}
-      \field{eprinttype}{arXiv}
-      \field{issn}{1947-5454, 1947-5462}
-      \field{journaltitle}{Annual Review of Condensed Matter Physics}
-      \field{month}{4}
-      \field{number}{1}
-      \field{shortjournal}{Annu. Rev. Condens. Matter Phys.}
-      \field{title}{Search for {{Majorana}} Fermions in Superconductors}
-      \field{urlday}{20}
-      \field{urlmonth}{9}
-      \field{urlyear}{2026}
-      \field{volume}{4}
-      \field{year}{2013}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{113\bibrangedash 136}
-      \range{pages}{24}
-      \verb{doi}
-      \verb 10.1146/annurev-conmatphys-030212-184337
-      \endverb
-      \verb{eprint}
-      \verb 1112.1950
-      \endverb
-      \verb{file}
-      \verb C\:\\Users\\axlkl\\Zotero\\storage\\CVI3BP9W\\Beenakker - 2013 - Search for Majorana fermions in superconductors.pdf;C\:\\Users\\axlkl\\Zotero\\storage\\I8AIYKK9\\1112.html
-      \endverb
-      \verb{urlraw}
-      \verb http://arxiv.org/abs/1112.1950
-      \endverb
-      \verb{url}
-      \verb http://arxiv.org/abs/1112.1950
-      \endverb
-      \keyw{Condensed Matter - Mesoscale and Nanoscale Physics}
-    \endentry
     \entry{leijnseIntroductionTopologicalSuperconductivity2012}{article}{}
       \name{author}{2}{}{%
         {{hash=d2b85c29f3de1b35b56c5d85bb89684c}{%
@@ -800,6 +746,60 @@
       \verb http://arxiv.org/abs/1206.1736
       \endverb
       \keyw{Condensed Matter - Mesoscale and Nanoscale Physics,Condensed Matter - Superconductivity,Quantum Physics}
+    \endentry
+    \entry{beenakkerSearchMajoranaFermions2013}{article}{}
+      \name{author}{1}{}{%
+        {{hash=46cbed27ebd2a2972ca82a8c5217c944}{%
+           family={Beenakker},
+           familyi={B\bibinitperiod},
+           given={C.\bibnamedelimi W.\bibnamedelimi J.},
+           giveni={C\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{46cbed27ebd2a2972ca82a8c5217c944}
+      \strng{fullhash}{46cbed27ebd2a2972ca82a8c5217c944}
+      \strng{bibnamehash}{46cbed27ebd2a2972ca82a8c5217c944}
+      \strng{authorbibnamehash}{46cbed27ebd2a2972ca82a8c5217c944}
+      \strng{authornamehash}{46cbed27ebd2a2972ca82a8c5217c944}
+      \strng{authorfullhash}{46cbed27ebd2a2972ca82a8c5217c944}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This is a colloquium-style introduction to the midgap excitations in superconductors known as Majorana fermions. These elusive particles, equal to their own antiparticle, may or may not exist in Nature as elementary building blocks, but in condensed matter they can be constructed out of electron and hole excitations. What is needed is a superconductor to hide the charge difference, and a topological (Berry) phase to eliminate the energy difference from zero-point motion. A pair of widely separated Majorana fermions, bound to magnetic or electrostatic defects, has non-Abelian exchange statistics. A qubit encoded in this Majorana pair is expected to have an unusually long coherence time. We discuss strategies to detect Majorana fermions in a topological superconductor, as well as possible applications in a quantum computer. The status of the experimental search is reviewed. Contents: I. What Are They? (Their origin in particle physics; Their emergence in superconductors; Their potential for quantum computing) II. How to Make Them (Shockley mechanism; Chiral p-wave superconductors; Topological insulators; Semiconductor heterostructures) III. How to Detect Them (Half-integer conductance quantization; Nonlocal tunneling; 4π-periodic Josephson effect; Thermal metal-insulator transition) IV. How to Use Them (Topological qubits; Read out; Braiding) V. Outlook on the Experimental Progress [scheduled for vol. 4 of Annual Review of Condensed Matter Physics]}
+      \field{day}{1}
+      \field{eprintclass}{cond-mat.mes-hall}
+      \field{eprinttype}{arXiv}
+      \field{issn}{1947-5454, 1947-5462}
+      \field{journaltitle}{Annual Review of Condensed Matter Physics}
+      \field{month}{4}
+      \field{number}{1}
+      \field{shortjournal}{Annu. Rev. Condens. Matter Phys.}
+      \field{title}{Search for {{Majorana}} Fermions in Superconductors}
+      \field{urlday}{20}
+      \field{urlmonth}{9}
+      \field{urlyear}{2026}
+      \field{volume}{4}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{113\bibrangedash 136}
+      \range{pages}{24}
+      \verb{doi}
+      \verb 10.1146/annurev-conmatphys-030212-184337
+      \endverb
+      \verb{eprint}
+      \verb 1112.1950
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\axlkl\\Zotero\\storage\\CVI3BP9W\\Beenakker - 2013 - Search for Majorana fermions in superconductors.pdf;C\:\\Users\\axlkl\\Zotero\\storage\\I8AIYKK9\\1112.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1112.1950
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1112.1950
+      \endverb
+      \keyw{Condensed Matter - Mesoscale and Nanoscale Physics}
     \endentry
     \entry{aliceaNewDirectionsPursuit2012}{article}{}
       \name{author}{1}{}{%
@@ -869,8 +869,8 @@
       \strng{authorbibnamehash}{112f5110049774712644579c8af01639}
       \strng{authornamehash}{112f5110049774712644579c8af01639}
       \strng{authorfullhash}{112f5110049774712644579c8af01639}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{A self-contained treatment of the Bogoliubov-Valatin transformation for homogeneous fermionic Hamiltonians is presented. The aim is to provide a quick reference that may also serve as supplementary material for a graduate-level course, and that can be understood with quantum mechanics knowledge up to the level of the second quantization's rules. The objective of the transformation is to cast a quadratic Hamiltonian into a diagonal form that resembles the Hamiltonian of a system of non-interacting particles. To obtain this, the first step consists in putting its coefficient matrix into its canonical form; the transformation can always be performed on fermionic Hamiltonians, only some care must be taken when this form is singular. Having explained how to cast a general matrix into its standard form, a complete description of the transformation is provided; a novel procedure is proposed here for the singular matrix case.}

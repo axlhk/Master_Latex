@@ -62,7 +62,7 @@ The two cases above can be thought of by a common intuitive picture of a chain o
 We can now define new annihilation and creation operators spanning the sites $j$ and $j+1$
 \begin{align}
     d_j &= \frac{1}{2} \left(c_{2j} + i c_{2j+1} \right) \\
-    d_j^\dagger &= \frac{1}{2} \left(c_{2j} - i c_{2j+1} \right).
+    d_j^\dagger &= \frac{1}{2} \left(c_{2j} - i c_{2j+1} \right). \label{eq:define_dj}
 \end{align}
 Such that we can rewrite the Hamiltonian 
 \begin{align}
@@ -146,17 +146,37 @@ The key take-away here is that the Kitaev chain Hamiltonian, due to being quadra
 \subsection{Properties of Majorana fermion quasiparticles}
 Let us take a minute to think about what a Majorana fermion quasiparticle really is. As the previous subsection also started by stating, a majorana fermion is a particle that is its own antiparticle. In other words, it obeys
 \begin{align}
-    c = c^\dagger.
+    c = c^\dagger. \label{eq:MF_Hermiticity}
 \end{align}
-At first glance\footnote{In fact, 6 months of first glances for some} it might appear to be a fairly tame statement. This is however an incredibly exciting statement which gives the Majorana fermions interesting properties. This equation essentially enforces that applying a majorana fermion annihilation operator is equivalent to applying a creation operator: removing a majorana fermion is identical to creating one. 
+At first glance\footnote{In fact, 6 months of first glances for some} it might appear to be a fairly tame statement. This is however a rather weird statement which gives the Majorana fermions interesting properties. This equation essentially enforces that applying a majorana fermion annihilation operator is equivalent to applying a creation operator: removing a majorana fermion is mathematically identical to creating one. 
 
-This completely changes how we need to think about the Majorana fermion compared to a normal fermion. For a normal fermion, when they are brought close, the Pauli principle sets in. 
+This completely changes how we need to think about the Majorana fermion compared to a Dirac fermion. For Dirac fermions, when they are brought close, the Pauli principle sets in and keeps them apart. All combinations of Majorana raising and lowering operators however obey the anticommutation relation as seen in \ref{eq:Majorana_Herm_anticomm}, which does not enforce the Pauli exclusion principle for same states, it instead enforces $(c_l^\dagger)^2 = 1$. The anticommutation relation also however enforces $c_l^\dagger c_m^\dagger = - c_m^\dagger c_l^\dagger$ for $m \neq l$, implying the same exchange statistics for MFs as for Dirac Fermions. Furthermore, the number operator $n = c^\dagger_i c_i = c^2_i = 1$ does not make sense when looking exclusively at the MFs. Remember however that the Majorana fermions are quasi-particles which emerge from Fermionic sites $a_i$, and we have re-defined the sites using Majorana operators in \ref{eq:define_dj}, which we called $d_i$. From this we can construct a meaningful number operator
+\begin{align}
+    n_i = d_j^\dagger d_j = \frac{1 + \gamma_1 \gamma_2}{2},
+\end{align}
+which has eigenvalues $n_i = 0, 1$. This number operator is experimentally measurable by bringing two MFs closer together and measuring the energy of the state. The energy will be caused by the overlap of the MFs and is described by the Hamiltonian
+\begin{align}
+    H_\text{overlap} = \frac{i}{2}t c_{2i-1} c_{2i} = t \left(n_i - \frac{1}{2} \right),
+\end{align}
+which we will later discuss in \ref{subsec:_Overlap_Of_MFs}. When two MFs are brought even closer and collide, eq \ref{eq:MF_Hermiticity} seems to imply that the MFs annihilate. We can however see that they instead pair up to form an ordinary Dirac fermionic site with an energy defined by this Hamiltonian.
 
-This is not true for Majorana fermions; they would simply annihilate if brought close together. But they are also two halves of an ordinary fermion, meaning they would not actually annihilate, but rather form a fermionic site. 
+Another property of MFs, perhaps obvious from the original derivation, is that they always come in pairs. A system has no trouble having an odd or even number of Dirac fermions, but there will always be an even number of MFs. The MFs can be separated in space, and so if a single MF appears somewhere in the system, another MF must appear somewhere else in the system. \cite{leijnseIntroductionTopologicalSuperconductivity2012} \cite{beenakkerSearchMajoranaFermions2013}
 
-And further, the number operator $n = c^\dagger c = c^2 = 1$ no longer makes sense. Asking how many majoranas are in a system is close to meaningless, yet we can still determine how many MZMs there are by studying the degeneracy of the ground state, as we will later do. And one can also define a number operator by looking at the fermionic sites $n_i = d_j^\dagger d_j$. There will also always be an even number of Majorana fermions in a system, although they can be separated in space, which differs from normal fermions which can have both even and odd numbers \cite{beenakkerSearchMajoranaFermions2013} \cite{leijnseIntroductionTopologicalSuperconductivity2012}.
+These are properties which typically arise from the particle-hole symmetry of superconducting systems, and is in fact an important reason as to why superconductors serve as a hunting ground for Majorana fermions. We will not be discussing the relevant properties of superconductors further \footnote{Although an attempt was made}. A good introduction to MFs in superconductors can be found in \cite{nayakNonAbelianAnyonsTopological2008}.
 
-These are properties which typically arise from the particle-hole symmetry of superconducting systems, and is in fact an important reason as to why superconductors serve as a hunting ground for Majorana fermions. 
+% This is not immediately true for Majorana fermions; they would simply annihilate if brought close together. But they are also two halves of an ordinary fermion, meaning they would not actually annihilate, but rather form a fermionic site. 
+% - Is this due to them having zero electric charge?
+% - This is inaccurate.
+
+% And further, the number operator $n = c^\dagger c = c^2 = 1$ no longer makes sense. Asking how many majoranas are in a system is close to meaningless, yet we can still determine how many MZMs there are by studying the degeneracy of the ground state, as we will later do. 
+% - Maybe that's inaccurate, zero mode doesnt necessarily mean Majorana?
+
+% And one can also define a number operator by looking at the fermionic sites
+% \begin{align}
+%     n_i = d_j^\dagger d_j = \frac{1 + \gamma_1 \gamma_2}{2}. 
+% \end{align}
+% There will also always be an even number of Majorana fermions in a system, although they can be separated in space, which differs from normal fermions which can have both even and odd numbers \cite{beenakkerSearchMajoranaFermions2013} \cite{leijnseIntroductionTopologicalSuperconductivity2012}.
+% - Reforumulate this, "always even number" is inaccurate. "In a finite closed system, Majorana zero modes occur in pairs. The two members of a pair may be spatially separated, as occurs at opposite ends of a topological Kitaev chain, but together they define one nonlocal fermionic degree of freedom."
 
 \section{Phases of the Kitaev chain} \label{sec:Phases_Kitaev_chain}
 The Kitaev chain is really only interesting to us due to its promise of MZMs at its edges. We have previously seen that these quasiparticles only appear for specific parameters. In other words the Kitaev chain can host phases where the MZMs are, or are not present. Previously we have referred to these phases as the topologically non-trivial and the topologically trivial phase, respectively. The goal of this section is to further our understanding of which relation of parameters causes the chain to be in which phase, with a specific focus on the distinction between the topological and the trivial phase. 
@@ -274,7 +294,7 @@ In this case we have Majorana zero modes $b'$ localized near $j=0$, and $b''$ ne
 % From this we get the plot of topological values in Eivinds(?)
 
 
-\subsection{Overlap of the Majorana wave functions}
+\subsection{Overlap of the Majorana wave functions - Ikke ferdig} \label{subsec:_Overlap_Of_MFs}
 Up until this point, the discussion has really been for either a periodic chain, or a chain with $L \to \infty$. But in a realistic system, we'd have a finite $L$.
 
 %This for example technically changes the commutator $[H, b'] \neq 0$
