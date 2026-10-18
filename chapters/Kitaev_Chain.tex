@@ -150,15 +150,15 @@ Let us take a minute to think about what a Majorana fermion quasiparticle really
 \end{align}
 At first glance\footnote{In fact, 6 months of first glances for some} it might appear to be a fairly tame statement. This is however a rather weird statement which gives the Majorana fermions interesting properties. This equation essentially enforces that applying a majorana fermion annihilation operator is equivalent to applying a creation operator: removing a majorana fermion is mathematically identical to creating one. 
 
-This completely changes how we need to think about the Majorana fermion compared to a Dirac fermion. For Dirac fermions, when they are brought close, the Pauli principle sets in and keeps them apart. All combinations of Majorana raising and lowering operators however obey the anticommutation relation as seen in \ref{eq:Majorana_Herm_anticomm}, which does not enforce the Pauli exclusion principle for same states, it instead enforces $(c_l^\dagger)^2 = 1$. The anticommutation relation also however enforces $c_l^\dagger c_m^\dagger = - c_m^\dagger c_l^\dagger$ for $m \neq l$, implying the same exchange statistics for MFs as for Dirac Fermions. Furthermore, the number operator $n = c^\dagger_i c_i = c^2_i = 1$ does not make sense when looking exclusively at the MFs. Remember however that the Majorana fermions are quasi-particles which emerge from Fermionic sites $a_i$, and we have re-defined the sites using Majorana operators in \ref{eq:define_dj}, which we called $d_i$. From this we can construct a meaningful number operator
+This completely changes how we need to think about the Majorana fermion compared to a Dirac fermion. For Dirac fermions, when they are brought close, the Pauli principle sets in and keeps them apart. All combinations of Majorana raising and lowering operators however obey the anticommutation relation as seen in \ref{eq:Majorana_Herm_anticomm}, which does not enforce the Pauli exclusion principle for same states, it instead enforces $(c_l^\dagger)^2 = 1$. The anticommutation relation also however enforces $c_l^\dagger c_m^\dagger = - c_m^\dagger c_l^\dagger$ for $m \neq l$, implying the same exchange statistics for MFs as for Dirac Fermions. Furthermore, the number operator $n = c^\dagger_i c_i = c^2_i = 1$ does not make sense when looking exclusively at the MFs. Remember however that the Majorana fermions are quasi-particles which emerge from Fermionic sites $a_i$, and we have re-defined the sites using Majorana operators in (\ref{eq:define_dj}), which we called $d_i$. From this we can construct a meaningful number operator
 \begin{align}
     n_i = d_j^\dagger d_j = \frac{1 + \gamma_1 \gamma_2}{2},
 \end{align}
-which has eigenvalues $n_i = 0, 1$. This number operator is experimentally measurable by bringing two MFs closer together and measuring the energy of the state. The energy will be caused by the overlap of the MFs and is described by the Hamiltonian
+which has eigenvalues $n_i = 0, 1$. This number operator is experimentally measurable by bringing two MFs closer together and measuring the energy of the state. The energy will be caused by the overlap of the MFs and is described by the effective Hamiltonian
 \begin{align}
-    H_\text{overlap} = \frac{i}{2}t c_{2i-1} c_{2i} = t \left(n_i - \frac{1}{2} \right),
+    H_\text{eff} = \frac{i}{2}t c_{2i-1} c_{2i} = t \left(n_i - \frac{1}{2} \right),
 \end{align}
-which we will later discuss in \ref{subsec:_Overlap_Of_MFs}. When two MFs are brought even closer and collide, eq \ref{eq:MF_Hermiticity} seems to imply that the MFs annihilate. We can however see that they instead pair up to form an ordinary Dirac fermionic site with an energy defined by this Hamiltonian.
+which we will later discuss in more detail in \ref{subsec:_Overlap_Of_MFs}, where we also detail the strength of the overlap $t$. When two MFs are brought even closer and collide, (\ref{eq:MF_Hermiticity}) seems to imply that the MFs annihilate. We can however see that they instead pair up to form an ordinary Dirac fermionic site with an energy defined by this Hamiltonian.
 
 Another property of MFs, perhaps obvious from the original derivation, is that they always come in pairs. A system has no trouble having an odd or even number of Dirac fermions, but there will always be an even number of MFs. The MFs can be separated in space, and so if a single MF appears somewhere in the system, another MF must appear somewhere else in the system. \cite{leijnseIntroductionTopologicalSuperconductivity2012} \cite{beenakkerSearchMajoranaFermions2013}
 
@@ -240,7 +240,7 @@ Where we used $\{c_m c_n, c_l\} = 2(\delta_{ln} c_m - \delta_{lm} c_n)$, crossed
 \begin{align}
     (\omega + |\Delta|)x^{j+1} + \mu x^j + (\omega - |\Delta|) x^{j-1} &= 0\\
     (\omega + |\Delta|)x^2 + \mu x + (\omega - |\Delta|) &= 0 \label{eq:characteristic_eq_x_boundaries}\\
-    \to x_\pm = \frac{-\mu \pm \sqrt{\mu^2 - 4 \omega^2 + 4 |\Delta|^2}}{2(\omega + |\Delta|)}. \\
+    \to x_\pm = \frac{-\mu \pm \sqrt{\mu^2 - 4 \omega^2 + 4 |\Delta|^2}}{2(\omega + |\Delta|)}. \label{eq:x_pm_phases}\\
 \end{align}
 From this the general solutions follow on the form
 \begin{align}
@@ -294,15 +294,24 @@ In this case we have Majorana zero modes $b'$ localized near $j=0$, and $b''$ ne
 % From this we get the plot of topological values in Eivinds(?)
 
 
-\subsection{Overlap of the Majorana wave functions - Ikke ferdig} \label{subsec:_Overlap_Of_MFs}
-Up until this point, the discussion has really been for either a periodic chain, or a chain with $L \to \infty$. But in a realistic system, we'd have a finite $L$.
+\subsection{Overlap of the Majorana wave functions} \label{subsec:_Overlap_Of_MFs}
+This subsection might have been better placed in the previous section on Majorana fermions. It is however dependent on the previous discussion on boundary modes, and is therefore placed here for a more pedagogical flow. 
 
-%This for example technically changes the commutator $[H, b'] \neq 0$
-
-Previously, when we said the Majorana zero modes were localized at an end of the chain, we said so because the coefficient of the majorana operator in $b', b''$ we either falling off or increasing exponentially with $j$. This means that they are not truly localized, but have a tail which falls off exponentially from their respective end of the chain.
-
-% Exponential decay of the overlap / tunneling amplitude
-
+Up until this point, the discussion has really been for either a periodic chain, or a chain with $L \to \infty$. But in a realistic system, we'd have a finite $L$. Recalling the discussion above, the localized MZMs are actually not actually perfectly localized, but rather the coefficients of the majorana operators decay exponentially fast into the bulk in the topological phase. So for a system with finite $L$ there would be some overlap between the MZMs which would decrease exponentially with the length of the chain. This overlap would cause some coupling between the MZMs, and we would have a non-zero energy based on the overlap. Seeing as $j$ is real and $|x_\pm| < 1$, we can describe the tail of the coefficients in the bulk as 
+\begin{align}
+    |x|^j &= e^{j \ln|x|} \\
+    &= e^{-j |\ln|x||} \\
+    &= e^{-j l_0}.
+\end{align}
+This will be governed by whichever root decays the most slowly, so we define $l_0^{-1} = \text{min}(|\ln|x_-||, |\ln|x_+||)$. The tail of the leftmost MZM would go as $e^{-j |ln|x_\pm||}$ whereas the tail of the rightmost MZM would go as $e^{-(L-j) |ln|x_\mp||}$. Multiplying them together we find the overlap $t \propto e^{-L/l_0}$. Using this, we can describe the interaction by an effective Hamiltonian on the form 
+\begin{align}
+    H_\text{eff} &= \frac{i}{4} \sum_{l, m} A_{lm} b_l b_m\\
+    &= \frac{i}{4}\left(t b' b'' - t b'' b' \right)\\
+    &= \frac{i}{4}\left(t b' b'' + t b' b'' \right)\\
+    &= \frac{i}{2} t b' b'' \\
+    &= t (d^\dagger d - \frac{1}{2}).
+\end{align}
+This will cause an energy splitting between the ground states, and they will be split by an energy $t$. A high $t$ would break the degeneracy of the ground states, causing great problems for our topological protection and quantum computation schemes as a whole. As such, figuring out which values of $t$ are necessary to for the system to be in a degenerate ground state, maintaining topological protection and allowing quantum computation is an important aspect of the field. The most obvious way to maintain a low $t$ is simply by making the chain longer, separating the MZMs. Another way of lowering $t$ is by making the tail $|x|$ decay faster, which can be done by minimizing $|x|$ in \ref{eq:x_pm_phases} with respect to the parameters $\mu, \omega, \Delta$, while remaining in the topological phase of course.
 
 \section{BdG} \label{sec:BdG}
 BdG formalism can also offer great reductions in the dimensions of the problem, and is as such a common formalism throughout the field. 

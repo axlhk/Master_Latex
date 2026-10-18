@@ -12,9 +12,9 @@
 \contentsline {subsection}{\numberline {2.2.2}Boundary modes}{16}{subsection.2.2.2}%
 \contentsline {subsubsection}{(a) $2|\omega | < |\mu |, \Delta \neq 0$}{19}{subsubsection*.6}%
 \contentsline {subsubsection}{(b) $2\omega > |\mu |, \Delta \neq 0$}{19}{subsubsection*.7}%
-\contentsline {subsection}{\numberline {2.2.3}Overlap of the Majorana wave functions - Ikke ferdig}{19}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}BdG}{19}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}General BdG form and Nambu basis}{19}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.2.3}Overlap of the Majorana wave functions}{19}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}BdG}{20}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}General BdG form and Nambu basis}{20}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}BdG form of the Kitaev chain Hamiltonian}{20}{subsection.2.3.2}%
 \contentsline {subsubsection}{Diagonalizing the BdG Hamiltonian}{21}{subsubsection*.8}%
 \contentsline {chapter}{\numberline {3}Quantum computation}{23}{chapter.3}%
