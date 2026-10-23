@@ -908,6 +908,79 @@
       \endverb
       \keyw{Condensed Matter - Other Condensed Matter,Quantum Physics}
     \endentry
+    \entry{mascotManyBodyMajoranaBraiding2023a}{article}{}
+      \name{author}{6}{}{%
+        {{hash=e991a8b2cd1c818bc951656229c19338}{%
+           family={Mascot},
+           familyi={M\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=34b1e8b91b3fdd378ad1ddc582e08bce}{%
+           family={Hodge},
+           familyi={H\bibinitperiod},
+           given={Themba},
+           giveni={T\bibinitperiod}}}%
+        {{hash=757fb8b45a3ee5234d9197785c7c0410}{%
+           family={Crawford},
+           familyi={C\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=357c79ac083f05d469a330df2a862220}{%
+           family={Bedow},
+           familyi={B\bibinitperiod},
+           given={Jasmin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=de8ea6b3fe8072dac61950a3a2203b9a}{%
+           family={Morr},
+           familyi={M\bibinitperiod},
+           given={Dirk\bibnamedelima K.},
+           giveni={D\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=a50a0d6c9eceb3f9476a7b910f69199d}{%
+           family={Rachel},
+           familyi={R\bibinitperiod},
+           given={Stephan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{50a93fd037e32a2776e9a01a046faffc}
+      \strng{fullhash}{90619b225b4990b06f02e4aa2ca0f70c}
+      \strng{bibnamehash}{50a93fd037e32a2776e9a01a046faffc}
+      \strng{authorbibnamehash}{50a93fd037e32a2776e9a01a046faffc}
+      \strng{authornamehash}{50a93fd037e32a2776e9a01a046faffc}
+      \strng{authorfullhash}{90619b225b4990b06f02e4aa2ca0f70c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{24}
+      \field{issn}{0031-9007, 1079-7114}
+      \field{journaltitle}{Physical Review Letters}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{17}
+      \field{shortjournal}{Phys. Rev. Lett.}
+      \field{title}{Many-{{Body Majorana Braiding}} without an {{Exponential Hilbert Space}}}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{131}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{176601}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.131.176601
+      \endverb
+      \verb{file}
+      \verb C:\Users\axlkl\Zotero\storage\9HQSLLHF\Mascot et al. - 2023 - Many-Body Majorana Braiding without an Exponential Hilbert Space.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.131.176601
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.131.176601
+      \endverb
+    \endentry
     \entry{aliceaNonAbelianStatisticsTopological2011a}{article}{}
       \name{author}{5}{}{%
         {{hash=6324a9f51bb50d2d158aef9f6ab76692}{%

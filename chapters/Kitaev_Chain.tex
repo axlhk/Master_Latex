@@ -311,14 +311,114 @@ This will be governed by whichever root decays the most slowly, so we define $l_
     &= \frac{i}{2} t b' b'' \\
     &= t (d^\dagger d - \frac{1}{2}).
 \end{align}
-This will cause an energy splitting between the ground states, and they will be split by an energy $t$. A high $t$ would break the degeneracy of the ground states, causing great problems for our topological protection and quantum computation schemes as a whole. As such, figuring out which values of $t$ are necessary to for the system to be in a degenerate ground state, maintaining topological protection and allowing quantum computation is an important aspect of the field. The most obvious way to maintain a low $t$ is simply by making the chain longer, separating the MZMs. Another way of lowering $t$ is by making the tail $|x|$ decay faster, which can be done by minimizing $|x|$ in \ref{eq:x_pm_phases} with respect to the parameters $\mu, \omega, \Delta$, while remaining in the topological phase of course.
+This will cause an energy splitting between the ground states, and they will be split by an energy $t$. A high $t$ would break the degeneracy of the ground states, causing great problems for our topological protection and quantum computation schemes as a whole. In fact, $t$ can be interpreted as the tunneling amplitude from one edge to the other for the fermionic quasiparticles, offering the quasiparticles a weak form of communication, which breaks their topological protection for high $t$. As such, figuring out which values of $t$ are necessary to for the system to be in a degenerate ground state, maintaining topological protection and allowing quantum computation is an important aspect of the field. The most obvious way to maintain a low $t$ is simply by making the chain $L$ longer, separating the MZMs as much as possible. Another way of lowering $t$ is by making the tail $|x|$ decay faster, which could be done by minimizing $|x|$ in \ref{eq:x_pm_phases} for all relevant sites with respect to the parameters $\mu, \omega, \Delta$ for both the trivial and the non-trivial phase. 
 
 \section{BdG} \label{sec:BdG}
-BdG formalism can also offer great reductions in the dimensions of the problem, and is as such a common formalism throughout the field. 
+BdG formalism can offer great reductions in the dimensions of the problem, and is as such a common formalism throughout the field of superconductivity as it is relevant for quadratic Hamiltonians. The method takes a quadratic Hamiltonian and casts it into a diagonal form, resembling a system of non-interacting particles \cite{bonarettiBogoliubovValatinTransformationFermionic2026}. In our case it takes the exponentially growing Hilbert space $(2^N \times 2^N)$, and reduces it to growing linearly as $2N \times 2N$. This could provide an enormous decrease in numerical cost of simulating the system.
 
-\subsection{General BdG form and Nambu basis}
-"the objective of the transformation is to cast a quadratic Hamiltonian into a diagonal form
-that resembles the Hamiltonian of a system of non-interacting particles." - \cite{bonarettiBogoliubovValatinTransformationFermionic2026}
+In this section we show the general BdG formalism. First we discuss the time-independent case and $t = 0$, diagonalizing it and finding the ground and excited states. Then we explore a method of time-evolving the operators while remaining in the BdG formalism. This largely follows \cite{mascotManyBodyMajoranaBraiding2023a}. Then we apply the time-independent case to the Kitaev chain Hamiltonian, producing results directly relevant to the discussion above. We do not apply the time-evolution to the Kitaev chain Hamiltonian here, instead we do this in \ref{sec:Time_dependent_Kitaev_BdG} for pedagogical reasons.
+
+Starting from the general (time-dependent) Hamiltonian in the BdG form
+\begin{align}
+    H(t) &= \frac{1}{2} \begin{pmatrix}
+        a^\dagger  & a
+    \end{pmatrix} \mathcal{H}_\text{BdG}(t)\begin{pmatrix}
+        a\\
+        a^\dagger
+    \end{pmatrix} \label{eq:General_H_BdG}\\
+    \mathcal{H}_\text{BdG}(t) &= \begin{pmatrix}
+        \mathcal{H}_{ij}(t) & \Delta_{ij}(t)\\
+        \Delta_{ji}^*(t) & -\mathcal{H}_{ij}^*(t)
+    \end{pmatrix}. \label{eq:General_BdG_Form_H}
+\end{align}
+
+\subsection{Diagonalizing $\boldsymbol{H(0)}$ by a Bogoliubov transformation}
+We wish to perform a Bogoliubov transformation in order to diagonalize the Hamiltonian at $t = 0$. We introduce $d_n, d_n^\dagger$ by
+\begin{align}
+    \begin{pmatrix}
+        a_i\\
+        a_i^\dagger 
+    \end{pmatrix} &= \sum_n \begin{pmatrix}
+        U_{in} & V_{in}^*\\
+        V_{in} & U_{in}^*
+    \end{pmatrix} \begin{pmatrix}
+        d_n \\
+        d_n^\dagger
+    \end{pmatrix}
+\end{align}
+We can equivalently write this without the indices, showing that this is simply an expansion of the original fermion operators $a$ into new fermion operators $d$ by
+\begin{align}
+    a & = U d + V^* d^\dagger \label{eq:bogoliubov_trans_a}\\
+    a^\dagger &= V d + U^* d^\dagger \label{eq:bogoliubov_trans_a_dag}.
+\end{align}
+And we can define the transformation matrix as
+\begin{align}
+    W = \begin{pmatrix}
+        U & V^*\\
+        V & U^*
+    \end{pmatrix}.
+\end{align}
+
+\subsubsection{Conditions on the Bogoliubov transformation}
+Following the anticommutation relations of fermion operators, this poses conditions on $U$ and $V$. We find them by studying the anticommutators
+\begin{align}
+    \left\{a_i, a_j^\dagger \right\} &= \sum_{nm} \left\{U_{in} d_n + V_{jm}^* d_m^\dagger, V_{jn} d_n + U_{jn}^* d_n^\dagger \right\}\\
+    &= \sum_{nm} \left[ U_{in} V_{jm} \left\{d_n, d_m\right\} + U_{in} U_{jm}^* \left\{d_n, d_m^\dagger \right\} + V_{in}^* V_{jm} \left\{d_n^\dagger, d_m \right\} + V_{in}^* U_{jm}^* \left\{d_n^\dagger d_m^\dagger \right\}\right] \notag \\
+    &= \sum_n \left[ 0 + U_{in} U_{jn}^* + V_{in}^* V_{jn} + 0\right]\\
+    &= \sum_n \left[ U_{in} \left(U_{jn}^*\right)^T + V_{in}^* V_{jn}^T\right] = \delta_{ij}\\
+    &\to U U^\dagger + V^* V^T = I.
+\end{align}
+Where we used the fermionic anticommutation relations in addition to 
+\begin{align}
+    \left\{a A, b B\right\} &= ab\left\{A,B\right\}\\
+    \left\{A + B, C + D\right\} &= \left\{A, C\right\} + \left\{A, D\right\} + \left\{B, C\right\} + \left\{B, D\right\}
+\end{align}
+where $a$ and $b$ are numbers, and $A, B, C, D$ are operators. We can similarly find
+\begin{align}
+    \left\{a_i, a_j \right\} &= \sum_{nm} \left[ U_{in} U_{jm}\left\{ d_n, d_m \right\} + U_{in} V_{jm}^* \left\{d_n, d_m^\dagger \right\} + V_{in}^\dagger U_{jm} \left\{ d_n^\dagger, d_m\right\} + V_{in}^* V_{jm}^* \left\{d_n^\dagger, d_m^\dagger \right\}\right] \notag \\
+    &= \sum_n \left[0 + U_{in}V_jn + V_{in}^* U_{in} + 0 \right] = 0\\
+    &\to UV^\dagger + V^* U^T = 0.
+\end{align}
+
+\subsubsection{Substituting the transformation into $\boldsymbol{H(0)}$}
+Choosing non-negative energies $E_n$ we can define the diagonal BdG Hamiltonian to be
+\begin{align}
+    W^\dagger \mathcal{H}(0) W &= \begin{pmatrix}
+        E & 0 \\
+        0 & -E
+    \end{pmatrix},
+\end{align}
+where the $-E$ stems for the particle-hole symmetry, apparent from the general form \ref{eq:General_BdG_Form_H}. We now substitue \ref{eq:bogoliubov_trans_a} \ref{eq:bogoliubov_trans_a_dag} into the general Hamiltonian \ref{eq:General_H_BdG}
+\begin{align}
+    H(0)&= \frac{1}{2} \begin{pmatrix}
+        d^\dagger & d
+    \end{pmatrix} W^\dagger \mathcal{H}(0) W \begin{pmatrix}
+        d \\
+        d^\dagger
+    \end{pmatrix}\\
+    &= \frac{1}{2} \begin{pmatrix}
+        d^\dagger & d
+    \end{pmatrix} \begin{pmatrix}
+        E & 0 \\
+        0 & -E
+    \end{pmatrix} \begin{pmatrix}
+        d\\
+        d^\dagger
+    \end{pmatrix}\\
+    &= \frac{1}{2} \sum_n E_n \left( d^\dagger_n d_m - d_n d^\dagger_n \right)\\
+    &= \sum_n E_n \left(d_n^\dagger d_n - \frac{1}{2} \right) \label{eq:BdG_Energy}.
+\end{align}
+Where we again used the anticommuation relations of $d_n$.
+
+\subsection{Finding the ground state of the diagonalized H(0)}
+From the energy \ref{eq:BdG_Energy} we can tell that the ground state is the vacuum of all particles $|\boldsymbol{0}_d\rangle$, where
+\begin{align}
+    d_n |\boldsymbol{0}_d\rangle = 0, \hspace{4mm} \text{for all $n$}.
+\end{align}
+This is called the Bogoliubov vacua. There are several ways of finding this state, we explore the Thouless and the product state.
+
+\subsubsection{Thouless state}
+
 
 
 \subsection{BdG form of the Kitaev chain Hamiltonian}
@@ -372,7 +472,7 @@ We see that we must have
 \end{align}
 
 
-\subsubsection{Diagonalizing the BdG Hamiltonian}
+\subsubsection{Diagonalizing the Kitaev chain Hamiltonian in BdG form}
 By diagonalizing the BdG Hamiltonian we can find the energy spectrum. We find its eigenvalues by
 \begin{align}
     \text{det}\left( \mathcal{H}_\text{BdG} - \epsilon I \right) &= 0\\ 
@@ -390,3 +490,7 @@ which by the abc-formula gives the energy spectrum
     \epsilon &= \pm \sqrt{\left(\mu + 2 \omega \cos(q)\right)^2 + 4 |\Delta|^2 \sin^2(q)}
 \end{align}
 % where we used $\xi = \mu + 2 \omega \cos(q)$ for simplicity during the calculation.
+
+
+
+% \subsection{Applied to the Kitaev chain}
